@@ -679,14 +679,16 @@ local autostrongholdButton = MainTab:CreateToggle({
 
                     -- HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor.Part
 
-                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor:GetChildren()[20].CFrame * CFrame.new(0, 5, 0) -- initialize
+                    --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor:GetChildren()[20].CFrame * CFrame.new(0, 5, 0) -- initialize
                     task.wait(1)
                     local q_trig = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone
                     q_trig.CanQuery = true
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,1,0)
                     task.wait()
+                    firetouchinterest(my_humanoid, q_trig, 0)
                     --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor:GetChildren()[28].CFrame * CFrame.new(-58, 1, 0) -- 2nd move
                     task.wait(5)
+                    firetouchinterest(my_humanoid, q_trig, 1)
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor2:GetChildren()[11].CFrame * CFrame.new(0, 8, 0) -- 2ndfloor afk spot
                     task.wait(240)
                     HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0, 6, 0)
