@@ -687,7 +687,7 @@ local autostrongholdButton = MainTab:CreateToggle({
                     task.wait()
                     firetouchinterest(my_humanoid, q_trig, 0)
                     --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor:GetChildren()[28].CFrame * CFrame.new(-58, 1, 0) -- 2nd move
-                    task.wait(5)
+                    task.wait(2)
                     firetouchinterest(my_humanoid, q_trig, 1)
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor2:GetChildren()[11].CFrame * CFrame.new(0, 8, 0) -- 2ndfloor afk spot
                     task.wait(240)
