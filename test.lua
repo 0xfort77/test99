@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vtest"
+local _Version = "Cyan-99 v1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -65,8 +65,9 @@ local chop_trees_flag = false
 local always_day_flag = false
 local insta_chest_flag = false
 local temporal_flag = false
-local strongholdA_flag = false
+local diamonds_flag = false
 local cultist_S_flag = false
+local auto_SH_flag = false
 
 --workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[4].TouchZone
 --local jungle_key1 = workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[1].TouchZone
@@ -267,6 +268,8 @@ local HealthToggle = MainTab:CreateToggle({
         end
     end,
 })
+
+local mainsection22 = MainTab:CreateSection("World:")
 
 local KILLToggle = MainTab:CreateToggle({
     Name = "Kill Aura",
@@ -659,9 +662,9 @@ local autodiamondsButton = MainTab:CreateToggle({
     Name = "Auto Pick up Diamonds",
     CurrentValue = false,
     Callback = function(Value) 
-        strongholdA_flag = Value
+        diamonds_flag = Value
 
-        if strongholdA_flag then
+        if diamonds_flag then
             Rayfield:Notify({
                 Title = "Notification",
                 Content = "Auto Pick up Diamonds enabled",
@@ -670,7 +673,7 @@ local autodiamondsButton = MainTab:CreateToggle({
             })
         end
 
-        while strongholdA_flag do
+        while diamonds_flag do
             task.wait(0.5)
 
             for _, d in pairs(workspace.Items:GetChildren()) do
@@ -709,6 +712,49 @@ local coinsButton = MainTab:CreateButton({
         end
         task.wait()
 
+
+    end,
+})
+
+local autoSHButton = MainTab:CreateToggle({
+    Name = "Auto Stronghold",
+    CurrentValue = false,
+    Callback = function(Value) 
+        auto_SH_flag = Value
+
+        if auto_SH_flag then
+            Rayfield:Notify({
+                Title = "Notification",
+                Content = "Auto Stronghold enabled",
+                Duration = 10,
+                Image = 4483362458,
+            })
+        end
+
+        while auto_SH_flag do
+            task.wait()
+            --if stronghold_loc:FindFirstChild("Stronghold") then
+
+                local internal_time = workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text
+
+                --if internal_time == "00s" then
+
+                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,12,0)
+
+
+                --end
+
+
+            --else
+            --    Rayfield:Notify({
+            --        Title = "Notification",
+            --        Content = "No Stronghold Detected!",
+            --        Duration = 10,
+            --        Image = 4483362458,
+            --    })
+            --end
+            task.wait(2)
+        end
 
     end,
 })
@@ -1328,6 +1374,8 @@ local locationDropdown = BringTab:CreateDropdown({
 
     end,
 })
+
+local describe2section = BringTab:CreateSection("Resources:")
 
 local fuel_100_Button = BringTab:CreateButton({
     Name = "Bring 100 Fuel",
