@@ -743,7 +743,7 @@ local autoSHButton = MainTab:CreateToggle({
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
                     task.wait(2)
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
-                    task.wait(240)
+                    task.wait(300)
                     HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                     task.wait()
                     local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
@@ -761,7 +761,7 @@ local autoSHButton = MainTab:CreateToggle({
                     end
                     
                     HRP.CFrame = FIREZONE.CFrame * CFrame.new(0,6,0) 
-                    task.wait()
+                    task.wait(300)
                 end
                 task.wait()
 
