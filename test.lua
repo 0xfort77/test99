@@ -733,27 +733,47 @@ local autoSHButton = MainTab:CreateToggle({
 
         while auto_SH_flag do
             task.wait()
-            --if stronghold_loc:FindFirstChild("Stronghold") then
+            if stronghold_loc:FindFirstChild("Stronghold") then
 
                 local internal_time = workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text
 
-                --if internal_time == "00s" then
+                if internal_time == "00s" then
 
-                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,12,0)
+                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
+                    task.wait(2)
+                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
+                    task.wait(240)
+                    HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
+                    task.wait()
+                    local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
+                    task.wait(1)
+                    fireproximityprompt(d_chest_prox)
+                    task.wait()
+                    for _, d in pairs(workspace.Items:GetChildren()) do
+                        if d.Name == "Diamond" then
+                            local args = {
+                                d,
+                            }
+                            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestTakeDiamonds"):FireServer(unpack(args))
+                        end
+                        task.wait()
+                    end
+                    
+                    HRP.CFrame = FIREZONE.CFrame * CFrame.new(0,6,0) 
+                    task.wait()
+                end
+                task.wait()
 
-
-                --end
-
-
-            --else
-            --    Rayfield:Notify({
-            --        Title = "Notification",
-            --        Content = "No Stronghold Detected!",
-            --        Duration = 10,
-            --        Image = 4483362458,
-            --    })
-            --end
-            task.wait(2)
+            else
+                Rayfield:Notify({
+                    Title = "Notification",
+                    Content = "No Stronghold Detected!",
+                    Duration = 10,
+                    Image = 4483362458,
+                })
+            end
+            task.wait()
+            
         end
 
     end,
