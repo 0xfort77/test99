@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vtestadd"
+local _Version = "Cyan-99 vtest"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -47,7 +47,7 @@ local Window = Rayfield:CreateWindow({
 local items = workspace.Items
 
 local player = game.Players.LocalPlayer
-local charr = player.Character
+local charr = player.Character or player.CharacterAdded
 local HRP = charr:FindFirstChild("HumanoidRootPart")
 local my_humanoid = charr:FindFirstChild("Humanoid")
 local my_head = game.Players.LocalPlayer.Character.Head
