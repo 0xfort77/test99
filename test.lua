@@ -315,7 +315,7 @@ local KILLToggle = MainTab:CreateToggle({
                     --v.CanQuery = true
                     --print(v.Parent)
                     --for _, item in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
-                    if game.Players.LocalPlayer.Inventory:FindFirstChild("Old Axe") then
+                    if game.Players.LocalPlayer.Character:FindFirstChild("Old Axe") then
                 
                         local args = {
                             v.Parent,
@@ -324,7 +324,7 @@ local KILLToggle = MainTab:CreateToggle({
                             v.CFrame * CFrame.new(0,0,0)
                         }
                         game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Good Axe") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Good Axe") then
                         local args = {
                             v.Parent,
                             game.Players.LocalPlayer.Inventory:WaitForChild("Good Axe"),
@@ -333,7 +333,7 @@ local KILLToggle = MainTab:CreateToggle({
                         }
                         game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
 
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Strong Axe") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Strong Axe") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Strong Axe"),
@@ -342,7 +342,7 @@ local KILLToggle = MainTab:CreateToggle({
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
 
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Chainsaw") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Chainsaw") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Chainsaw"),
@@ -350,7 +350,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Spear") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Spear") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Spear"),
@@ -358,7 +358,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Morningstar") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Morningstar") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Morningstar"),
@@ -366,7 +366,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Poison Claws") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Poison Claws") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Poison Claws"),
@@ -374,7 +374,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Obsidiron Hammer") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Obsidiron Hammer") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Obsidiron Hammer"),
@@ -382,7 +382,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Katana") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Katana") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Katana"),
@@ -390,7 +390,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Flamethrower") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Flamethrower") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Flamethrower"),
@@ -398,7 +398,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Trident") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Trident") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Trident"),
@@ -406,7 +406,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Poison Spear") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Poison Spear") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Poison Spear"),
@@ -414,7 +414,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Laser Sword") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Laser Sword") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Laser Sword"),
@@ -422,7 +422,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Vampire Scythe") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Vampire Scythe") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Vampire Scythe"),
@@ -430,7 +430,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Scythe") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Scythe") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Scythe"),
@@ -438,7 +438,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Infernal Sword") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Infernal Sword") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Infernal Sword"),
@@ -446,7 +446,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 v.CFrame * CFrame.new(0,0,0)
                             }
                             game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                    elseif game.Players.LocalPlayer.Inventory:FindFirstChild("Ice Sword") then
+                    elseif game.Players.LocalPlayer.Character:FindFirstChild("Ice Sword") then
                             local args = {
                                 v.Parent,
                                 game.Players.LocalPlayer.Inventory:WaitForChild("Ice Sword"),
