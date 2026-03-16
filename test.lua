@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 test"
+local _Version = "Cyan-99 v1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -685,10 +685,10 @@ local autostrongholdButton = MainTab:CreateToggle({
                     q_trig.CanQuery = true
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,1,0)
                     task.wait()
-                    firetouchinterest(my_humanoid, q_trig, 0)
+                    firetouchinterest(HRP, q_trig, 0)
                     --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor:GetChildren()[28].CFrame * CFrame.new(-58, 1, 0) -- 2nd move
-                    --task.wait()
-                    --firetouchinterest(my_humanoid, q_trig, 1)
+                    task.wait()
+                    firetouchinterest(HRP, q_trig, 1)
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(5,1,5)
                     task.wait()
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor2:GetChildren()[11].CFrame * CFrame.new(0, 8, 0) -- 2ndfloor afk spot
