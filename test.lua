@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vt-wait"
+local _Version = "Cyan-99 vtest"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -682,10 +682,35 @@ local autodiamondsButton = MainTab:CreateToggle({
                 end
                 task.wait()
             end
-            task.wait(0.5)
+            task.wait()
         end
     end,
 
+})
+
+local coinsButton = MainTab:CreateButton({
+    Name = "Collect All Coins",
+    Callback = function()
+        Rayfield:Notify({
+            Title = "Notification",
+            Content = "Collecting all Coins",
+            Duration = 10,
+            Image = 4483362458,
+        })
+        task.wait()
+        for _, coins in pairs(workspace.Items:GetChildren()) do
+            if coins.Name == "Coin Stack" then
+                local args = {
+                    coins
+                    }
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestCollectCoints"):InvokeServer(unpack(args))
+            end
+            task.wait()
+        end
+        task.wait()
+
+
+    end,
 })
 
 --local strongholdtablabel1 = MainTab:CreateLabel("Stronghold Time: None", 0)
