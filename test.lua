@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 vtestadd"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -655,8 +655,8 @@ local cultVolcanoToggle = MainTab:CreateToggle({
 
 -- workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text
 
-local autostrongholdButton = MainTab:CreateToggle({
-    Name = "Auto Stronghold",
+local autodiamondsButton = MainTab:CreateToggle({
+    Name = "Auto Pick up Diamonds",
     CurrentValue = false,
     Callback = function(Value) 
         strongholdA_flag = Value
@@ -664,69 +664,25 @@ local autostrongholdButton = MainTab:CreateToggle({
         if strongholdA_flag then
             Rayfield:Notify({
                 Title = "Notification",
-                Content = "Auto Stronghold enabled",
+                Content = "Auto Pick up Diamonds enabled",
                 Duration = 10,
                 Image = 4483362458,
             })
         end
 
         while strongholdA_flag do
+            task.wait(0.5)
 
-            if stronghold_loc:FindFirstChild("Stronghold") then
-                task.wait(0.5)
-
-                if workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text == "00s" then
-
-                    -- HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor.Part
-
-                    --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor:GetChildren()[20].CFrame * CFrame.new(0, 5, 0) -- initialize
-                    task.wait(1)
-                    local q_trig = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone
-                    q_trig.CanQuery = true
-                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,1,0)
-                    task.wait()
-                    firetouchinterest(HRP, q_trig, 0)
-                    --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor:GetChildren()[28].CFrame * CFrame.new(-58, 1, 0) -- 2nd move
-                    task.wait()
-                    
-                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(5,1,5)
-                    firetouchinterest(HRP, q_trig, 1)
-                    task.wait()
-                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Building.Floor2:GetChildren()[11].CFrame * CFrame.new(0, 8, 0) -- 2ndfloor afk spot
-                    task.wait(240)
-                    HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0, 6, 0)
-                    local prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
-                    prox.HoldDuration = 0
-                    prox.RequiresLineOfSight = false
-                    task.wait(1.5)
-                    fireproximityprompt(prox)
-                    task.wait(1)
-
-                    for _, d in pairs(workspace.Items:GetChildren()) do
-                        if d.Name == "Diamond" then
-                            local args = {
-                                d,
-                            }
-                            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestTakeDiamonds"):FireServer(unpack(args))
-                        end
-                        task.wait()
-                    end
-                    task.wait(0.055)
-                    HRP.CFrame = FIREZONE.CFrame * CFrame.new(0,6,0)
-                    task.wait(800)
-
+            for _, d in pairs(workspace.Items:GetChildren()) do
+                if d.Name == "Diamond" then
+                    local args = {
+                        d,
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestTakeDiamonds"):FireServer(unpack(args))
                 end
-
-
-            else
-                Rayfield:Notify({
-                    Title = "Notification",
-                    Content = "No Stronghold detected!",
-                    Duration = 10,
-                    Image = 4483362458,
-                })
+                task.wait()
             end
-
+            task.wait(0.5)
         end
     end,
 
@@ -1689,31 +1645,265 @@ local Label = BringTab:CreateLabel("every 2 seconds")
 local mainsection3 = BringTab:CreateSection("Gem of the Forest Fragments:")
 
 local FFButton = BringTab:CreateButton({
-    Name = "Bring All Forest Fragments to Workbench",
+    Name = "Bring All Forest Fragments",
     Callback = function() 
+        if bring_index == "Player" then
     
-        for _, FF_gem in pairs(workspace.Items:GetChildren()) do
+            for _, FF_gem in pairs(workspace.Items:GetChildren()) do
 
-            if FF_gem:IsA("Model") and string.find(FF_gem.Name, "Gem of the Forest Fragment") then
+                if FF_gem:IsA("Model") and string.find(FF_gem.Name, "Gem of the Forest Fragment") then
 
-                local args = {
-	                FF_gem
-                }
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    local args = {
+	                    FF_gem
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
 
-                local args = {
-	                FF_gem
-                }
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    local args = {
+	                    FF_gem
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
 
-                FF_gem:PivotTo(workbench_loc.CFrame * CFrame.new(0, 6, -2))
+                    FF_gem:PivotTo(my_head.CFrame * CFrame.new(0, 6, -2))
 
-                task.wait(0.2)
+                    task.wait(0.2)
+
+                end
 
             end
+        elseif bring_index == "Scrapper" then
+            for _, FF_gem in pairs(workspace.Items:GetChildren()) do
 
+                if FF_gem:IsA("Model") and string.find(FF_gem.Name, "Gem of the Forest Fragment") then
+
+                    local args = {
+	                    FF_gem
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+	                    FF_gem
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    FF_gem:PivotTo(workbench_loc.CFrame * CFrame.new(0, 6, -2))
+
+                    task.wait(0.2)
+
+                end
+
+            end
+        elseif bring_index == "Fire" then
+            for _, FF_gem in pairs(workspace.Items:GetChildren()) do
+
+                if FF_gem:IsA("Model") and string.find(FF_gem.Name, "Gem of the Forest Fragment") then
+
+                    local args = {
+	                    FF_gem
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+	                    FF_gem
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    FF_gem:PivotTo(FIREZONE.CFrame * CFrame.new(0, 6, -2))
+
+                    task.wait(0.2)
+
+                end
+
+            end
         end
-    
+    end,
+})
+
+local mainsectionweapontools = BringTab:CreateSection("Weapons/Tools:")
+
+local highendweaponsButton = BringTab:CreateButton({
+    Name = "Bring Weapons/Tools",
+    Callback = function()
+        if bring_index == "Player" then
+            for _, w_tool in pairs(workspace.Items:GetChildren()) do
+
+                if w_tool.Name == "Giant Sack" or w_tool.Name == "Strong Axe" or w_tool.Name == "Rifle" or w_tool.Name == "Revolver" or w_tool.Name == "Strong Flashlight" or w_tool.Name == "Old Rod" or w_tool.Name == "Spear" or w_tool.Name == "Tactical Shotgun" or w_tool.Name == "Morningstar" then
+                    local args = {
+                        w_tool
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        w_tool
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    w_tool:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait()
+        elseif bring_index == "Scrapper" then
+            for _, w_tool in pairs(workspace.Items:GetChildren()) do
+
+                if w_tool.Name == "Giant Sack" or w_tool.Name == "Strong Axe" or w_tool.Name == "Rifle" or w_tool.Name == "Revolver" or w_tool.Name == "Strong Flashlight" or w_tool.Name == "Old Rod" or w_tool.Name == "Spear" or w_tool.Name == "Tactical Shotgun" or w_tool.Name == "Morningstar" then
+                    local args = {
+                        w_tool
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        w_tool
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    w_tool:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait() 
+        elseif bring_index == "Fire" then
+            for _, w_tool in pairs(workspace.Items:GetChildren()) do
+
+                if w_tool.Name == "Giant Sack" or w_tool.Name == "Strong Axe" or w_tool.Name == "Rifle" or w_tool.Name == "Revolver" or w_tool.Name == "Strong Flashlight" or w_tool.Name == "Old Rod" or w_tool.Name == "Spear" or w_tool.Name == "Tactical Shotgun" or w_tool.Name == "Morningstar" then
+                    local args = {
+                        w_tool
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        w_tool
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    w_tool:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait()  
+        end  
+    end,
+})
+
+local mainsectionAMMO = BringTab:CreateSection("Ammo:")
+
+local highendammoButton = BringTab:CreateButton({
+    Name = "Bring Ammo",
+    Callback = function()
+        if bring_index == "Player" then
+            for _, w_ammo in pairs(workspace.Items:GetChildren()) do
+
+                if w_ammo.Name == "Rifle Ammo" or w_ammo.Name == "Revolver Ammo" then
+                    local args = {
+                        w_ammo
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        w_ammo
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    w_ammo:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait()
+        elseif bring_index == "Scrapper" then
+            for _, w_ammo in pairs(workspace.Items:GetChildren()) do
+
+                if w_ammo.Name == "Rifle Ammo" or w_ammo.Name == "Revolver Ammo" then
+                    local args = {
+                        w_ammo
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        w_ammo
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    w_ammo:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait()
+        elseif bring_index == "Fire" then
+            for _, w_ammo in pairs(workspace.Items:GetChildren()) do
+
+                if w_ammo.Name == "Rifle Ammo" or w_ammo.Name == "Revolver Ammo" then
+                    local args = {
+                        w_ammo
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        w_ammo
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    w_ammo:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait()
+        end
+    end,
+})
+
+local mainsectionfood = BringTab:CreateSection("Pelts:")
+
+local highendammoButton = BringTab:CreateButton({
+    Name = "Bring Animal Pelts",
+    Callback = function()
+        if bring_index == "Player" then
+            for _, pelt1 in pairs(workspace.Items:GetChildren()) do
+
+                if pelt1.Name == "Bunny Foot" or pelt1.Name == "Wolf Pelt" or pelt1.Name == "Alpha Wolf Pelt" or pelt1.Name == "Bear Pelt" then
+                    local args = {
+                        pelt1
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        pelt1
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    pelt1:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait()
+        elseif bring_index == "Scrapper" then
+            for _, pelt1 in pairs(workspace.Items:GetChildren()) do
+
+                if pelt1.Name == "Bunny Foot" or pelt1.Name == "Wolf Pelt" or pelt1.Name == "Alpha Wolf Pelt" or pelt1.Name == "Bear Pelt" then
+                    local args = {
+                        pelt1
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        pelt1
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    pelt1:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait()
+        elseif bring_index == "Fire" then
+            for _, pelt1 in pairs(workspace.Items:GetChildren()) do
+
+                if pelt1.Name == "Bunny Foot" or pelt1.Name == "Wolf Pelt" or pelt1.Name == "Alpha Wolf Pelt" or pelt1.Name == "Bear Pelt" then
+                    local args = {
+                        pelt1
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                    local args = {
+                        pelt1
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                    pelt1:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
+                end
+            end
+            task.wait()
+        end
     end,
 })
 
