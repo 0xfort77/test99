@@ -305,7 +305,7 @@ local KILLToggle = MainTab:CreateToggle({
             includeparams.FilterType = Enum.RaycastFilterType.Include
             includeparams.FilterDescendantsInstances = {NPC_enemies}
             excludeparams.FilterType = Enum.RaycastFilterType.Exclude
-            excludeparams.FilterDescendantsInstances = {}
+            excludeparams.FilterDescendantsInstances = {items}
             excludeparams.MaxParts = 60
             local worldrootradius = workspace:GetPartBoundsInRadius(HRP.Position, 180, includeparams, excludeparams)
 
