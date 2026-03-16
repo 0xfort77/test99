@@ -310,7 +310,7 @@ local KILLToggle = MainTab:CreateToggle({
             local worldrootradius = workspace:GetPartBoundsInRadius(HRP.Position, 180, includeparams, excludeparams)
 
             for _, v in ipairs(worldrootradius) do
-                if v:IsA("Part") and string.find(v.Name, "HumanoidRootPart") then
+                if v:IsA("Part") and v.Name == "HumanoidRootPart" then
                     --v.CanQuery = true
                     --print(v.Parent)
                     for _, item in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
