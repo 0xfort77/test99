@@ -304,6 +304,7 @@ local KILLToggle = MainTab:CreateToggle({
             local excludeparams = OverlapParams.new()
             includeparams.FilterType = Enum.RaycastFilterType.Include
             includeparams.FilterDescendantsInstances = {NPC_enemies}
+            includeparams.CollisionGroup = "NPCs"
             excludeparams.FilterType = Enum.RaycastFilterType.Exclude
             excludeparams.FilterDescendantsInstances = {items}
             excludeparams.MaxParts = 60
