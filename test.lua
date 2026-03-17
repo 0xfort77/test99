@@ -304,7 +304,7 @@ local KILLToggle = MainTab:CreateToggle({
             local excludeparams = OverlapParams.new()
             includeparams.FilterType = Enum.RaycastFilterType.Include
             includeparams.FilterDescendantsInstances = {NPC_enemies}
-            includeparams.CollisionGroup = "NPCs"
+            --includeparams.CollisionGroup = "NPCs"
             excludeparams.FilterType = Enum.RaycastFilterType.Exclude
             excludeparams.FilterDescendantsInstances = {items}
             excludeparams.MaxParts = 60
@@ -337,7 +337,7 @@ local KILLToggle = MainTab:CreateToggle({
                         elseif string.find(item.Name, "Strong Axe") then
                             local args = {
                                 v.Parent,
-                                game.Players.LocalPlayer.Inventory["Strong Axe"],
+                                game.Players.LocalPlayer.Inventory:WaitForChild("Strong Axe"),
                                 damage_hash,
                                 v.CFrame * CFrame.new(0,0,0)
                             }
