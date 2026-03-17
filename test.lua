@@ -442,10 +442,10 @@ local KILLToggle = MainTab:CreateToggle({
                                     damage_hash,
                                     v.CFrame * CFrame.new(0,0,0)
                                 }
-                            game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                            game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args)) -- here
                             elseif string.find(item.Name, "Infernal Sword") then
                                 local args = {
-                                    v.Parent,
+                                    enemy_parent,
                                     game.Players.LocalPlayer.Inventory:WaitForChild("Infernal Sword"),
                                     damage_hash,
                                     v.CFrame * CFrame.new(0,0,0)
