@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 vtestF"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -747,7 +747,7 @@ local autoSHButton = MainTab:CreateToggle({
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
                     task.wait(5)
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
-                    task.wait(300)
+                    task.wait(190)
                     HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                     task.wait()
                     local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
@@ -765,7 +765,7 @@ local autoSHButton = MainTab:CreateToggle({
                     end
                     
                     HRP.CFrame = FIREZONE.CFrame * CFrame.new(0,6,0) 
-                    task.wait(300)
+                    task.wait(600)
                 end
                 task.wait()
 
@@ -1220,7 +1220,7 @@ local chopToggle = TreeTab:CreateToggle({
             includeparams.FilterDescendantsInstances = {workspace.Map.Foliage}
             excludeparams.FilterType = Enum.RaycastFilterType.Exclude
             excludeparams.FilterDescendantsInstances = {NPC_enemies}
-            local worldrootradiustrees = workspace:GetPartBoundsInRadius(HRP.Position, 180, includeparams, excludeparams)
+            local worldrootradiustrees = workspace:GetPartBoundsInBox(HRP.CFrame, Vector3.new(200,60,200), includeparams, excludeparams)
 
             for _, foliage in pairs(worldrootradiustrees) do
                 --print(foliage)
