@@ -324,7 +324,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Old Axe"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Old Axe"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -332,7 +332,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Good Axe") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Good Axe"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Good Axe"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -341,7 +341,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Strong Axe") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Strong Axe"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Strong Axe"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -350,7 +350,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Chainsaw") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Chainsaw"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Chainsaw"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -358,7 +358,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Spear") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Spear"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Spear"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -366,7 +366,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Morningstar") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Morningstar"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Morningstar"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -374,7 +374,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Poison Claws") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Poison Claws"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Poison Claws"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -382,7 +382,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Obsidiron Hammer") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Obsidiron Hammer"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Obsidiron Hammer"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -390,7 +390,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Katana") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Katana"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Katana"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -398,7 +398,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Flamethrower") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Flamethrower"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Flamethrower"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -406,7 +406,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Trident") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Trident"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Trident"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -414,7 +414,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Poison Spear") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Poison Spear"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Poison Spear"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -422,7 +422,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Laser Sword") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Laser Sword"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Laser Sword"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -430,7 +430,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Vampire Scythe") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Vampire Scythe"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Vampire Scythe"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -438,7 +438,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Scythe") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Scythe"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Scythe"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -446,7 +446,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Infernal Sword") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Infernal Sword"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Infernal Sword"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
@@ -454,7 +454,7 @@ local KILLToggle = MainTab:CreateToggle({
                                 --elseif string.find(item.Name, "Ice Sword") then
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Ice Sword"),
+                                        game.Players.LocalPlayer.Inventory:FindFirstChild("Ice Sword"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
