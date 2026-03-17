@@ -311,161 +311,161 @@ local KILLToggle = MainTab:CreateToggle({
             local worldrootradius = workspace:GetPartBoundsInRadius(HRP.Position, 180, includeparams, excludeparams)
 
             for _, v in ipairs(worldrootradius) do
-                if v:IsA("Part") and v.Name == "HumanoidRootPart" then
+                --if v:IsA("Part") and v.Name == "HumanoidRootPart" then
                     --v.CanQuery = true
                     --print(v.Parent)
                     local enemy_parent = v:FindFirstAncestorWhichIsA("Model")
                     if enemy_parent ~= nil then
 
                         if enemy_parent.Name == "Cultist" or enemy_parent.Name == "Crossbow Cultist" or enemy_parent.Name == "Juggernaut Cultist" or enemy_parent.Name == "Alpha Wolf" or enemy_parent.Name == "Bear" or enemy_parent.Name == "Bunny" or enemy_parent.Name == "Meteor Crab" or enemy_parent.Name == "Mossy Wolf" or enemy_parent.Name == "Scorpion" or enemy_parent.Name == "Wolf" then
-                            for _, item in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
+                            --for _, item in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
                             
-                                if string.find(item.Name, "Old Axe") then
+                                --if string.find(item.Name, "Old Axe") then
                                 
                                     local args = {
                                         enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Old Axe"),
+                                        game.Players.LocalPlayer.Inventory:WaitForChild("Old Axe") or game.Players.LocalPlayer.Inventory:WaitForChild("Infernal Sword"),
                                         damage_hash,
                                         v.CFrame * CFrame.new(0,0,0)
                                     }
                                     game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Good Axe") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Good Axe"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                    }
-                                    game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Good Axe") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Good Axe"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --    }
+                                --    game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+--
+                                --elseif string.find(item.Name, "Strong Axe") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Strong Axe"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --    }
+                                --    game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+--
+                                --elseif string.find(item.Name, "Chainsaw") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Chainsaw"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --    }
+                                --    game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Spear") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Spear"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Morningstar") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Morningstar"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Poison Claws") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Poison Claws"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Obsidiron Hammer") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Obsidiron Hammer"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Katana") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Katana"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Flamethrower") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Flamethrower"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Trident") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Trident"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Poison Spear") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Poison Spear"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Laser Sword") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Laser Sword"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Vampire Scythe") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Vampire Scythe"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --}
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Scythe") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Scythe"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --    }
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args)) -- here
+                                --elseif string.find(item.Name, "Infernal Sword") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Infernal Sword"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --    }
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+                                --elseif string.find(item.Name, "Ice Sword") then
+                                --    local args = {
+                                --        enemy_parent,
+                                --        game.Players.LocalPlayer.Inventory:WaitForChild("Ice Sword"),
+                                --        damage_hash,
+                                --        v.CFrame * CFrame.new(0,0,0)
+                                --    }
+                                --game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
 
-                                elseif string.find(item.Name, "Strong Axe") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Strong Axe"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                    }
-                                    game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-
-                                elseif string.find(item.Name, "Chainsaw") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Chainsaw"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                    }
-                                    game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Spear") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Spear"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Morningstar") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Morningstar"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Poison Claws") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Poison Claws"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Obsidiron Hammer") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Obsidiron Hammer"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Katana") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Katana"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Flamethrower") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Flamethrower"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Trident") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Trident"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Poison Spear") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Poison Spear"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Laser Sword") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Laser Sword"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Vampire Scythe") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Vampire Scythe"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Scythe") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Scythe"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                    }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args)) -- here
-                                elseif string.find(item.Name, "Infernal Sword") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Infernal Sword"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                    }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                                elseif string.find(item.Name, "Ice Sword") then
-                                    local args = {
-                                        enemy_parent,
-                                        game.Players.LocalPlayer.Inventory:WaitForChild("Ice Sword"),
-                                        damage_hash,
-                                        v.CFrame * CFrame.new(0,0,0)
-                                    }
-                                game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-
-                                end
-                            end
+                                --end
+                            --end
 
                         end
                     end
-                end
+                --end
 
             end
 
