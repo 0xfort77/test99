@@ -315,7 +315,7 @@ local KILLToggle = MainTab:CreateToggle({
                     --v.CanQuery = true
                     --print(v.Parent)
                 local enemy_parent = v:FindFirstAncestorWhichIsA("Model")
-                if enemy_parent.Name == "Cultist" or enemy_parent.Name == "Crossbow Cultist" then
+                if enemy_parent.Name == "Cultist" or enemy_parent.Name == "Crossbow Cultist" or enemy_parent.Name == "Alpha Wolf" or enemy_parent.Name == "Bear" or enemy_parent.Name == "Bunny" or enemy_parent.Name == "Meteor Crab" or enemy_parent.Name == "Mossy Wolf" or enemy_parent.Name == "Scorpion" or enemy_parent.Name == "Wolf" then
                     for _, item in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
     
                         if string.find(item.Name, "Old Axe") then
