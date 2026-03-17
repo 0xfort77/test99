@@ -311,9 +311,11 @@ local KILLToggle = MainTab:CreateToggle({
             local worldrootradius = workspace:GetPartBoundsInRadius(HRP.Position, 180, includeparams, excludeparams)
 
             for _, v in ipairs(worldrootradius) do
-                if v:IsA("Part") and v.Name == "HumanoidRootPart" then
+                --if v:IsA("Part") and v.Name == "HumanoidRootPart" then
                     --v.CanQuery = true
                     --print(v.Parent)
+                local enemy_parent = v:FindFirstAncestorWhichIsA("Model")
+                if enemy_parent.Name == "Cultist" or enemy_parent.Name == "Crossbow Cultist" then
                     for _, item in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
     
                         if string.find(item.Name, "Old Axe") then
