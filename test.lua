@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vrev444"
+local _Version = "Cyan-99 vsbF"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3235,23 +3235,22 @@ local Toggle = BaseTab:CreateToggle({
             end)
             task.wait()
         end 
-        while interface_flag do
 
             
-            if interface_flag == false then
-                Rayfield:Notify({
-                    Title = "Notification",
-                    Content = "Skybase Interface disabled",
-                    Duration = 6.5,
-                    Image = 4483362458,
-                })
+        if interface_flag == false then
+            Rayfield:Notify({
+                Title = "Notification",
+                Content = "Skybase Interface disabled",
+                Duration = 6.5,
+                Image = 4483362458,
+            })
 
-                task.wait()
-                _interface.Enabled = false
-                task.wait()
-            end
+            task.wait()
+            _interface.Enabled = false
             task.wait()
         end
+        task.wait()
+
 
          
     end,
