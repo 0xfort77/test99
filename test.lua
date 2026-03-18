@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vskbase"
+local _Version = "Cyan-99 v1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2666,7 +2666,7 @@ local function create_exp_UI()
 
     local Interface_i = Instance.new("ScreenGui") do
     	Interface_i.Name = "Interface_i"
-    	Interface_i.Enabled = false
+    	Interface_i.Enabled = true
     	Interface_i.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     end
 
@@ -2934,6 +2934,8 @@ local function create_exp_UI()
 end
 
 create_exp_UI()
+task.wait()
+Interface_i.Enabled = false
 -- exp UI toggle
 local Toggle = BaseTab:CreateToggle({
     Name = "Interface",
