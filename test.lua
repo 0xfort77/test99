@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 vSB2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2668,6 +2668,7 @@ local function create_exp_UI()
     	Interface_i.Name = "Interface_i"
     	Interface_i.Enabled = true
     	Interface_i.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        Interface_i.Parent = game.Players.LocalPlayer.PlayerGui
     end
 
     local HolderFrame = Instance.new("Frame",Interface_i) do
@@ -2935,7 +2936,8 @@ end
 
 create_exp_UI()
 task.wait()
-Interface_i.Enabled = false
+local _interface = game.Players.LocalPlayer.PlayerGui.Interface_i
+_interface.Enabled = false
 -- exp UI toggle
 local Toggle = BaseTab:CreateToggle({
     Name = "Interface",
@@ -2953,11 +2955,11 @@ local Toggle = BaseTab:CreateToggle({
 
             
             task.wait(2)
-            Interface_i.Enabled = true
+            _interface.Enabled = true
         end 
         while interface_flag do
 
-            local _interface = game.Players.LocalPlayer.PlayerGui:WaitForChild("Interface_i")
+            local _interface = game.Players.LocalPlayer.PlayerGui:FindFirstChild("Interface_i")
 
             --local player = game.Players.LocalPlayer
             --local charr = player.Character
