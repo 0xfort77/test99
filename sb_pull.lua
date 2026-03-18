@@ -1,3 +1,5 @@
+local _interface = game.Players.LocalPlayer.PlayerGui.Interface_i
+
 local UIS = game:GetService("UserInputService")
 local frame = _interface.HolderFrame
 local dragToggle = nil
