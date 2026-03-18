@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vrevDestroyGUI"
+local _Version = "Cyan-99 vrevertSB"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2956,8 +2956,6 @@ local Toggle = BaseTab:CreateToggle({
             
             task.wait(2)
 
-            if not _interface then create_exp_UI() end
-            task.wait(1)
             _interface.Enabled = true
 
 
@@ -3249,7 +3247,6 @@ local Toggle = BaseTab:CreateToggle({
 
             task.wait()
             _interface.Enabled = false
-            _interface:Destroy()
             task.wait()
         end
         task.wait()
