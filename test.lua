@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vmulti refactor"
+local _Version = "Cyan-99 vtoggle"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2940,7 +2940,7 @@ local _interface = game.Players.LocalPlayer.PlayerGui.Interface_i
 _interface.Enabled = false
 task.wait(1)
 -- exp UI toggle
-local Toggle = BaseTab:CreateToggle({
+local skybaseToggle = BaseTab:CreateToggle({
     Name = "Enable Interface Interaction",
     CurrentValue = false,
     Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
@@ -3250,6 +3250,25 @@ local Toggle = BaseTab:CreateToggle({
    
     end,
 })
+
+local function lockSBToggle()
+    task.wait()
+    while true do
+        if interface_flag then
+            while true do
+                skybaseToggle:Set(true)
+                task.wait()
+            end
+        else
+            return
+        end
+    end
+    task.wait()
+
+end
+
+pcall(lockSBToggle)
+
 local warnlabel1 = BaseTab:CreateLabel("**ONLY ENABLE THIS ONCE**", 0)
 local warnlabel2 = BaseTab:CreateLabel("**YOU WILL CREATE MULTIPLE PLATFORMS AND LAG**", 0)
 local warnlabel2 = BaseTab:CreateLabel("**work in progress :) thanks**", 0)
@@ -3263,7 +3282,7 @@ local showskybaseButton = BaseTab:CreateButton({
 })
 
 local removeskybaseButton = BaseTab:CreateButton({
-    Name = "Show Interface",
+    Name = "Hide Interface",
     Callback = function()
         _interface.Enabled = false
         task.wait()
