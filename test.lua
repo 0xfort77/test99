@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vskulltest"
+local _Version = "Cyan-99 vST2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2573,17 +2573,17 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
                     --if index == 1 then
                         task.wait()
                         local args = {
-                            skull
+                            workspace.Items:FindFirstChild("Crystal Skull Key")
                         }
                         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
                         task.wait()
 
                         local args = {
-                            skull
+                            workspace.Items:FindFirstChild("Crystal Skull Key")
                         }
                         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
                         task.wait()
-                        skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[p_index].TouchZone.CFrame * CFrame.new(0,1,0))
+                        workspace.Items:FindFirstChild("Crystal Skull Key"):PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[p_index].TouchZone.CFrame * CFrame.new(0,1,0))
                         print("times moved: "..tostring(index))
                         task.wait(1)
                         index = index + 1
