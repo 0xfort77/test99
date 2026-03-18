@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 vsbRevised1"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3046,12 +3046,16 @@ local Toggle = BaseTab:CreateToggle({
             	end
             
             	local platPart = Instance.new("Part") do
-            		platPart.Name = "expPlatform"
-            		platPart.BrickColor = BrickColor.new("Salmon")
+            		platPart.Name = "Grass"
+            		platPart.BrickColor = BrickColor.new("Parsley green")
+                    platPart.brickColor = BrickColor.new("Parsley green")
             		platPart.Parent = workspace.Map.Ground
+                    platPart.CanCollide = true
+                    platPart.CanQuery = true
+                    platPart.CanTouch = true
             		platPart.Anchored = true
-            		platPart.Transparency = 0.75
-            		platPart.BottomSurface = Enum.SurfaceType.Smooth
+            		platPart.Transparency = 0.5
+            		platPart.BottomSurface = Enum.SurfaceType.Inlet
             		platPart.Material = Enum.Material.Grass
             		platPart.Position = vector.create(my_current_pos.Position.X, 2, my_current_pos.Position.Z)
             		platPart.Size = vector.create(tonumber(length_input),0.6,tonumber(width_input))
@@ -3075,9 +3079,9 @@ local Toggle = BaseTab:CreateToggle({
 
             local function deletePlatform()
             
-            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            	local target_plat = workspace.Map.Ground.Grass --
             
-            	if target_plat then
+            	if target_plat.Transparency == 0.5 then
             		target_plat:Destroy()
             		print("deleted")
             		create_plat_button.Selectable = true
@@ -3097,9 +3101,9 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatUp()
             
-            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            	local target_plat = workspace.Map.Ground.Grass --
             
-            	if target_plat then
+            	if target_plat.Transparency == 0.5 then
                 
             		local prev_pos = target_plat.Position
             		local new_pos = vector.create(prev_pos.X, prev_pos.Y + 0.5, prev_pos.Z)
@@ -3119,9 +3123,9 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatDown()
             
-            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            	local target_plat = workspace.Map.Ground.Grass --
             
-            	if target_plat then
+            	if target_plat.Transparency == 0.5 then
                 
             		local prev_pos = target_plat.Position
             		local new_pos = vector.create(prev_pos.X, prev_pos.Y - 0.5, prev_pos.Z)
@@ -3141,9 +3145,9 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatLeft()
             
-            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            	local target_plat = workspace.Map.Ground.Grass --
             
-            	if target_plat then
+            	if target_plat.Transparency == 0.5 then
                 
             		local prev_pos = target_plat.Position
             		local new_pos = vector.create(prev_pos.X - 0.5, prev_pos.Y, prev_pos.Z)
@@ -3162,9 +3166,9 @@ local Toggle = BaseTab:CreateToggle({
             -- move plat RIGHT
 
             local function movePlatRight()
-            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            	local target_plat = workspace.Map.Ground.Grass --
             
-            	if target_plat then
+            	if target_plat.Transparency == 0.5 then
                 
             		local prev_pos = target_plat.Position
             		local new_pos = vector.create(prev_pos.X + 0.5, prev_pos.Y, prev_pos.Z)
@@ -3184,9 +3188,9 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatForward()
             
-            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            	local target_plat = workspace.Map.Ground.Grass --
             
-            	if target_plat then
+            	if target_plat.Transparency == 0.5 then
                 
             		local prev_pos = target_plat.Position
             		local new_pos = vector.create(prev_pos.X, prev_pos.Y, prev_pos.Z + 0.5)
@@ -3206,9 +3210,9 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatBackward()
             
-            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            	local target_plat = workspace.Map.Ground.Grass --
             
-            	if target_plat then
+            	if target_plat.Transparency == 0.5 then
                 
             		local prev_pos = target_plat.Position
             		local new_pos = vector.create(prev_pos.X, prev_pos.Y, prev_pos.Z - 0.5)
@@ -3228,7 +3232,7 @@ local Toggle = BaseTab:CreateToggle({
         while interface_flag do
 
             
-            if not interface_flag then
+            if interface_flag == false then
                 Rayfield:Notify({
                     Title = "Notification",
                     Content = "Skybase Interface disabled",
