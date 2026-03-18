@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vtoggle"
+local _Version = "Cyan-99 vskulltest"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2561,15 +2561,17 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
         end
 
         local index = 1
+        local p_index = 1
 
         while skull_podium_flag do
             --print("flag on")
-            for _, skull in pairs(workspace.Items:GetChildren()) do
+            for s = 1, 4 do
+            --for _, skull in pairs(workspace.Items:GetChildren()) do
+                if workspace.Items:FindFirstChild("Crystal Skull Key") then
+                --if skull:IsA("Model") and skull.Name == "Crystal Skull Key" then
 
-                if skull:IsA("Model") and skull.Name == "Crystal Skull Key" then
-
-                    if index == 1 then
-
+                    --if index == 1 then
+                        task.wait()
                         local args = {
                             skull
                         }
@@ -2581,77 +2583,79 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
                         }
                         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
                         task.wait()
-                        skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[1].TouchZone.CFrame * CFrame.new(0,1,0))
-                        print(tostring(index))
+                        skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[p_index].TouchZone.CFrame * CFrame.new(0,1,0))
+                        print("times moved: "..tostring(index))
                         task.wait(1)
-                        index = 2
+                        index = index + 1
+                        p_index = p_index + 1
                     
-                    elseif index == 2 then
+                    --elseif index == 2 then
 
-                        local args = {
-                            skull
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
-                        task.wait()
-
-                        local args = {
-                            skull
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
-                        task.wait()
-                        skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[2].TouchZone.CFrame * CFrame.new(0,1,0))
-                        print(tostring(index))
-                        task.wait(1)
-                        index = 3
-                    elseif index == 3 then
-                        --print("index 3")
-                        
-
-                        local args = {
-                            skull
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
-                        task.wait()
-
-                        local args = {
-                            skull
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
-                        task.wait()
-                        skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[3].TouchZone.CFrame * CFrame.new(0,1,0))
-                        print(tostring(index))
-                        task.wait(1)
-                        index = 4
-                        --task.wait(312)
-                        -- 5 minute wait for additional spawns
-
-                    elseif index == 4 then
-                        --print("index 4")
-                        
-                        local args = {
-                            skull
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
-                        task.wait()
-
-                        local args = {
-                            skull
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
-                        task.wait()
-                        skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[4].TouchZone.CFrame * CFrame.new(0,1,0))
-                        print(tostring(index))
-                        task.wait(2)
-                        index = 1
+                    --    local args = {
+                    --        skull
+                    --    }
+                    --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    --    task.wait()
+--
+                    --    local args = {
+                    --        skull
+                    --    }
+                    --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    --    task.wait()
+                    --    skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[p_index].TouchZone.CFrame * CFrame.new(0,1,0))
+                    --    print(tostring(index))
+                    --    task.wait(1)
+                    --    index = 3
+--
+                    ----elseif index == 3 then
+                    --    --print("index 3")
+                    --    
+--
+                    --    local args = {
+                    --        skull
+                    --    }
+                    --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    --    task.wait()
+--
+                    --    local args = {
+                    --        skull
+                    --    }
+                    --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    --    task.wait()
+                    --    skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[3].TouchZone.CFrame * CFrame.new(0,1,0))
+                    --    print(tostring(index))
+                    --    task.wait(1)
+                    --    index = 4
+                    --    --task.wait(312)
+                    --    -- 5 minute wait for additional spawns
+--
+                    ----elseif index == 4 then
+                    --    --print("index 4")
+                    --    
+                    --    local args = {
+                    --        skull
+                    --    }
+                    --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    --    task.wait()
+--
+                    --    local args = {
+                    --        skull
+                    --    }
+                    --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    --    task.wait()
+                    --    skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[4].TouchZone.CFrame * CFrame.new(0,1,0))
+                    --    print(tostring(index))
+                    --    task.wait(2)
+                    --    index = 1
                         task.wait(315)
                         
-                    end
+                    --end
                     
                 end
 
             end
             task.wait()
-            index = 1
+            --index = 1
 
         end
 
@@ -3234,40 +3238,21 @@ local skybaseToggle = BaseTab:CreateToggle({
    
         end 
             
-        --if interface_flag == false then
-        --    Rayfield:Notify({
-        --        Title = "- WARNING -",
-        --        Content = "Skybase Interface disabled",
-        --        Duration = 12,
-        --        Image = 4483362458,
-        --    })
---
-        --    task.wait()
-        --    --_interface.Enabled = false
-        --    task.wait()
-        --end
+        if interface_flag == false then
+            Rayfield:Notify({
+                Title = "- WARNING -",
+                Content = "Skybase Interface disabled - Multiple Platforms Possible!",
+                Duration = 12,
+                Image = 4483362458,
+            })
+
+            task.wait()
+            --_interface.Enabled = false
+        end
         task.wait()
    
     end,
 })
-
-local function lockSBToggle()
-    task.wait()
-    while true do
-        if interface_flag then
-            while true do
-                skybaseToggle:Set(true)
-                task.wait()
-            end
-        else
-            return
-        end
-    end
-    task.wait()
-
-end
-
-pcall(lockSBToggle)
 
 local warnlabel1 = BaseTab:CreateLabel("**ONLY ENABLE THIS ONCE**", 0)
 local warnlabel2 = BaseTab:CreateLabel("**YOU WILL CREATE MULTIPLE PLATFORMS AND LAG**", 0)
