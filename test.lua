@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vsbRevised1"
+local _Version = "Cyan-99 vrev444"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3078,17 +3078,17 @@ local Toggle = BaseTab:CreateToggle({
             -- deleting and replacing platform button
 
             local function deletePlatform()
-            
-            	local target_plat = workspace.Map.Ground.Grass --
-            
-            	if target_plat.Transparency == 0.5 then
-            		target_plat:Destroy()
-            		print("deleted")
-            		create_plat_button.Selectable = true
-            		create_plat_button.Active = true
-            		create_plat_button.Interactable = true
-            		create_plat_button.Visible = true
-            	end
+                for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+                    
+            	    if ground.Transparency == 0.5 then
+            	    	ground:Destroy()
+            	    	print("deleted")
+            	    	create_plat_button.Selectable = true
+            	    	create_plat_button.Active = true
+            	    	create_plat_button.Interactable = true
+            	    	create_plat_button.Visible = true
+            	    end
+                end
             
             end
 
@@ -3101,14 +3101,15 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatUp()
             
-            	local target_plat = workspace.Map.Ground.Grass --
-            
-            	if target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+                    
+            	    if ground.Transparency == 0.5 then
                 
-            		local prev_pos = target_plat.Position
+            		local prev_pos = ground.Position
             		local new_pos = vector.create(prev_pos.X, prev_pos.Y + 0.5, prev_pos.Z)
-            		target_plat.Position = new_pos
+            		ground.Position = new_pos
             		print("moved up")
+                    end
                 
             	end
             
@@ -3123,14 +3124,15 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatDown()
             
-            	local target_plat = workspace.Map.Ground.Grass --
-            
-            	if target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+                    
+            	    if ground.Transparency == 0.5 then
                 
-            		local prev_pos = target_plat.Position
+            		local prev_pos = ground.Position
             		local new_pos = vector.create(prev_pos.X, prev_pos.Y - 0.5, prev_pos.Z)
-            		target_plat.Position = new_pos
+            		ground.Position = new_pos
             		print("moved down")
+                    end
                 
             	end
             
@@ -3145,14 +3147,15 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatLeft()
             
-            	local target_plat = workspace.Map.Ground.Grass --
-            
-            	if target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+                    
+            	    if ground.Transparency == 0.5 then
                 
-            		local prev_pos = target_plat.Position
+            		local prev_pos = ground.Position
             		local new_pos = vector.create(prev_pos.X - 0.5, prev_pos.Y, prev_pos.Z)
-            		target_plat.Position = new_pos
+            		ground.Position = new_pos
             		print("moved left")
+                    end
                 
             	end
             
@@ -3166,14 +3169,15 @@ local Toggle = BaseTab:CreateToggle({
             -- move plat RIGHT
 
             local function movePlatRight()
-            	local target_plat = workspace.Map.Ground.Grass --
-            
-            	if target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+                    
+            	    if ground.Transparency == 0.5 then
                 
-            		local prev_pos = target_plat.Position
+            		local prev_pos = ground.Position
             		local new_pos = vector.create(prev_pos.X + 0.5, prev_pos.Y, prev_pos.Z)
-            		target_plat.Position = new_pos
+            		ground.Position = new_pos
             		print("moved right")
+                    end
                 
             	end
             
@@ -3188,14 +3192,15 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatForward()
             
-            	local target_plat = workspace.Map.Ground.Grass --
-            
-            	if target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+                    
+            	    if ground.Transparency == 0.5 then
                 
-            		local prev_pos = target_plat.Position
+            		local prev_pos = ground.Position
             		local new_pos = vector.create(prev_pos.X, prev_pos.Y, prev_pos.Z + 0.5)
-            		target_plat.Position = new_pos
+            		ground.Position = new_pos
             		print("moved forward")
+                    end
                 
             	end
             
@@ -3210,14 +3215,15 @@ local Toggle = BaseTab:CreateToggle({
 
             local function movePlatBackward()
             
-            	local target_plat = workspace.Map.Ground.Grass --
-            
-            	if target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+                    
+            	    if ground.Transparency == 0.5 then
                 
-            		local prev_pos = target_plat.Position
+            		local prev_pos = ground.Position
             		local new_pos = vector.create(prev_pos.X, prev_pos.Y, prev_pos.Z - 0.5)
-            		target_plat.Position = new_pos
+            		ground.Position = new_pos
             		print("moved backward")
+                    end
                 
             	end
             
