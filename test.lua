@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vST2"
+local _Version = "Cyan-99 vst33"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2647,7 +2647,7 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
                     --    print(tostring(index))
                     --    task.wait(2)
                     --    index = 1
-                        task.wait(315)
+                        
                         
                     --end
                     
@@ -2655,6 +2655,7 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
 
             end
             task.wait()
+            task.wait(315)
             --index = 1
 
         end
