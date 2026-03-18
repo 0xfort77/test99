@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vtestF"
+local _Version = "Cyan-99 vskbase"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -68,6 +68,7 @@ local temporal_flag = false
 local diamonds_flag = false
 local cultist_S_flag = false
 local auto_SH_flag = false
+local interface_flag = false
 
 --workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[4].TouchZone
 --local jungle_key1 = workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[1].TouchZone
@@ -127,7 +128,7 @@ local MoveTab = Window:CreateTab("Teleport", "move") -- Title, Image
 local TreeTab = Window:CreateTab("Trees", "trees")
 local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
 local SkullTab = Window:CreateTab("Skulls", "skull") -- Title, Image
-
+local BaseTab = Window:CreateTab("Skybase", "baseline")
 local CREDITS = Window:CreateTab("Credits", "users") -- Title, Image
 
 
@@ -1558,7 +1559,7 @@ local allGearsButton = BringTab:CreateButton({
         elseif bring_index == "Scrapper" then
             for _, gear_item in pairs(workspace.Items:GetChildren()) do
 
-                if gear_item.Name == "Broken Fan" or gear_item.Name == "Broken Microwave" or gear_item.Name == "Old Car Engine" or gear_item.Name == "Old Radio" or gear_item.Name == "Sheet Metal" or gear_item.Name == "Washing Machine" then
+                if gear_item.Name == "Broken Fan" or gear_item.Name == "Broken Microwave" or gear_item.Name == "Old Car Engine" or gear_item.Name == "Old Radio" or gear_item.Name == "Sheet Metal" or gear_item.Name == "Tyre" or gear_item.Name == "Washing Machine" then
                     local args = {
                         gear_item
                     }
@@ -1576,7 +1577,7 @@ local allGearsButton = BringTab:CreateButton({
         elseif bring_index == "Fire" then
             for _, gear_item in pairs(workspace.Items:GetChildren()) do
 
-                if gear_item.Name == "Broken Fan" or gear_item.Name == "Broken Microwave" or gear_item.Name == "Old Car Engine" or gear_item.Name == "Old Radio" or gear_item.Name == "Sheet Metal" or gear_item.Name == "Washing Machine" then
+                if gear_item.Name == "Broken Fan" or gear_item.Name == "Broken Microwave" or gear_item.Name == "Old Car Engine" or gear_item.Name == "Old Radio" or gear_item.Name == "Sheet Metal" or gear_item.Name == "Tyre" or gear_item.Name == "Washing Machine" then
                     local args = {
                         gear_item
                     }
@@ -2660,6 +2661,586 @@ local Label = SkullTab:CreateLabel("Opens the Jungle Temple every 5-6 minutes")
 local Label2 = SkullTab:CreateLabel(" --- Max Fire Recommended --- ")
 local Label3 = SkullTab:CreateLabel(" --- Didn't work? Try teleporting to the temple first --- ")
 local Paragraph = SkullTab:CreateParagraph({Title = "Important Notice", Content = "You must have atleast 3-4 skulls on the ground somewhere NOT in your sack. Do not interact with the crystal skulls. If you experience issues turn toggle to OFF and wait 6-7 minutes for the cycle to refresh."})
+
+local function create_exp_UI()
+
+    local Interface_i = Instance.new("ScreenGui") do
+    	Interface_i.Name = "Interface_i"
+    	Interface_i.Enabled = false
+    	Interface_i.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    end
+
+    local HolderFrame = Instance.new("Frame",Interface_i) do
+    	HolderFrame.Name = "HolderFrame"
+    	HolderFrame.BackgroundColor3 = Color3.new(0.58,0.58,0.58)
+    	HolderFrame.BorderColor3 = Color3.new(0,0,0)
+    	HolderFrame.BorderSizePixel = 0
+    	HolderFrame.Position = UDim2.new(0.746,0,0.44,0)
+    	HolderFrame.Size = UDim2.new(0.155,0,0.255,0)
+    end
+
+    local UICorner = Instance.new("UICorner",HolderFrame)
+    local UIGradient = Instance.new("UIGradient",HolderFrame) do
+    	UIGradient.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
+    	UIGradient.Transparency = NumberSequence.new(0.12)
+    end
+    local TopbarFrame = Instance.new("Frame",HolderFrame) do
+    	TopbarFrame.Name = "TopbarFrame"
+    	TopbarFrame.BackgroundColor3 = Color3.new(0.118,0.118,0.118)
+    	TopbarFrame.BorderColor3 = Color3.new(0,0,0)
+    	TopbarFrame.BorderSizePixel = 0
+    	TopbarFrame.Position = UDim2.new(0,0,0,1)
+    	TopbarFrame.Selectable = true
+    	TopbarFrame.Size = UDim2.new(1,0,0.154,0)
+    end
+
+    local UICorner_1 = Instance.new("UICorner",TopbarFrame)
+    local UIGradient_1 = Instance.new("UIGradient",TopbarFrame) do
+    	UIGradient_1.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
+    	UIGradient_1.Transparency = NumberSequence.new(0.12)
+    end
+    local TextLabeltopbinfo = Instance.new("TextLabel",TopbarFrame) do
+    	TextLabeltopbinfo.Name = "TextLabeltopbinfo"
+    	TextLabeltopbinfo.BackgroundColor3 = Color3.new(1,1,1)
+    	TextLabeltopbinfo.BackgroundTransparency = 1
+    	TextLabeltopbinfo.BorderColor3 = Color3.new(0,0,0)
+    	TextLabeltopbinfo.BorderSizePixel = 0
+    	TextLabeltopbinfo.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextLabeltopbinfo.Position = UDim2.new(0,1,0,1)
+    	TextLabeltopbinfo.Size = UDim2.new(0.996,0,0.97,0)
+    	TextLabeltopbinfo.Text = " draggable box"
+    	TextLabeltopbinfo.TextColor3 = Color3.new(1,1,1)
+    	TextLabeltopbinfo.TextScaled = true
+    	TextLabeltopbinfo.TextSize = 14
+    	TextLabeltopbinfo.TextWrapped = true
+    	TextLabeltopbinfo.TextXAlignment = Enum.TextXAlignment.Left
+    end
+    local maininnerFrame = Instance.new("Frame",HolderFrame) do
+    	maininnerFrame.Name = "maininnerFrame"
+    	maininnerFrame.BackgroundColor3 = Color3.new(0.118,0.118,0.118)
+    	maininnerFrame.BackgroundTransparency = 0.55
+    	maininnerFrame.BorderColor3 = Color3.new(0,0,0)
+    	maininnerFrame.BorderSizePixel = 0
+    	maininnerFrame.Position = UDim2.new(0,0,0,34)
+    	maininnerFrame.Size = UDim2.new(1,0,0.841,0)
+    end
+
+    local UICorner_2 = Instance.new("UICorner",maininnerFrame)
+    local UIGradient_2 = Instance.new("UIGradient",maininnerFrame) do
+    	UIGradient_2.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
+    	UIGradient_2.Transparency = NumberSequence.new(0.12)
+    end
+    local TextBoxLength = Instance.new("TextBox",maininnerFrame) do
+    	TextBoxLength.Name = "TextBoxLength"
+    	TextBoxLength.BackgroundColor3 = Color3.new(1,1,1)
+    	TextBoxLength.BorderColor3 = Color3.new(0,0,0)
+    	TextBoxLength.BorderSizePixel = 0
+    	TextBoxLength.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Regular,Enum.FontStyle.Normal)
+    	TextBoxLength.Position = UDim2.new(0.52,0,0.056,0)
+    	TextBoxLength.Size = UDim2.new(0.419,0,0.278,0)
+    	TextBoxLength.Text = ""
+    	TextBoxLength.TextColor3 = Color3.new(0,0,0)
+    	TextBoxLength.TextSize = 14
+    end
+
+    local UICorner_3 = Instance.new("UICorner",TextBoxLength)
+    local TextBoxWidth = Instance.new("TextBox",maininnerFrame) do
+    	TextBoxWidth.Name = "TextBoxWidth"
+    	TextBoxWidth.BackgroundColor3 = Color3.new(1,1,1)
+    	TextBoxWidth.BorderColor3 = Color3.new(0,0,0)
+    	TextBoxWidth.BorderSizePixel = 0
+    	TextBoxWidth.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Regular,Enum.FontStyle.Normal)
+    	TextBoxWidth.Position = UDim2.new(0.52,0,0.361,0)
+    	TextBoxWidth.Size = UDim2.new(0.419,0,0.278,0)
+    	TextBoxWidth.Text = ""
+    	TextBoxWidth.TextColor3 = Color3.new(0,0,0)
+    	TextBoxWidth.TextSize = 14
+    end
+
+    local UICorner_4 = Instance.new("UICorner",TextBoxWidth)
+    local lengthID = Instance.new("TextLabel",maininnerFrame) do
+    	lengthID.Name = "lengthID"
+    	lengthID.BackgroundColor3 = Color3.new(1,1,1)
+    	lengthID.BackgroundTransparency = 1
+    	lengthID.BorderColor3 = Color3.new(0,0,0)
+    	lengthID.BorderSizePixel = 0
+    	lengthID.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	lengthID.Position = UDim2.new(0.057,0,0.056,0)
+    	lengthID.Size = UDim2.new(0.458,0,0.278,0)
+    	lengthID.Text = "L: "
+    	lengthID.TextColor3 = Color3.new(0,0,0)
+    	lengthID.TextScaled = true
+    	lengthID.TextSize = 14
+    	lengthID.TextWrapped = true
+    end
+
+    local UICorner_5 = Instance.new("UICorner",lengthID)
+    local widthID = Instance.new("TextLabel",maininnerFrame) do
+    	widthID.Name = "widthID"
+    	widthID.BackgroundColor3 = Color3.new(1,1,1)
+    	widthID.BackgroundTransparency = 1
+    	widthID.BorderColor3 = Color3.new(0,0,0)
+    	widthID.BorderSizePixel = 0
+    	widthID.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	widthID.Position = UDim2.new(0.057,0,0.361,0)
+    	widthID.Size = UDim2.new(0.458,0,0.278,0)
+    	widthID.Text = "W: "
+    	widthID.TextColor3 = Color3.new(0,0,0)
+    	widthID.TextScaled = true
+    	widthID.TextSize = 14
+    	widthID.TextWrapped = true
+    end
+
+    local UICorner_6 = Instance.new("UICorner",widthID)
+    local TextButtoncreate = Instance.new("TextButton",maininnerFrame) do
+    	TextButtoncreate.Name = "TextButtoncreate"
+    	TextButtoncreate.BackgroundColor3 = Color3.new(0.2,0.675,0.176)
+    	TextButtoncreate.BorderColor3 = Color3.new(0,0,0)
+    	TextButtoncreate.BorderSizePixel = 0
+    	TextButtoncreate.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextButtoncreate.Position = UDim2.new(0.057,0,0.672,0)
+    	TextButtoncreate.Size = UDim2.new(0.881,0,0.292,0)
+    	TextButtoncreate.Text = "create"
+    	TextButtoncreate.TextColor3 = Color3.new(0,0,0)
+    	TextButtoncreate.TextScaled = true
+    	TextButtoncreate.TextSize = 14
+    	TextButtoncreate.TextWrapped = true
+    end
+
+    local UICorner_7 = Instance.new("UICorner",TextButtoncreate)
+    local TextButtondelete = Instance.new("TextButton",maininnerFrame) do
+    	TextButtondelete.Name = "TextButtondelete"
+    	TextButtondelete.BackgroundColor3 = Color3.new(0.8,0.584,0.078)
+    	TextButtondelete.BorderColor3 = Color3.new(0,0,0)
+    	TextButtondelete.BorderSizePixel = 0
+    	TextButtondelete.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextButtondelete.Position = UDim2.new(0.3,0,1,0)
+    	TextButtondelete.Size = UDim2.new(0.432,0,0.276,0)
+    	TextButtondelete.Text = "DEL ❌"
+    	TextButtondelete.TextColor3 = Color3.new(0,0,0)
+    	TextButtondelete.TextScaled = true
+    	TextButtondelete.TextSize = 14
+    	TextButtondelete.TextWrapped = true
+    end
+
+    local UICorner_8 = Instance.new("UICorner",TextButtondelete)
+    local movebuttFrame = Instance.new("Frame",HolderFrame) do
+    	movebuttFrame.Name = "movebuttFrame"
+    	movebuttFrame.BackgroundColor3 = Color3.new(1,1,1)
+    	movebuttFrame.BackgroundTransparency = 1
+    	movebuttFrame.BorderColor3 = Color3.new(0,0,0)
+    	movebuttFrame.BorderSizePixel = 0
+    	movebuttFrame.Position = UDim2.new(1,0,0.005,0)
+    	movebuttFrame.Size = UDim2.new(0.318,0,0.995,0)
+    end
+
+    local UICorner_9 = Instance.new("UICorner",movebuttFrame)
+    local TextButtonUP = Instance.new("TextButton",movebuttFrame) do
+    	TextButtonUP.Name = "TextButtonUP"
+    	TextButtonUP.BackgroundColor3 = Color3.new(1,0,0)
+    	TextButtonUP.BorderColor3 = Color3.new(0,0,0)
+    	TextButtonUP.BorderSizePixel = 0
+    	TextButtonUP.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextButtonUP.Position = UDim2.new(0,0,-0,0)
+    	TextButtonUP.Size = UDim2.new(0,72,0,53)
+    	TextButtonUP.Text = "UP"
+    	TextButtonUP.TextColor3 = Color3.new(0,0,0)
+    	TextButtonUP.TextScaled = true
+    	TextButtonUP.TextSize = 14
+    	TextButtonUP.TextWrapped = true
+    end
+
+    local UICorner_10 = Instance.new("UICorner",TextButtonUP)
+    local TextButtonDOWN = Instance.new("TextButton",movebuttFrame) do
+    	TextButtonDOWN.Name = "TextButtonDOWN"
+    	TextButtonDOWN.BackgroundColor3 = Color3.new(1,0.969,0)
+    	TextButtonDOWN.BorderColor3 = Color3.new(0,0,0)
+    	TextButtonDOWN.BorderSizePixel = 0
+    	TextButtonDOWN.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextButtonDOWN.Position = UDim2.new(0,0,0.249,0)
+    	TextButtonDOWN.Size = UDim2.new(0,72,0,54)
+    	TextButtonDOWN.Text = "DOWN"
+    	TextButtonDOWN.TextColor3 = Color3.new(0,0,0)
+    	TextButtonDOWN.TextScaled = true
+    	TextButtonDOWN.TextSize = 14
+    	TextButtonDOWN.TextWrapped = true
+    end
+
+    local UICorner_11 = Instance.new("UICorner",TextButtonDOWN)
+    local TextButtonLEFT = Instance.new("TextButton",movebuttFrame) do
+    	TextButtonLEFT.Name = "TextButtonLEFT"
+    	TextButtonLEFT.BackgroundColor3 = Color3.new(0.047,0.792,0.741)
+    	TextButtonLEFT.BorderColor3 = Color3.new(0,0,0)
+    	TextButtonLEFT.BorderSizePixel = 0
+    	TextButtonLEFT.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextButtonLEFT.Position = UDim2.new(0,0,0.498,0)
+    	TextButtonLEFT.Size = UDim2.new(0,72,0,49)
+    	TextButtonLEFT.Text = "LEFT"
+    	TextButtonLEFT.TextColor3 = Color3.new(0,0,0)
+    	TextButtonLEFT.TextScaled = true
+    	TextButtonLEFT.TextSize = 14
+    	TextButtonLEFT.TextWrapped = true
+    end
+
+    local UICorner_12 = Instance.new("UICorner",TextButtonLEFT)
+    local TextButtonRIGHT = Instance.new("TextButton",movebuttFrame) do
+    	TextButtonRIGHT.Name = "TextButtonRIGHT"
+    	TextButtonRIGHT.BackgroundColor3 = Color3.new(0.843,0.055,1)
+    	TextButtonRIGHT.BorderColor3 = Color3.new(0,0,0)
+    	TextButtonRIGHT.BorderSizePixel = 0
+    	TextButtonRIGHT.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextButtonRIGHT.Position = UDim2.new(0,0,0.737,0)
+    	TextButtonRIGHT.Size = UDim2.new(0,72,0,50)
+    	TextButtonRIGHT.Text = "RIGHT"
+    	TextButtonRIGHT.TextColor3 = Color3.new(0,0,0)
+    	TextButtonRIGHT.TextScaled = true
+    	TextButtonRIGHT.TextSize = 14
+    	TextButtonRIGHT.TextWrapped = true
+    end
+
+    local UICorner_13 = Instance.new("UICorner",TextButtonRIGHT)
+    local TextButtonFORWARD = Instance.new("TextButton",movebuttFrame) do
+    	TextButtonFORWARD.Name = "TextButtonFORWARD"
+    	TextButtonFORWARD.BackgroundColor3 = Color3.new(1,0.322,0.204)
+    	TextButtonFORWARD.BorderColor3 = Color3.new(0,0,0)
+    	TextButtonFORWARD.BorderSizePixel = 0
+    	TextButtonFORWARD.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextButtonFORWARD.Position = UDim2.new(0,0,0.971,0)
+    	TextButtonFORWARD.Size = UDim2.new(0,72,0,48)
+    	TextButtonFORWARD.Text = "FORWARD"
+    	TextButtonFORWARD.TextColor3 = Color3.new(0,0,0)
+    	TextButtonFORWARD.TextScaled = true
+    	TextButtonFORWARD.TextSize = 14
+    	TextButtonFORWARD.TextWrapped = true
+    end
+
+    local UICorner_14 = Instance.new("UICorner",TextButtonFORWARD)
+    local TextButtonBACK = Instance.new("TextButton",movebuttFrame) do
+    	TextButtonBACK.Name = "TextButtonBACK"
+    	TextButtonBACK.BackgroundColor3 = Color3.new(0.22,0.22,1)
+    	TextButtonBACK.BorderColor3 = Color3.new(0,0,0)
+    	TextButtonBACK.BorderSizePixel = 0
+    	TextButtonBACK.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+    	TextButtonBACK.Position = UDim2.new(0,0,1.197,0)
+    	TextButtonBACK.Size = UDim2.new(0,72,0,47)
+    	TextButtonBACK.Text = "BACK"
+    	TextButtonBACK.TextColor3 = Color3.new(0,0,0)
+    	TextButtonBACK.TextScaled = true
+    	TextButtonBACK.TextSize = 14
+    	TextButtonBACK.TextWrapped = true
+    end
+
+    local UICorner_15 = Instance.new("UICorner",TextButtonBACK)
+end
+
+create_exp_UI()
+-- exp UI toggle
+local Toggle = BaseTab:CreateToggle({
+    Name = "Interface",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        interface_flag = Value
+        if interface_flag then
+            Rayfield:Notify({
+                Title = "Notification",
+                Content = "Skybase Interface enabled",
+                Duration = 6.5,
+                Image = 4483362458,
+            })
+
+            
+            task.wait(2)
+            Interface_i.Enabled = true
+        end 
+        while interface_flag do
+
+            local _interface = game.Players.LocalPlayer.PlayerGui:WaitForChild("Interface_i")
+
+            --local player = game.Players.LocalPlayer
+            --local charr = player.Character
+            --local HRP = charr:FindFirstChild("HumanoidRootPart")
+
+            local UIS = game:GetService("UserInputService")
+            local frame = _interface.HolderFrame
+            local dragToggle = nil
+            local dragSpeed = 20
+            local dragStart = nil
+            local startPos = nil
+
+            --// DRAG SERVICE
+
+            local function updateInput(input)
+            	local delta = input.Position - dragStart
+            	local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+            	game:GetService("TweenService"):Create(frame, TweenInfo.new(0.30), {Position = position}):Play()
+            end
+
+            frame.InputBegan:Connect(function(input)
+            	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+            		dragToggle = true
+            		dragStart = input.Position
+            		startPos = frame.Position
+            		input.Changed:Connect(function()
+            			if (input.UserInputState == Enum.UserInputState.End) then
+            				dragToggle = false
+            			end
+            		end)
+            	end
+            end)
+
+            UIS.InputChanged:Connect(function(input)
+            	if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) and dragToggle then
+            		updateInput(input)
+            	end
+            end)
+
+            --// MAIN CREATE FUNCTION(S) & local vars
+
+            local create_plat_button = frame.maininnerFrame:FindFirstChild("TextButtoncreate")
+            local delete_plat_button = frame.maininnerFrame:FindFirstChild("TextButtondelete")
+            local move_plat_up = frame.movebuttFrame:FindFirstChild("TextButtonUP")
+            local move_plat_down = frame.movebuttFrame:FindFirstChild("TextButtonDOWN")
+            local move_plat_left = frame.movebuttFrame:FindFirstChild("TextButtonLEFT")
+            local move_plat_right = frame.movebuttFrame:FindFirstChild("TextButtonRIGHT")
+            local move_plat_forward = frame.movebuttFrame:FindFirstChild("TextButtonFORWARD")
+            local move_plat_back = frame.movebuttFrame:FindFirstChild("TextButtonBACK")
+            local length_index = frame.maininnerFrame:FindFirstChild("TextBoxLength")
+            local width_index = frame.maininnerFrame:FindFirstChild("TextBoxWidth")
+
+            -- inputs
+
+            local lengthtextBox = frame.maininnerFrame:FindFirstChild("TextBoxLength")
+
+            local function allowOnlyNumbers()
+            	lengthtextBox.Text = string.gsub(lengthtextBox.Text, "%D", "")
+            end
+
+            lengthtextBox:GetPropertyChangedSignal("Text"):Connect(allowOnlyNumbers)
+
+            local widthtextBox = frame.maininnerFrame:FindFirstChild("TextBoxWidth")
+
+            local function allowOnlyNumbers2()
+            	widthtextBox.Text = string.gsub(widthtextBox.Text, "%D", "")
+            end	
+
+            widthtextBox:GetPropertyChangedSignal("Text"):Connect(allowOnlyNumbers2)
+
+            -- Creating general platform
+
+            local function createPlatform()
+            	print("attempt")
+            
+            	local my_current_pos = HRP.CFrame
+            	local length_input = length_index.Text
+            	local width_input = width_index.Text
+            
+            	if length_input == "" then
+            		length_input = 10
+            	end
+            
+            	if width_input == "" then
+            		width_input = 10
+            	end
+            
+            	local platPart = Instance.new("Part") do
+            		platPart.Name = "expPlatform"
+            		platPart.BrickColor = BrickColor.new("Salmon")
+            		platPart.Parent = workspace.Map.Ground
+            		platPart.Anchored = true
+            		platPart.Transparency = 0.75
+            		platPart.BottomSurface = Enum.SurfaceType.Smooth
+            		platPart.Material = Enum.Material.Grass
+            		platPart.Position = vector.create(my_current_pos.Position.X, 2, my_current_pos.Position.Z)
+            		platPart.Size = vector.create(tonumber(length_input),0.6,tonumber(width_input))
+            		platPart.TopSurface = Enum.SurfaceType.Smooth
+            	end
+            
+            end
+
+
+            create_plat_button.MouseButton1Click:Connect(function()
+            	createPlatform()
+            	print("platform created")
+            	task.wait()
+            	create_plat_button.Selectable = false
+            	create_plat_button.Active = false
+            	create_plat_button.Interactable = false
+            	create_plat_button.Visible = false
+            end)
+
+            -- deleting and replacing platform button
+
+            local function deletePlatform()
+            
+            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            
+            	if target_plat then
+            		target_plat:Destroy()
+            		print("deleted")
+            		create_plat_button.Selectable = true
+            		create_plat_button.Active = true
+            		create_plat_button.Interactable = true
+            		create_plat_button.Visible = true
+            	end
+            
+            end
+
+            delete_plat_button.MouseButton1Click:Connect(function()
+            	deletePlatform()
+            	task.wait()
+            end)
+
+            -- move plat UP
+
+            local function movePlatUp()
+            
+            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            
+            	if target_plat then
+                
+            		local prev_pos = target_plat.Position
+            		local new_pos = vector.create(prev_pos.X, prev_pos.Y + 0.5, prev_pos.Z)
+            		target_plat.Position = new_pos
+            		print("moved up")
+                
+            	end
+            
+            end
+
+            move_plat_up.MouseButton1Click:Connect(function()
+            	movePlatUp()
+            	task.wait()
+            end)
+
+            -- move plat DOWN
+
+            local function movePlatDown()
+            
+            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            
+            	if target_plat then
+                
+            		local prev_pos = target_plat.Position
+            		local new_pos = vector.create(prev_pos.X, prev_pos.Y - 0.5, prev_pos.Z)
+            		target_plat.Position = new_pos
+            		print("moved down")
+                
+            	end
+            
+            end
+
+            move_plat_down.MouseButton1Click:Connect(function()
+            	movePlatDown()
+            	task.wait()
+            end)
+
+            -- move plat LEFT
+
+            local function movePlatLeft()
+            
+            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            
+            	if target_plat then
+                
+            		local prev_pos = target_plat.Position
+            		local new_pos = vector.create(prev_pos.X - 0.5, prev_pos.Y, prev_pos.Z)
+            		target_plat.Position = new_pos
+            		print("moved left")
+                
+            	end
+            
+            end	
+
+            move_plat_left.MouseButton1Click:Connect(function()
+            	movePlatLeft()
+            	task.wait()
+            end)
+
+            -- move plat RIGHT
+
+            local function movePlatRight()
+            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            
+            	if target_plat then
+                
+            		local prev_pos = target_plat.Position
+            		local new_pos = vector.create(prev_pos.X + 0.5, prev_pos.Y, prev_pos.Z)
+            		target_plat.Position = new_pos
+            		print("moved right")
+                
+            	end
+            
+            end
+
+            move_plat_right.MouseButton1Click:Connect(function()
+            	movePlatRight()
+            	task.wait()
+            end)
+
+            -- move plat FORWARD
+
+            local function movePlatForward()
+            
+            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            
+            	if target_plat then
+                
+            		local prev_pos = target_plat.Position
+            		local new_pos = vector.create(prev_pos.X, prev_pos.Y, prev_pos.Z + 0.5)
+            		target_plat.Position = new_pos
+            		print("moved forward")
+                
+            	end
+            
+            end	
+
+            move_plat_forward.MouseButton1Click:Connect(function()
+            	movePlatForward()
+            	task.wait()
+            end)
+
+            -- move plat BACKWARD
+
+            local function movePlatBackward()
+            
+            	local target_plat = workspace.Map.Ground:FindFirstChild("expPlatform") --
+            
+            	if target_plat then
+                
+            		local prev_pos = target_plat.Position
+            		local new_pos = vector.create(prev_pos.X, prev_pos.Y, prev_pos.Z - 0.5)
+            		target_plat.Position = new_pos
+            		print("moved backward")
+                
+            	end
+            
+            end	
+
+            move_plat_back.MouseButton1Click:Connect(function()
+            	movePlatBackward()
+            	task.wait()
+            end)
+
+            if not interface_flag then
+                Rayfield:Notify({
+                    Title = "Notification",
+                    Content = "Skybase Interface disabled",
+                    Duration = 6.5,
+                    Image = 4483362458,
+                })
+
+                task.wait()
+                Interface_i.Enabled = false
+                task.wait()
+            end
+        end
+
+         
+    end,
+})
+
+
 
 
 
