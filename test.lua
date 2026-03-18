@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vSB2"
+local _Version = "Cyan-99 vsb33"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3225,7 +3225,7 @@ local Toggle = BaseTab:CreateToggle({
             	movePlatBackward()
             	task.wait()
             end)
-
+            task.wait()
             if not interface_flag then
                 Rayfield:Notify({
                     Title = "Notification",
@@ -3235,9 +3235,10 @@ local Toggle = BaseTab:CreateToggle({
                 })
 
                 task.wait()
-                Interface_i.Enabled = false
+                _interface.Enabled = false
                 task.wait()
             end
+            task.wait()
         end
 
          
