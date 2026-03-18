@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vsbrefactor"
+local _Version = "Cyan-99 vref222"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2940,7 +2940,20 @@ local _interface = game.Players.LocalPlayer.PlayerGui.Interface_i
 _interface.Enabled = false
 
 
+local UIS = game:GetService("UserInputService")
+local frame = _interface.HolderFrame
+local dragToggle = nil
+local dragSpeed = 20
+local dragStart = nil
+local startPos = nil
 
+--// DRAG SERVICE
+
+local function updateInput(input)
+    local delta = input.Position - dragStart
+    local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    game:GetService("TweenService"):Create(frame, TweenInfo.new(0.30), {Position = position}):Play()
+end
 
 --// MAIN CREATE FUNCTION(S) & local vars
 
@@ -3171,21 +3184,6 @@ local Toggle = BaseTab:CreateToggle({
 
             _interface.Enabled = true
 
-            local UIS = game:GetService("UserInputService")
-            local frame = _interface.HolderFrame
-            local dragToggle = nil
-            local dragSpeed = 20
-            local dragStart = nil
-            local startPos = nil
-
-            --// DRAG SERVICE
-
-            local function updateInput(input)
-                local delta = input.Position - dragStart
-                local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-                game:GetService("TweenService"):Create(frame, TweenInfo.new(0.30), {Position = position}):Play()
-            end
-
             frame.InputBegan:Connect(function(input)
                 if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
                     dragToggle = true
@@ -3214,7 +3212,7 @@ local Toggle = BaseTab:CreateToggle({
                 create_plat_button.Interactable = false
                 create_plat_button.Visible = false
             end)
-            
+
 
             delete_plat_button.MouseButton1Click:Connect(function()
                 deletePlatform()
