@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vskbOut1"
+local _Version = "Cyan-99 vsbrefactor"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2940,39 +2940,7 @@ local _interface = game.Players.LocalPlayer.PlayerGui.Interface_i
 _interface.Enabled = false
 
 
-local UIS = game:GetService("UserInputService")
-local frame = _interface.HolderFrame
-local dragToggle = nil
-local dragSpeed = 20
-local dragStart = nil
-local startPos = nil
 
---// DRAG SERVICE
-
-local function updateInput(input)
-    local delta = input.Position - dragStart
-    local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    game:GetService("TweenService"):Create(frame, TweenInfo.new(0.30), {Position = position}):Play()
-end
-
-frame.InputBegan:Connect(function(input)
-    if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
-        dragToggle = true
-        dragStart = input.Position
-        startPos = frame.Position
-        input.Changed:Connect(function()
-            if (input.UserInputState == Enum.UserInputState.End) then
-                dragToggle = false
-            end
-        end)
-    end
-end)
-
-UIS.InputChanged:Connect(function(input)
-    if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) and dragToggle then
-        updateInput(input)
-    end
-end)
 
 --// MAIN CREATE FUNCTION(S) & local vars
 
@@ -3042,15 +3010,7 @@ local function createPlatform()
 end
 
 
-create_plat_button.MouseButton1Click:Connect(function()
-    createPlatform()
-    print("platform created")
-    task.wait()
-    create_plat_button.Selectable = false
-    create_plat_button.Active = false
-    create_plat_button.Interactable = false
-    create_plat_button.Visible = false
-end)
+
 
 -- deleting and replacing platform button
 
@@ -3069,10 +3029,7 @@ local function deletePlatform()
 
 end
 
-delete_plat_button.MouseButton1Click:Connect(function()
-    deletePlatform()
-    task.wait()
-end)
+
 
 -- move plat UP
 
@@ -3092,10 +3049,7 @@ local function movePlatUp()
 
 end
 
-move_plat_up.MouseButton1Click:Connect(function()
-    movePlatUp()
-    task.wait()
-end)
+
 
 -- move plat DOWN
 
@@ -3115,10 +3069,7 @@ local function movePlatDown()
 
 end
 
-move_plat_down.MouseButton1Click:Connect(function()
-    movePlatDown()
-    task.wait()
-end)
+
 
 -- move plat LEFT
 
@@ -3138,10 +3089,7 @@ local function movePlatLeft()
 
 end	
 
-move_plat_left.MouseButton1Click:Connect(function()
-    movePlatLeft()
-    task.wait()
-end)
+
 
 -- move plat RIGHT
 
@@ -3160,10 +3108,7 @@ local function movePlatRight()
 
 end
 
-move_plat_right.MouseButton1Click:Connect(function()
-    movePlatRight()
-    task.wait()
-end)
+
 
 -- move plat FORWARD
 
@@ -3183,10 +3128,7 @@ local function movePlatForward()
 
 end	
 
-move_plat_forward.MouseButton1Click:Connect(function()
-    movePlatForward()
-    task.wait()
-end)
+
 
 -- move plat BACKWARD
 
@@ -3206,11 +3148,7 @@ local function movePlatBackward()
 
 end	
 
-move_plat_back.MouseButton1Click:Connect(function()
-    movePlatBackward()
-    task.wait()
-end)
-task.wait()
+
 
 
 -- exp UI toggle
@@ -3232,6 +3170,87 @@ local Toggle = BaseTab:CreateToggle({
             task.wait(2)
 
             _interface.Enabled = true
+
+            local UIS = game:GetService("UserInputService")
+            local frame = _interface.HolderFrame
+            local dragToggle = nil
+            local dragSpeed = 20
+            local dragStart = nil
+            local startPos = nil
+
+            --// DRAG SERVICE
+
+            local function updateInput(input)
+                local delta = input.Position - dragStart
+                local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+                game:GetService("TweenService"):Create(frame, TweenInfo.new(0.30), {Position = position}):Play()
+            end
+
+            frame.InputBegan:Connect(function(input)
+                if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+                    dragToggle = true
+                    dragStart = input.Position
+                    startPos = frame.Position
+                    input.Changed:Connect(function()
+                        if (input.UserInputState == Enum.UserInputState.End) then
+                            dragToggle = false
+                        end
+                    end)
+                end
+            end)
+
+            UIS.InputChanged:Connect(function(input)
+                if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) and dragToggle then
+                    updateInput(input)
+                end
+            end)
+
+            create_plat_button.MouseButton1Click:Connect(function()
+                createPlatform()
+                print("platform created")
+                task.wait()
+                create_plat_button.Selectable = false
+                create_plat_button.Active = false
+                create_plat_button.Interactable = false
+                create_plat_button.Visible = false
+            end)
+            
+
+            delete_plat_button.MouseButton1Click:Connect(function()
+                deletePlatform()
+                task.wait()
+            end)
+
+            move_plat_back.MouseButton1Click:Connect(function()
+                movePlatBackward()
+                task.wait()
+            end)
+            task.wait()
+
+            move_plat_forward.MouseButton1Click:Connect(function()
+                movePlatForward()
+                task.wait()
+            end)
+
+            move_plat_right.MouseButton1Click:Connect(function()
+                movePlatRight()
+                task.wait()
+            end)
+
+            move_plat_left.MouseButton1Click:Connect(function()
+                movePlatLeft()
+                task.wait()
+            end)
+
+            move_plat_down.MouseButton1Click:Connect(function()
+                movePlatDown()
+                task.wait()
+            end)
+
+            move_plat_up.MouseButton1Click:Connect(function()
+                movePlatUp()
+                task.wait()
+            end)
 
         end 
 
