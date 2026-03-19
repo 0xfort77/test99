@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 v1.2wp"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -746,7 +746,7 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
                     local doing_sh = true
                     while doing_sh do
-                        if workspace.Map.Landmarks.Stronghold.Functional.FinalGate.Position == Vector3.new(683.0052490234375, 63.488651275634766, 37.91798400878906) then
+                        if workspace.Map.Landmarks.Stronghold.Functional.FinalGate.WorldPivot.Position == Vector3.new(683.0052490234375, 63.488651275634766, 37.91798400878906) then
                             local done_sh = true
                         else
                             continue --repeat task.wait() until done_sh
