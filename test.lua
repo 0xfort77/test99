@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vinside"
+local _Version = "Cyan-99 vins"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -757,11 +757,12 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                             fireproximityprompt(d_chest_prox)
                             task.wait()
                             for _, d in pairs(workspace.Items:GetChildren()) do
-                            if d.Name == "Diamond" then
-                                local args = {
-                                    d,
-                                }
-                                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestTakeDiamonds"):FireServer(unpack(args))
+                                if d.Name == "Diamond" then
+                                    local args = {
+                                        d,
+                                    }
+                                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestTakeDiamonds"):FireServer(unpack(args))
+                                end
                             end
                             task.wait()
                             HRP.CFrame = FIREZONE.CFrame * CFrame.new(0,6,0)
