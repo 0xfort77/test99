@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 vrep"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -745,17 +745,16 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                     task.wait(6.5)
                     local init_sh = true
                     task.wait()
-                    if init_sh then
+                    repeat
                         HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
 
                         task.wait(6.5)
-                    end
-                    if workspace.Map.Landmarks.Stronghold.Functional.FinalGate.WorldPivot.Position == Vector3.new(683.0052490234375, 63.488651275634766, 37.91798400878906) then
-                        local done_sh = true
-                        init_sh = false
-                    else
-                        repeat task.wait(1) until init_sh = false
-                    end
+                        if workspace.Map.Landmarks.Stronghold.Functional.FinalGate.WorldPivot.Position == Vector3.new(683.0052490234375, 63.488651275634766, 37.91798400878906) then
+                            local done_sh = true
+                            init_sh = false
+                        end
+                    until not init_sh
+                    
                     if done_sh then
                         HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                         task.wait()
