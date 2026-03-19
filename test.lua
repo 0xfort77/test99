@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vkill4"
+local _Version = "Cyan-99 vkill55"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -312,7 +312,7 @@ local KILLToggle = MainTab:CreateToggle({
             local worldrootradius = workspace:GetPartBoundsInBox(HRP.CFrame, Vector3.new(180,60,180), includeparams, excludeparams)
 
             for _, v in pairs(worldrootradius) do
-                if v:IsA("Part") and v.Name == "HumanoidRootPart" then
+                if v:IsA("Part") then--and v.Name == "HumanoidRootPart" then
                     --v.CanQuery = true
                     --print(v.Parent)
                     for _, item in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
