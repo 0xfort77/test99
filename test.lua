@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 vinside"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -740,29 +740,23 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                 local internal_time = workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text
 
                 if internal_time == "00s" then
-
+                    local init_sh = false
+                    local done_sh = false
+ 
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
                     task.wait(6.5)
-                    local init_sh = true
-                    task.wait()
+                    --task.wait()
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
                     repeat
                         task.wait(6.5)
                         if workspace.Map.Landmarks.Stronghold.Functional.Braziers.Brazier.Main.FireAttach.Fire.Enabled == false then
-                            local done_sh = true
-                            init_sh = false
+                            HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
-                        end
-                    until done_sh
-                    
-                    if done_sh then
-                        HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
-                        task.wait()
-                        local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
-                        task.wait(1)
-                        fireproximityprompt(d_chest_prox)
-                        task.wait()
-                        for _, d in pairs(workspace.Items:GetChildren()) do
+                            local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
+                            task.wait(1)
+                            fireproximityprompt(d_chest_prox)
+                            task.wait()
+                            for _, d in pairs(workspace.Items:GetChildren()) do
                             if d.Name == "Diamond" then
                                 local args = {
                                     d,
@@ -770,12 +764,18 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                                 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestTakeDiamonds"):FireServer(unpack(args))
                             end
                             task.wait()
+                            HRP.CFrame = FIREZONE.CFrame * CFrame.new(0,6,0)
+                            task.wait()
+                            done_sh = true
                         end
-
-                        HRP.CFrame = FIREZONE.CFrame * CFrame.new(0,6,0) 
+                        task.wait()
+                    until done_sh
+                    
+                    if done_sh then
+                         
                         task.wait(600)
                         done_sh = false
-                        doing_sh = false
+                        --doing_sh = false
                     end
                     task.wait(1)
 
