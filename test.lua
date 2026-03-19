@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vsh9"
+local _Version = "Cyan-99 v1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -773,7 +773,7 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                             done_sh = false
                             doing_sh = false
                         end
-                        task.wait()
+                        task.wait(1)
                     end
                 end
                 task.wait()
