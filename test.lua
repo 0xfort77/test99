@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vst33"
+local _Version = "Cyan-99 vt32"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -543,7 +543,7 @@ local instaChestButton = MainTab:CreateToggle({
         while insta_chest_flag do
             for _, Chest in pairs(workspace.Items:GetChildren()) do
 
-                if Chest.Name == "Item Chest" or Chest.Name == "Item Chest2" or Chest.Name == "Item Chest3" or Chest.Name == "Item Chest4" or Chest.Name == "Item Chest5" or Chest.Name == "Item Chest6" or Chest.Name == "Jungle Chest1" or Chest.Name == "Jungle Chest2" or Chest.Name == "Stronghold Diamond Chest" or Chest.Name == "Stone Chest1" or Chest.Name == "Stone Chest2" or Chest.Name == "Mossy Chest" or Chest.Name == "Obsidiron Chest" or Chest.Name == "Small Present" then
+                if Chest.Name == "Item Chest" or Chest.Name == "Item Chest2" or Chest.Name == "Item Chest3" or Chest.Name == "Item Chest4" or Chest.Name == "Item Chest5" or Chest.Name == "Item Chest6" or Chest.Name == "Jungle Chest1" or Chest.Name == "Jungle Chest2" or Chest.Name == "Stronghold Diamond Chest" or Chest.Name == "Stone Chest1" or Chest.Name == "Stone Chest2" or Chest.Name == "Mossy Chest" or Chest.Name == "Obsidiron Chest" or Chest.Name == "Small Present" or Chest.Name == "Giant Present" then
 
                     for _, m in pairs(Chest:GetChildren()) do
 
@@ -2656,7 +2656,9 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
             end
             task.wait()
             task.wait(315)
-            --index = 1
+
+            p_index = 1
+            index = 1
 
         end
 
