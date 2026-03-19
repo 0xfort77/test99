@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1kill3"
+local _Version = "Cyan-99 vkill4"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -308,7 +308,7 @@ local KILLToggle = MainTab:CreateToggle({
             --includeparams.CollisionGroup = "NPCs"
             excludeparams.FilterType = Enum.RaycastFilterType.Exclude
             excludeparams.FilterDescendantsInstances = {}
-            excludeparams.MaxParts = 180 -- changed
+            excludeparams.MaxParts = 280 -- changed
             local worldrootradius = workspace:GetPartBoundsInBox(HRP.CFrame, Vector3.new(180,60,180), includeparams, excludeparams)
 
             for _, v in pairs(worldrootradius) do
