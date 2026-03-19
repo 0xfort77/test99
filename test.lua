@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vt32"
+local _Version = "Cyan-99 vsktestF"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2596,7 +2596,6 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
                     --    }
                     --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
                     --    task.wait()
---
                     --    local args = {
                     --        skull
                     --    }
@@ -2606,17 +2605,14 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
                     --    print(tostring(index))
                     --    task.wait(1)
                     --    index = 3
---
                     ----elseif index == 3 then
                     --    --print("index 3")
                     --    
---
                     --    local args = {
                     --        skull
                     --    }
                     --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
                     --    task.wait()
---
                     --    local args = {
                     --        skull
                     --    }
@@ -2628,7 +2624,6 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
                     --    index = 4
                     --    --task.wait(312)
                     --    -- 5 minute wait for additional spawns
---
                     ----elseif index == 4 then
                     --    --print("index 4")
                     --    
@@ -2637,7 +2632,6 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
                     --    }
                     --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
                     --    task.wait()
---
                     --    local args = {
                     --        skull
                     --    }
@@ -2646,19 +2640,17 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
                     --    skull:PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[4].TouchZone.CFrame * CFrame.new(0,1,0))
                     --    print(tostring(index))
                     --    task.wait(2)
-                    --    index = 1
-                        
-                        
+                    --    index = 1     
                     --end
                     
                 end
 
             end
             task.wait()
-            task.wait(315)
-
             p_index = 1
             index = 1
+            print("Final indx: "..tostring(index))
+            task.wait(315)
 
         end
 
