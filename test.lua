@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vkill66"
+local _Version = "Cyan-99 vSHkill7"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -718,7 +718,7 @@ local coinsButton = MainTab:CreateButton({
     end,
 })
 
-local autoSHButton = MainTab:CreateToggle({
+local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghold.Functional.FinalGate.Main CFrame Y changes when done **
     Name = "Auto Stronghold",
     CurrentValue = false,
     Callback = function(Value) 
@@ -744,7 +744,7 @@ local autoSHButton = MainTab:CreateToggle({
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
                     task.wait(5)
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
-                    task.wait(190)
+                    repeat task.wait() until workspace.Map.Landmarks.Stronghold.Functional.FinalGate.Main.CFrame.Position.Y = 63.4886513 end
                     HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                     task.wait()
                     local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
