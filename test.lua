@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vbraz"
+local _Version = "Cyan-99 v1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -751,8 +751,9 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                         if workspace.Map.Landmarks.Stronghold.Functional.Braziers.Brazier.Main.FireAttach.Fire.Enabled == false then
                             local done_sh = true
                             init_sh = false
+                            task.wait()
                         end
-                    until not init_sh
+                    until done_sh
                     
                     if done_sh then
                         HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
