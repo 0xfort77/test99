@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vmulti-tp"
+local _Version = "Cyan-99 v1.2KAnowait"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -301,7 +301,8 @@ local KILLToggle = MainTab:CreateToggle({
         end
 
         while kill_flag do
-
+            local weap_name_ = workspace[my_name]:WaitForChild("ToolHandle"):GetAttribute("ToolName")
+            print("equipped "..weap_name_)
             local includeparams = OverlapParams.new()
             local excludeparams = OverlapParams.new()
             includeparams.FilterType = Enum.RaycastFilterType.Include
@@ -317,10 +318,10 @@ local KILLToggle = MainTab:CreateToggle({
                     --v.CanQuery = true
                     --print(v.Parent)
                     task.wait()
-                    local weap_name_ = workspace[my_name]:WaitForChild("ToolHandle"):GetAttribute("ToolName")
+                    
                     local args = {
                         v.Parent,
-                        game.Players.LocalPlayer.Inventory:WaitForChild(weap_name_),
+                        game.Players.LocalPlayer.Inventory.weap_name_,
                         damage_hash,
                         v.CFrame * CFrame.new(0,0,0)
                     }
