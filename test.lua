@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vaurav2"
+local _Version = "Cyan-99 vattribute"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -317,7 +317,7 @@ local KILLToggle = MainTab:CreateToggle({
                     --v.CanQuery = true
                     --print(v.Parent)
                     task.wait()
-                    local weap_name_ = workspace[my_name]:WaitForChild("ToolHandle"):WaitForChild("ToolName")
+                    local weap_name_ = workspace[my_name]:WaitForChild("ToolHandle"):GetAttribute("ToolName")
                     local args = {
                         v.Parent,
                         game.Players.LocalPlayer.Inventory:WaitForChild(weap_name_),
