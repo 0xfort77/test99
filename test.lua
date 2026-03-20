@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tui"
+local _Version = "Cyan-99 vshfish"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -651,9 +651,14 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                             HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
                             local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
-                            task.wait(1)
-                            fireproximityprompt(d_chest_prox)
-                            task.wait(1)
+                            if d_chest_prox then
+                                d_chest_prox.RequiresLineOfSight = false
+                                task.wait(1)
+                                fireproximityprompt(d_chest_prox)
+                                task.wait(1)
+                            else
+                                continue
+                            end
                             for _, d in pairs(workspace.Items:GetChildren()) do
                                 if d.Name == "Diamond" then
                                     local args = {
@@ -700,6 +705,9 @@ local strongholdtablabel1 = MainTab:CreateLabel("Player will teleport around to 
 
 local fishSuccessArea = game:GetService("Players").LocalPlayer.PlayerGui.Interface.FishingCatchFrame.TimingBar.SuccessArea
 
+local UICorner_F = Instance.new("UICorner",fishSuccessArea)
+UICorner_F.CornerRadius = UDim.new(0, 20)
+
 local Toggle = MainTab:CreateToggle({
     Name = "Easy Fishing",
     CurrentValue = false,
@@ -714,8 +722,6 @@ local Toggle = MainTab:CreateToggle({
                 Duration = 10,
                 Image = 4483362458,
             })
-
-            local UICorner_F = Instance.new("UICorner",fishSuccessArea)
         end
 
         while fishing_flag do
