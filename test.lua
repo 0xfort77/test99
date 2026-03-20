@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vcont"
+local _Version = "Cyan-99 vSBT1"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2853,14 +2853,31 @@ local skybaseToggle = BaseTab:CreateToggle({
 
             local create_plat_button = frame.maininnerFrame:FindFirstChild("TextButtoncreate")
             local delete_plat_button = frame.maininnerFrame:FindFirstChild("TextButtondelete")
-            local move_plat_up = frame.movebuttFrame:FindFirstChild("TextButtonUP")
-            local move_plat_down = frame.movebuttFrame:FindFirstChild("TextButtonDOWN")
-            local move_plat_left = frame.movebuttFrame:FindFirstChild("TextButtonLEFT")
-            local move_plat_right = frame.movebuttFrame:FindFirstChild("TextButtonRIGHT")
-            local move_plat_forward = frame.movebuttFrame:FindFirstChild("TextButtonFORWARD")
-            local move_plat_back = frame.movebuttFrame:FindFirstChild("TextButtonBACK")
+            local move_plat_up = frame.circledirectional:FindFirstChild("TextButtonUP")
+            local move_plat_down = frame.circledirectional:FindFirstChild("TextButtonDOWN")
+            local move_plat_left = frame.circledirectional:FindFirstChild("TextButtonLEFT")
+            local move_plat_right = frame.circledirectional:FindFirstChild("TextButtonRIGHT")
+            local move_plat_forward = frame.circledirectional:FindFirstChild("TextButtonFORWARD")
+            local move_plat_back = frame.circledirectional:FindFirstChild("TextButtonBACK")
             local length_index = frame.maininnerFrame:FindFirstChild("TextBoxLength")
             local width_index = frame.maininnerFrame:FindFirstChild("TextBoxWidth")
+
+            local colorsframe = frame:FindFirstChild("colorsFrame")
+            local color1 = colorsframe:FindFirstChild("COLORSELECTwhite")
+            local color2 = colorsframe:FindFirstChild("COLORSELECTpink")
+            local color3 = colorsframe:FindFirstChild("COLORSELECTyellow")
+            local color_def = colorsframe:FindFirstChild("COLORSELECTdefault")
+
+            local color_activate = colorsframe:FindFirstChild("coloractivButton")
+            local color_exit = colorsframe:FindFirstChild("COLORexit")
+
+            delete_plat_button.Visible = false
+            color1.Visible = false
+            color2.Visible = false
+            color3.Visible = false
+            color_def.Visible = false
+            color_exit.Visible = false
+            color_activate.Visible = true
 
             -- inputs
 
@@ -3086,6 +3103,97 @@ local skybaseToggle = BaseTab:CreateToggle({
                 task.wait()
             end)
             task.wait()
+
+            local function changeColorWhite()
+	
+	            local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
+
+	            if target_plat and target_plat.Transparency == 0.5 then
+                
+	            	target_plat.Color = Color3.new(1, 1, 1)
+                
+	            end
+	
+            end
+
+            color1.MouseButton1Click:Connect(function()
+            	changeColorWhite()
+            	task.wait()
+            end)
+            
+            local function changeColorPink()
+            
+            	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
+            
+            	if target_plat and target_plat.Transparency == 0.5 then
+                
+            		target_plat.Color = Color3.new(1, 0.321569, 0.478431)
+                
+            	end
+            end
+            
+            color2.MouseButton1Click:Connect(function()
+            	changeColorPink()
+            	task.wait()
+            end)
+            
+            local function changeColorYellow()
+            	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
+            
+            	if target_plat and target_plat.Transparency == 0.5 then
+                
+            		target_plat.Color = Color3.new(1, 0.917647, 0.129412)
+                
+            	end
+            end
+            
+            color3.MouseButton1Click:Connect(function()
+            	changeColorYellow()
+            	task.wait()
+            end)
+            
+            local function changeColorDefault()
+            	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
+            
+            	if target_plat and target_plat.Transparency == 0.5 then
+                
+            		target_plat.Color = Color3.new(0.172549, 0.882353, 0.133333)
+                
+            	end
+            end
+            
+            color_def.MouseButton1Click:Connect(function()
+            	changeColorDefault()
+            	task.wait()
+            end)
+            
+            local function colorsExit()
+            	color1.Visible = false
+            	color2.Visible = false
+            	color3.Visible = false
+            	color_def.Visible = false
+            	color_exit.Visible = false
+            	color_activate.Visible = true
+            end
+            
+            color_exit.MouseButton1Click:Connect(function()
+            	colorsExit()
+            	task.wait()
+            end)
+            
+            local function colorsActivate()
+            	color1.Visible = true
+            	color2.Visible = true
+            	color3.Visible = true
+            	color_def.Visible = true
+            	color_exit.Visible = true
+            	color_activate.Visible = false
+            end
+            
+            color_activate.MouseButton1Click:Connect(function()
+            	colorsActivate()
+            	task.wait()
+            end)
    
         end 
             
