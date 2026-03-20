@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vcontinue"
+local _Version = "Cyan-99 vbreak"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -352,7 +352,7 @@ local KILLToggle = MainTab:CreateToggle({
 
                 end
             else
-                continue
+                break
             end
             --print(worldrootradius)
 
@@ -633,16 +633,18 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                 if internal_time == "00s" then
                     local init_sh = false
                     local done_sh = false
- 
-                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
-                    task.wait(6.5)
-                    --task.wait()
-                    HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
-                    repeat
-                        task.wait(6.5)
+                    for i=1, 5 do
                         HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
-                        task.wait(4)
+                        task.wait(6.5)
+                        --task.wait()
                         HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
+                        task.wait(4)
+                    end
+                    repeat
+                        --task.wait(6.5)
+                        --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
+                        task.wait(4)
+                        --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
                         if workspace.Map.Landmarks.Stronghold.Functional.Braziers.Brazier.Main.FireAttach.Fire.Enabled == false then
                             HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
