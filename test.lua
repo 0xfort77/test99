@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t"
+local _Version = "Cyan-99 v1.tinit"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -134,6 +134,15 @@ local BaseTab = Window:CreateTab("Skybase", "baseline")
 local ExtrasTab = Window:CreateTab("Extras", "star")
 local CREDITS = Window:CreateTab("Credits", "users") -- Title, Image
 
+--init hidden menus
+
+local scr_bench_init_ = workspace.Map.Campground.CraftingBench.TouchZone.ProximityAttachment.ProximityInteraction
+scr_bench_init_.HoldDuration = 0
+scr_bench_init_.MaxActivationDistance = 1000
+scr_bench_init_.RequiresLineOfSight = false
+task.wait()
+fireproximityprompt(scr_bench_init_)
+task.wait()
 
 --// create main tab 
 
