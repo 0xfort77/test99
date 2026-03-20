@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 v1.2strings"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -321,7 +321,7 @@ local KILLToggle = MainTab:CreateToggle({
                     
                     local args = {
                         v.Parent,
-                        game.Players.LocalPlayer.Inventory:WaitForChild(weap_name_),
+                        game.Players.LocalPlayer.Inventory:WaitForChild(tostring(weap_name_)),
                         damage_hash,
                         v.CFrame * CFrame.new(0,0,0)
                     }
