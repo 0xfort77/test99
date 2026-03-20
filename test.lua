@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2strings"
+local _Version = "Cyan-99 v1table"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -273,6 +273,26 @@ local HealthToggle = MainTab:CreateToggle({
 
 local mainsection22 = MainTab:CreateSection("World:")
 
+local acceptable_weapons_table = {
+    "Good Axe",
+    "Old Axe",
+    "Strong Axe",
+    "Spear",
+    "Chainsaw",
+    "Infernal Sword",
+    "Ice Sword",
+    "Morningstar",
+    "Flamethrower",
+    "Poison Spear",
+    "Poison Claws",
+    "Obsidiron Hammer",
+    "Scythe",
+    "Vampire Scythe",
+    "Katana",
+    "Trident",
+    "Laser Sword",
+}
+
 local KILLToggle = MainTab:CreateToggle({
     Name = "Kill Aura",
     CurrentValue = false,
@@ -303,32 +323,36 @@ local KILLToggle = MainTab:CreateToggle({
         while kill_flag do
             local weap_name_ = workspace[my_name]:WaitForChild("ToolHandle"):WaitForChild("OriginalItem").Value
             print("equipped "..tostring(weap_name_))
-            local includeparams = OverlapParams.new()
-            local excludeparams = OverlapParams.new()
-            includeparams.FilterType = Enum.RaycastFilterType.Include
-            includeparams.FilterDescendantsInstances = {NPC_enemies}
-            --includeparams.CollisionGroup = "NPCs"
-            excludeparams.FilterType = Enum.RaycastFilterType.Exclude
-            excludeparams.FilterDescendantsInstances = {}
-            excludeparams.MaxParts = 220 -- changed
-            local worldrootradius = workspace:GetPartBoundsInBox(HRP.CFrame, Vector3.new(180,60,180), includeparams, excludeparams)
+            if table.find(acceptable_weapons_table, tostring(weap_name_)) then
+                local includeparams = OverlapParams.new()
+                local excludeparams = OverlapParams.new()
+                includeparams.FilterType = Enum.RaycastFilterType.Include
+                includeparams.FilterDescendantsInstances = {NPC_enemies}
+                --includeparams.CollisionGroup = "NPCs"
+                excludeparams.FilterType = Enum.RaycastFilterType.Exclude
+                excludeparams.FilterDescendantsInstances = {}
+                excludeparams.MaxParts = 220 -- changed
+                local worldrootradius = workspace:GetPartBoundsInBox(HRP.CFrame, Vector3.new(180,60,180), includeparams, excludeparams)
 
-            for _, v in pairs(worldrootradius) do
-                if v:IsA("Part") and v.Name == "HumanoidRootPart" or v.Name == "Head" then
-                    --v.CanQuery = true
-                    --print(v.Parent)
-                    task.wait()
-                    
-                    local args = {
-                        v.Parent,
-                        game.Players.LocalPlayer.Inventory:WaitForChild(tostring(weap_name_)),
-                        damage_hash,
-                        v.CFrame * CFrame.new(0,0,0)
-                    }
-                    game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
-                       
+                for _, v in pairs(worldrootradius) do
+                    if v:IsA("Part") and v.Name == "HumanoidRootPart" or v.Name == "Head" then
+                        --v.CanQuery = true
+                        --print(v.Parent)
+                        task.wait()
+
+                        local args = {
+                            v.Parent,
+                            game.Players.LocalPlayer.Inventory:WaitForChild(tostring(weap_name_)),
+                            damage_hash,
+                            v.CFrame * CFrame.new(0,0,0)
+                        }
+                        game.ReplicatedStorage.RemoteEvents.ToolDamageObject:InvokeServer(unpack(args))
+
+                    end
+
                 end
-
+            else
+                return
             end
             --print(worldrootradius)
 
