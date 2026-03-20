@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1table"
+local _Version = "Cyan-99 vcontinue"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -352,7 +352,7 @@ local KILLToggle = MainTab:CreateToggle({
 
                 end
             else
-                return
+                continue
             end
             --print(worldrootradius)
 
