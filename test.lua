@@ -709,8 +709,6 @@ if not fishSuccessArea.UICorner then
 
     local UICorner_F = Instance.new("UICorner",fishSuccessArea)
     UICorner_F.CornerRadius = UDim.new(0, 20)
-else
-    break
 end
 
 local Toggle = MainTab:CreateToggle({
