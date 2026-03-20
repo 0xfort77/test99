@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.textras"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3406,7 +3406,7 @@ local craftingmenuButton = ExtrasTab:CreateButton({
     Callback = function()
         local crafting_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.CraftingTable
 
-        crafting_menu_path.Visble = true
+        crafting_menu_path.Visible = true
         crafting_menu_path.Active = true
     end,
 })
@@ -3416,7 +3416,7 @@ local fairyflowersmenuButton = ExtrasTab:CreateButton({
     Callback = function()
         local flowerfairy_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Flower
 
-        flowerfairy_menu_path.Visble = true
+        flowerfairy_menu_path.Visible = true
         flowerfairy_menu_path.Active = true
     end,
 })
@@ -3426,7 +3426,7 @@ local skilltoolsmenuButton = ExtrasTab:CreateButton({
     Callback = function()
         local skilltool_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.ToolSmith
 
-        skilltool_menu_path.Visble = true
+        skilltool_menu_path.Visible = true
         skilltool_menu_path.Active = true
     end,
 })
@@ -3438,7 +3438,7 @@ local furnituremenuButton = ExtrasTab:CreateButton({
     Callback = function()
         local furn_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Furniture
 
-        furn_menu_path.Visble = true
+        furn_menu_path.Visible = true
         furn_menu_path.Active = true
     end,
 })
@@ -3450,7 +3450,7 @@ local haloweencostumesmenuButton = ExtrasTab:CreateButton({
     Callback = function()
         local halloweencostume_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.HalloweenCostumesFrame
 
-        halloweencostume_path.Visble = true
+        halloweencostume_path.Visible = true
         halloweencostume_path.Active = true
     end,
 })
@@ -3462,7 +3462,7 @@ local santamenuButton = ExtrasTab:CreateButton({
     Callback = function()
         local santasack_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.SantaSack
 
-        santasack_path.Visble = true
+        santasack_path.Visible = true
         santasack_path.Active = true
     end,
 })
