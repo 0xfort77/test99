@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vsbrev4"
+local _Version = "Cyan-99 vsbcolors"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3223,11 +3223,12 @@ local skybaseToggle = BaseTab:CreateToggle({
 
             local function changeColorWhite()
 	
-	            local target_plat = workspace.Map.Ground:FindFirstChild("Grass") --workspace.Map.Ground
+	            for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
 
-	            if target_plat and target_plat.Transparency == 0.5 then
+                    if ground.Transparency == 0.5 then
                 
-	            	target_plat.Color = Color3.new(1, 1, 1)
+	            	    ground.BrickColor = Color3.new(1, 1, 1)
+                    end
                 
 	            end
 	
@@ -3240,11 +3241,12 @@ local skybaseToggle = BaseTab:CreateToggle({
 
             local function changeColorPink()
             
-            	local target_plat = workspace.Map.Ground:FindFirstChild("Grass") --workspace.Map.Ground
-            
-            	if target_plat and target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+
+                    if ground.Transparency == 0.5 then
                 
-            		target_plat.Color = Color3.new(1, 0.321569, 0.478431)
+            		    ground.BrickColor = Color3.new(1, 0.321569, 0.478431)
+                    end
                 
             	end
             end
@@ -3255,11 +3257,12 @@ local skybaseToggle = BaseTab:CreateToggle({
             end)
 
             local function changeColorYellow()
-            	local target_plat = workspace.Map.Ground:FindFirstChild("Grass") --workspace.Map.Ground
-            
-            	if target_plat and target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+
+                    if ground.Transparency == 0.5 then
                 
-            		target_plat.Color = Color3.new(1, 0.917647, 0.129412)
+            		    ground.BrickColor = Color3.new(1, 0.917647, 0.129412)
+                    end
                 
             	end
             end
@@ -3270,11 +3273,12 @@ local skybaseToggle = BaseTab:CreateToggle({
             end)
 
             local function changeColorDefault()
-            	local target_plat = workspace.Map.Ground:FindFirstChild("Grass") --workspace.Map.Ground
-            
-            	if target_plat and target_plat.Transparency == 0.5 then
+            	for _, ground in pairs(workspace.Map.Ground:GetChildren()) do
+
+                    if ground.Transparency == 0.5 then
                 
-            		target_plat.Color = Color3.new(0.172549, 0.882353, 0.133333)
+            		    ground.BrickColor = Color3.new(0.172549, 0.882353, 0.133333)
+                    end
                 
             	end
             end
