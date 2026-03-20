@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vshfish"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -705,8 +705,13 @@ local strongholdtablabel1 = MainTab:CreateLabel("Player will teleport around to 
 
 local fishSuccessArea = game:GetService("Players").LocalPlayer.PlayerGui.Interface.FishingCatchFrame.TimingBar.SuccessArea
 
-local UICorner_F = Instance.new("UICorner",fishSuccessArea)
-UICorner_F.CornerRadius = UDim.new(0, 20)
+if not fishSuccessArea.UICorner then
+
+    local UICorner_F = Instance.new("UICorner",fishSuccessArea)
+    UICorner_F.CornerRadius = UDim.new(0, 20)
+else
+    continue
+end
 
 local Toggle = MainTab:CreateToggle({
     Name = "Easy Fishing",
