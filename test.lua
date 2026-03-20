@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 vsbrev3"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3056,6 +3056,7 @@ local skybaseToggle = BaseTab:CreateToggle({
                 create_plat_button.Active = false
                 create_plat_button.Interactable = false
                 create_plat_button.Visible = false
+                delete_plat_button.Visible = true
             end)
 
             -- deleting and replacing platform button
@@ -3070,6 +3071,7 @@ local skybaseToggle = BaseTab:CreateToggle({
                         create_plat_button.Active = true
                         create_plat_button.Interactable = true
                         create_plat_button.Visible = true
+                        delete_plat_button.Visible = false
                     end
                 end
             
@@ -3220,7 +3222,7 @@ local skybaseToggle = BaseTab:CreateToggle({
 
             local function changeColorWhite()
 	
-	            local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
+	            local target_plat = workspace.Map.Ground:FindFirstChild("Grass") --workspace.Map.Ground
 
 	            if target_plat and target_plat.Transparency == 0.5 then
                 
@@ -3237,7 +3239,7 @@ local skybaseToggle = BaseTab:CreateToggle({
 
             local function changeColorPink()
             
-            	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
+            	local target_plat = workspace.Map.Ground:FindFirstChild("Grass") --workspace.Map.Ground
             
             	if target_plat and target_plat.Transparency == 0.5 then
                 
@@ -3252,7 +3254,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             end)
 
             local function changeColorYellow()
-            	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
+            	local target_plat = workspace.Map.Ground:FindFirstChild("Grass") --workspace.Map.Ground
             
             	if target_plat and target_plat.Transparency == 0.5 then
                 
@@ -3267,7 +3269,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             end)
 
             local function changeColorDefault()
-            	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
+            	local target_plat = workspace.Map.Ground:FindFirstChild("Grass") --workspace.Map.Ground
             
             	if target_plat and target_plat.Transparency == 0.5 then
                 
