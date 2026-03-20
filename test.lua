@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vSBT1"
+local _Version = "Cyan-99 vsbt2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2519,274 +2519,387 @@ local Paragraph = SkullTab:CreateParagraph({Title = "Important Notice", Content 
 
 local function create_exp_UI()
 
-    local Interface_i = Instance.new("ScreenGui") do
-    	Interface_i.Name = "Interface_i"
-    	Interface_i.Enabled = true
-    	Interface_i.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-        Interface_i.Parent = game.Players.LocalPlayer.PlayerGui
-    end
+    --20.03.2026 - 01:38 : 41
 
-    local HolderFrame = Instance.new("Frame",Interface_i) do
-    	HolderFrame.Name = "HolderFrame"
-    	HolderFrame.BackgroundColor3 = Color3.new(0.58,0.58,0.58)
-    	HolderFrame.BorderColor3 = Color3.new(0,0,0)
-    	HolderFrame.BorderSizePixel = 0
-    	HolderFrame.Position = UDim2.new(0.746,0,0.44,0)
-    	HolderFrame.Size = UDim2.new(0.155,0,0.255,0)
-    end
+local Interface_i = Instance.new("ScreenGui") do
+	Interface_i.Name = "Interface_i"
+	Interface_i.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+end
 
-    local UICorner = Instance.new("UICorner",HolderFrame)
-    local UIGradient = Instance.new("UIGradient",HolderFrame) do
-    	UIGradient.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
-    	UIGradient.Transparency = NumberSequence.new(0.12)
-    end
-    local TopbarFrame = Instance.new("Frame",HolderFrame) do
-    	TopbarFrame.Name = "TopbarFrame"
-    	TopbarFrame.BackgroundColor3 = Color3.new(0.118,0.118,0.118)
-    	TopbarFrame.BorderColor3 = Color3.new(0,0,0)
-    	TopbarFrame.BorderSizePixel = 0
-    	TopbarFrame.Position = UDim2.new(0,0,0,1)
-    	TopbarFrame.Selectable = true
-    	TopbarFrame.Size = UDim2.new(1,0,0.154,0)
-    end
+local HolderFrame = Instance.new("Frame",Interface_i) do
+	HolderFrame.Name = "HolderFrame"
+	HolderFrame.BackgroundColor3 = Color3.new(0.58,0.58,0.58)
+	HolderFrame.BorderColor3 = Color3.new(0,0,0)
+	HolderFrame.BorderSizePixel = 0
+	HolderFrame.Position = UDim2.new(0.746,0,0.44,0)
+	HolderFrame.Size = UDim2.new(0.155,0,0.255,0)
+end
 
-    local UICorner_1 = Instance.new("UICorner",TopbarFrame)
-    local UIGradient_1 = Instance.new("UIGradient",TopbarFrame) do
-    	UIGradient_1.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
-    	UIGradient_1.Transparency = NumberSequence.new(0.12)
-    end
-    local TextLabeltopbinfo = Instance.new("TextLabel",TopbarFrame) do
-    	TextLabeltopbinfo.Name = "TextLabeltopbinfo"
-    	TextLabeltopbinfo.BackgroundColor3 = Color3.new(1,1,1)
-    	TextLabeltopbinfo.BackgroundTransparency = 1
-    	TextLabeltopbinfo.BorderColor3 = Color3.new(0,0,0)
-    	TextLabeltopbinfo.BorderSizePixel = 0
-    	TextLabeltopbinfo.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextLabeltopbinfo.Position = UDim2.new(0,1,0,1)
-    	TextLabeltopbinfo.Size = UDim2.new(0.996,0,0.97,0)
-    	TextLabeltopbinfo.Text = " 4NTHOskybase.v1"
-    	TextLabeltopbinfo.TextColor3 = Color3.new(1,1,1)
-    	TextLabeltopbinfo.TextScaled = true
-    	TextLabeltopbinfo.TextSize = 14
-    	TextLabeltopbinfo.TextWrapped = true
-    	TextLabeltopbinfo.TextXAlignment = Enum.TextXAlignment.Left
-    end
-    local maininnerFrame = Instance.new("Frame",HolderFrame) do
-    	maininnerFrame.Name = "maininnerFrame"
-    	maininnerFrame.BackgroundColor3 = Color3.new(0.118,0.118,0.118)
-    	maininnerFrame.BackgroundTransparency = 0.55
-    	maininnerFrame.BorderColor3 = Color3.new(0,0,0)
-    	maininnerFrame.BorderSizePixel = 0
-    	maininnerFrame.Position = UDim2.new(0,0,0,34)
-    	maininnerFrame.Size = UDim2.new(1,0,0.841,0)
-    end
+local UICorner = Instance.new("UICorner",HolderFrame)
+local UIGradient = Instance.new("UIGradient",HolderFrame) do
+	UIGradient.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
+	UIGradient.Transparency = NumberSequence.new(0.12)
+end
+local TopbarFrame = Instance.new("Frame",HolderFrame) do
+	TopbarFrame.Name = "TopbarFrame"
+	TopbarFrame.BackgroundColor3 = Color3.new(0.118,0.118,0.118)
+	TopbarFrame.BorderColor3 = Color3.new(0,0,0)
+	TopbarFrame.BorderSizePixel = 0
+	TopbarFrame.Position = UDim2.new(0,0,0,1)
+	TopbarFrame.Selectable = true
+	TopbarFrame.Size = UDim2.new(1,0,0.154,0)
+end
 
-    local UICorner_2 = Instance.new("UICorner",maininnerFrame)
-    local UIGradient_2 = Instance.new("UIGradient",maininnerFrame) do
-    	UIGradient_2.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
-    	UIGradient_2.Transparency = NumberSequence.new(0.12)
-    end
-    local TextBoxLength = Instance.new("TextBox",maininnerFrame) do
-    	TextBoxLength.Name = "TextBoxLength"
-    	TextBoxLength.BackgroundColor3 = Color3.new(1,1,1)
-    	TextBoxLength.BorderColor3 = Color3.new(0,0,0)
-    	TextBoxLength.BorderSizePixel = 0
-    	TextBoxLength.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Regular,Enum.FontStyle.Normal)
-    	TextBoxLength.Position = UDim2.new(0.52,0,0.056,0)
-    	TextBoxLength.Size = UDim2.new(0.419,0,0.278,0)
-    	TextBoxLength.Text = ""
-    	TextBoxLength.TextColor3 = Color3.new(0,0,0)
-    	TextBoxLength.TextSize = 14
-    end
+local UICorner_1 = Instance.new("UICorner",TopbarFrame)
+local UIGradient_1 = Instance.new("UIGradient",TopbarFrame) do
+	UIGradient_1.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
+	UIGradient_1.Transparency = NumberSequence.new(0.12)
+end
+local TextLabeltopbinfo = Instance.new("TextLabel",TopbarFrame) do
+	TextLabeltopbinfo.Name = "TextLabeltopbinfo"
+	TextLabeltopbinfo.BackgroundColor3 = Color3.new(1,1,1)
+	TextLabeltopbinfo.BackgroundTransparency = 1
+	TextLabeltopbinfo.BorderColor3 = Color3.new(0,0,0)
+	TextLabeltopbinfo.BorderSizePixel = 0
+	TextLabeltopbinfo.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextLabeltopbinfo.Position = UDim2.new(0,1,0,1)
+	TextLabeltopbinfo.Size = UDim2.new(0.996,0,0.97,0)
+	TextLabeltopbinfo.Text = " 4NTHOSkybase.v2"
+	TextLabeltopbinfo.TextColor3 = Color3.new(1,1,1)
+	TextLabeltopbinfo.TextScaled = true
+	TextLabeltopbinfo.TextSize = 14
+	TextLabeltopbinfo.TextWrapped = true
+	TextLabeltopbinfo.TextXAlignment = Enum.TextXAlignment.Left
+end
+local maininnerFrame = Instance.new("Frame",HolderFrame) do
+	maininnerFrame.Name = "maininnerFrame"
+	maininnerFrame.BackgroundColor3 = Color3.new(0.118,0.118,0.118)
+	maininnerFrame.BackgroundTransparency = 0.55
+	maininnerFrame.BorderColor3 = Color3.new(0,0,0)
+	maininnerFrame.BorderSizePixel = 0
+	maininnerFrame.Position = UDim2.new(0,0,0,34)
+	maininnerFrame.Size = UDim2.new(1,0,0.841,0)
+end
 
-    local UICorner_3 = Instance.new("UICorner",TextBoxLength)
-    local TextBoxWidth = Instance.new("TextBox",maininnerFrame) do
-    	TextBoxWidth.Name = "TextBoxWidth"
-    	TextBoxWidth.BackgroundColor3 = Color3.new(1,1,1)
-    	TextBoxWidth.BorderColor3 = Color3.new(0,0,0)
-    	TextBoxWidth.BorderSizePixel = 0
-    	TextBoxWidth.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Regular,Enum.FontStyle.Normal)
-    	TextBoxWidth.Position = UDim2.new(0.52,0,0.361,0)
-    	TextBoxWidth.Size = UDim2.new(0.419,0,0.278,0)
-    	TextBoxWidth.Text = ""
-    	TextBoxWidth.TextColor3 = Color3.new(0,0,0)
-    	TextBoxWidth.TextSize = 14
-    end
+local UICorner_2 = Instance.new("UICorner",maininnerFrame)
+local UIGradient_2 = Instance.new("UIGradient",maininnerFrame) do
+	UIGradient_2.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
+	UIGradient_2.Transparency = NumberSequence.new(0.12)
+end
+local TextBoxLength = Instance.new("TextBox",maininnerFrame) do
+	TextBoxLength.Name = "TextBoxLength"
+	TextBoxLength.BackgroundColor3 = Color3.new(1,1,1)
+	TextBoxLength.BorderColor3 = Color3.new(0,0,0)
+	TextBoxLength.BorderSizePixel = 0
+	TextBoxLength.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Regular,Enum.FontStyle.Normal)
+	TextBoxLength.Position = UDim2.new(0.52,0,0.056,0)
+	TextBoxLength.Size = UDim2.new(0.419,0,0.278,0)
+	TextBoxLength.Text = ""
+	TextBoxLength.TextColor3 = Color3.new(0,0,0)
+	TextBoxLength.TextSize = 14
+end
 
-    local UICorner_4 = Instance.new("UICorner",TextBoxWidth)
-    local lengthID = Instance.new("TextLabel",maininnerFrame) do
-    	lengthID.Name = "lengthID"
-    	lengthID.BackgroundColor3 = Color3.new(1,1,1)
-    	lengthID.BackgroundTransparency = 1
-    	lengthID.BorderColor3 = Color3.new(0,0,0)
-    	lengthID.BorderSizePixel = 0
-    	lengthID.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	lengthID.Position = UDim2.new(0.057,0,0.056,0)
-    	lengthID.Size = UDim2.new(0.458,0,0.278,0)
-    	lengthID.Text = "L: "
-    	lengthID.TextColor3 = Color3.new(0,0,0)
-    	lengthID.TextScaled = true
-    	lengthID.TextSize = 14
-    	lengthID.TextWrapped = true
-    end
+local UICorner_3 = Instance.new("UICorner",TextBoxLength)
+local TextBoxWidth = Instance.new("TextBox",maininnerFrame) do
+	TextBoxWidth.Name = "TextBoxWidth"
+	TextBoxWidth.BackgroundColor3 = Color3.new(1,1,1)
+	TextBoxWidth.BorderColor3 = Color3.new(0,0,0)
+	TextBoxWidth.BorderSizePixel = 0
+	TextBoxWidth.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Regular,Enum.FontStyle.Normal)
+	TextBoxWidth.Position = UDim2.new(0.52,0,0.361,0)
+	TextBoxWidth.Size = UDim2.new(0.419,0,0.278,0)
+	TextBoxWidth.Text = ""
+	TextBoxWidth.TextColor3 = Color3.new(0,0,0)
+	TextBoxWidth.TextSize = 14
+end
 
-    local UICorner_5 = Instance.new("UICorner",lengthID)
-    local widthID = Instance.new("TextLabel",maininnerFrame) do
-    	widthID.Name = "widthID"
-    	widthID.BackgroundColor3 = Color3.new(1,1,1)
-    	widthID.BackgroundTransparency = 1
-    	widthID.BorderColor3 = Color3.new(0,0,0)
-    	widthID.BorderSizePixel = 0
-    	widthID.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	widthID.Position = UDim2.new(0.057,0,0.361,0)
-    	widthID.Size = UDim2.new(0.458,0,0.278,0)
-    	widthID.Text = "W: "
-    	widthID.TextColor3 = Color3.new(0,0,0)
-    	widthID.TextScaled = true
-    	widthID.TextSize = 14
-    	widthID.TextWrapped = true
-    end
+local UICorner_4 = Instance.new("UICorner",TextBoxWidth)
+local lengthID = Instance.new("TextLabel",maininnerFrame) do
+	lengthID.Name = "lengthID"
+	lengthID.BackgroundColor3 = Color3.new(1,1,1)
+	lengthID.BackgroundTransparency = 1
+	lengthID.BorderColor3 = Color3.new(0,0,0)
+	lengthID.BorderSizePixel = 0
+	lengthID.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	lengthID.Position = UDim2.new(0.057,0,0.056,0)
+	lengthID.Size = UDim2.new(0.458,0,0.278,0)
+	lengthID.Text = "L: "
+	lengthID.TextColor3 = Color3.new(0,0,0)
+	lengthID.TextScaled = true
+	lengthID.TextSize = 14
+	lengthID.TextWrapped = true
+end
 
-    local UICorner_6 = Instance.new("UICorner",widthID)
-    local TextButtoncreate = Instance.new("TextButton",maininnerFrame) do
-    	TextButtoncreate.Name = "TextButtoncreate"
-    	TextButtoncreate.BackgroundColor3 = Color3.new(0.2,0.675,0.176)
-    	TextButtoncreate.BorderColor3 = Color3.new(0,0,0)
-    	TextButtoncreate.BorderSizePixel = 0
-    	TextButtoncreate.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextButtoncreate.Position = UDim2.new(0.057,0,0.672,0)
-    	TextButtoncreate.Size = UDim2.new(0.881,0,0.292,0)
-    	TextButtoncreate.Text = "create"
-    	TextButtoncreate.TextColor3 = Color3.new(0,0,0)
-    	TextButtoncreate.TextScaled = true
-    	TextButtoncreate.TextSize = 14
-    	TextButtoncreate.TextWrapped = true
-    end
+local UICorner_5 = Instance.new("UICorner",lengthID)
+local widthID = Instance.new("TextLabel",maininnerFrame) do
+	widthID.Name = "widthID"
+	widthID.BackgroundColor3 = Color3.new(1,1,1)
+	widthID.BackgroundTransparency = 1
+	widthID.BorderColor3 = Color3.new(0,0,0)
+	widthID.BorderSizePixel = 0
+	widthID.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	widthID.Position = UDim2.new(0.057,0,0.361,0)
+	widthID.Size = UDim2.new(0.458,0,0.278,0)
+	widthID.Text = "W: "
+	widthID.TextColor3 = Color3.new(0,0,0)
+	widthID.TextScaled = true
+	widthID.TextSize = 14
+	widthID.TextWrapped = true
+end
 
-    local UICorner_7 = Instance.new("UICorner",TextButtoncreate)
-    local TextButtondelete = Instance.new("TextButton",maininnerFrame) do
-    	TextButtondelete.Name = "TextButtondelete"
-    	TextButtondelete.BackgroundColor3 = Color3.new(0.8,0.584,0.078)
-    	TextButtondelete.BorderColor3 = Color3.new(0,0,0)
-    	TextButtondelete.BorderSizePixel = 0
-    	TextButtondelete.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextButtondelete.Position = UDim2.new(0.3,0,1,0)
-    	TextButtondelete.Size = UDim2.new(0.432,0,0.276,0)
-    	TextButtondelete.Text = "DEL ❌"
-    	TextButtondelete.TextColor3 = Color3.new(0,0,0)
-    	TextButtondelete.TextScaled = true
-    	TextButtondelete.TextSize = 14
-    	TextButtondelete.TextWrapped = true
-    end
+local UICorner_6 = Instance.new("UICorner",widthID)
+local TextButtoncreate = Instance.new("TextButton",maininnerFrame) do
+	TextButtoncreate.Name = "TextButtoncreate"
+	TextButtoncreate.BackgroundColor3 = Color3.new(0.2,0.675,0.176)
+	TextButtoncreate.BorderColor3 = Color3.new(0,0,0)
+	TextButtoncreate.BorderSizePixel = 0
+	TextButtoncreate.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextButtoncreate.Position = UDim2.new(0.057,0,0.672,0)
+	TextButtoncreate.Size = UDim2.new(0.881,0,0.292,0)
+	TextButtoncreate.Text = "create"
+	TextButtoncreate.TextColor3 = Color3.new(0,0,0)
+	TextButtoncreate.TextScaled = true
+	TextButtoncreate.TextSize = 14
+	TextButtoncreate.TextWrapped = true
+end
 
-    local UICorner_8 = Instance.new("UICorner",TextButtondelete)
-    local movebuttFrame = Instance.new("Frame",HolderFrame) do
-    	movebuttFrame.Name = "movebuttFrame"
-    	movebuttFrame.BackgroundColor3 = Color3.new(1,1,1)
-    	movebuttFrame.BackgroundTransparency = 1
-    	movebuttFrame.BorderColor3 = Color3.new(0,0,0)
-    	movebuttFrame.BorderSizePixel = 0
-    	movebuttFrame.Position = UDim2.new(1,0,0.005,0)
-    	movebuttFrame.Size = UDim2.new(0.318,0,0.995,0)
-    end
+local UICorner_7 = Instance.new("UICorner",TextButtoncreate)
+local TextButtondelete = Instance.new("TextButton",maininnerFrame) do
+	TextButtondelete.Name = "TextButtondelete"
+	TextButtondelete.BackgroundColor3 = Color3.new(0.8,0.584,0.078)
+	TextButtondelete.BorderColor3 = Color3.new(0,0,0)
+	TextButtondelete.BorderSizePixel = 0
+	TextButtondelete.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextButtondelete.Position = UDim2.new(0.286,0,0.715,0)
+	TextButtondelete.Size = UDim2.new(0.432,0,0.205,0)
+	TextButtondelete.Text = "DEL ❌"
+	TextButtondelete.TextColor3 = Color3.new(0,0,0)
+	TextButtondelete.TextScaled = true
+	TextButtondelete.TextSize = 14
+	TextButtondelete.TextWrapped = true
+	TextButtondelete.Visible = false
+end
 
-    local UICorner_9 = Instance.new("UICorner",movebuttFrame)
-    local TextButtonUP = Instance.new("TextButton",movebuttFrame) do
-    	TextButtonUP.Name = "TextButtonUP"
-    	TextButtonUP.BackgroundColor3 = Color3.new(1,0,0)
-    	TextButtonUP.BorderColor3 = Color3.new(0,0,0)
-    	TextButtonUP.BorderSizePixel = 0
-    	TextButtonUP.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextButtonUP.Position = UDim2.new(0,0,-0,0)
-    	TextButtonUP.Size = UDim2.new(0,72,0,53)
-    	TextButtonUP.Text = "UP"
-    	TextButtonUP.TextColor3 = Color3.new(0,0,0)
-    	TextButtonUP.TextScaled = true
-    	TextButtonUP.TextSize = 14
-    	TextButtonUP.TextWrapped = true
-    end
+local UICorner_8 = Instance.new("UICorner",TextButtondelete)
+local colorsFrame = Instance.new("Frame",HolderFrame) do
+	colorsFrame.Name = "colorsFrame"
+	colorsFrame.BackgroundColor3 = Color3.new(1,1,1)
+	colorsFrame.BackgroundTransparency = 1
+	colorsFrame.BorderColor3 = Color3.new(0,0,0)
+	colorsFrame.BorderSizePixel = 0
+	colorsFrame.Position = UDim2.new(1,0,0.005,0)
+	colorsFrame.Size = UDim2.new(0.534,0,0.995,0)
+end
 
-    local UICorner_10 = Instance.new("UICorner",TextButtonUP)
-    local TextButtonDOWN = Instance.new("TextButton",movebuttFrame) do
-    	TextButtonDOWN.Name = "TextButtonDOWN"
-    	TextButtonDOWN.BackgroundColor3 = Color3.new(1,0.969,0)
-    	TextButtonDOWN.BorderColor3 = Color3.new(0,0,0)
-    	TextButtonDOWN.BorderSizePixel = 0
-    	TextButtonDOWN.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextButtonDOWN.Position = UDim2.new(0,0,0.249,0)
-    	TextButtonDOWN.Size = UDim2.new(0,72,0,54)
-    	TextButtonDOWN.Text = "DOWN"
-    	TextButtonDOWN.TextColor3 = Color3.new(0,0,0)
-    	TextButtonDOWN.TextScaled = true
-    	TextButtonDOWN.TextSize = 14
-    	TextButtonDOWN.TextWrapped = true
-    end
+local UICorner_9 = Instance.new("UICorner",colorsFrame)
+local coloractivButton = Instance.new("TextButton",colorsFrame) do
+	coloractivButton.Name = "coloractivButton"
+	coloractivButton.BackgroundColor3 = Color3.new(0.78,0.259,0.392)
+	coloractivButton.BorderColor3 = Color3.new(0,0,0)
+	coloractivButton.BorderSizePixel = 0
+	coloractivButton.FontFace = Font.new("rbxasset://fonts/families/PermanentMarker.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	coloractivButton.Position = UDim2.new(-0.479,0,0.347,0)
+	coloractivButton.Rotation = -90
+	coloractivButton.Size = UDim2.new(1.68,0,0.292,0)
+	coloractivButton.Text = "COLORS"
+	coloractivButton.TextColor3 = Color3.new(1,1,1)
+	coloractivButton.TextScaled = true
+	coloractivButton.TextSize = 14
+	coloractivButton.TextStrokeColor3 = Color3.new(0.8,0.8,0.8)
+	coloractivButton.TextWrapped = true
+	coloractivButton.Visible = false
+end
 
-    local UICorner_11 = Instance.new("UICorner",TextButtonDOWN)
-    local TextButtonLEFT = Instance.new("TextButton",movebuttFrame) do
-    	TextButtonLEFT.Name = "TextButtonLEFT"
-    	TextButtonLEFT.BackgroundColor3 = Color3.new(0.047,0.792,0.741)
-    	TextButtonLEFT.BorderColor3 = Color3.new(0,0,0)
-    	TextButtonLEFT.BorderSizePixel = 0
-    	TextButtonLEFT.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextButtonLEFT.Position = UDim2.new(0,0,0.498,0)
-    	TextButtonLEFT.Size = UDim2.new(0,72,0,49)
-    	TextButtonLEFT.Text = "LEFT"
-    	TextButtonLEFT.TextColor3 = Color3.new(0,0,0)
-    	TextButtonLEFT.TextScaled = true
-    	TextButtonLEFT.TextSize = 14
-    	TextButtonLEFT.TextWrapped = true
-    end
+local UICorner_10 = Instance.new("UICorner",coloractivButton)
+local COLORSELECTwhite = Instance.new("TextButton",colorsFrame) do
+	COLORSELECTwhite.Name = "COLORSELECTwhite"
+	COLORSELECTwhite.BackgroundColor3 = Color3.new(1,1,1)
+	COLORSELECTwhite.BorderColor3 = Color3.new(0,0,0)
+	COLORSELECTwhite.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	COLORSELECTwhite.Position = UDim2.new(0.083,0,0.07,0)
+	COLORSELECTwhite.Size = UDim2.new(0.897,0,0.192,0)
+	COLORSELECTwhite.Text = "White"
+	COLORSELECTwhite.TextColor3 = Color3.new(0,0,0)
+	COLORSELECTwhite.TextScaled = true
+	COLORSELECTwhite.TextSize = 14
+	COLORSELECTwhite.TextWrapped = true
+end
+local COLORSELECTpink = Instance.new("TextButton",colorsFrame) do
+	COLORSELECTpink.Name = "COLORSELECTpink"
+	COLORSELECTpink.BackgroundColor3 = Color3.new(1,0.294,0.565)
+	COLORSELECTpink.BorderColor3 = Color3.new(0,0,0)
+	COLORSELECTpink.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	COLORSELECTpink.Position = UDim2.new(0.083,0,0.324,0)
+	COLORSELECTpink.Size = UDim2.new(0.897,0,0.192,0)
+	COLORSELECTpink.Text = "Pink"
+	COLORSELECTpink.TextColor3 = Color3.new(0,0,0)
+	COLORSELECTpink.TextScaled = true
+	COLORSELECTpink.TextSize = 14
+	COLORSELECTpink.TextWrapped = true
+end
+local COLORSELECTyellow = Instance.new("TextButton",colorsFrame) do
+	COLORSELECTyellow.Name = "COLORSELECTyellow"
+	COLORSELECTyellow.BackgroundColor3 = Color3.new(1,1,0)
+	COLORSELECTyellow.BorderColor3 = Color3.new(0,0,0)
+	COLORSELECTyellow.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	COLORSELECTyellow.Position = UDim2.new(0.083,0,0.577,0)
+	COLORSELECTyellow.Size = UDim2.new(0.897,0,0.192,0)
+	COLORSELECTyellow.Text = "Yellow"
+	COLORSELECTyellow.TextColor3 = Color3.new(0,0,0)
+	COLORSELECTyellow.TextScaled = true
+	COLORSELECTyellow.TextSize = 14
+	COLORSELECTyellow.TextWrapped = true
+end
+local COLORSELECTdefault = Instance.new("TextButton",colorsFrame) do
+	COLORSELECTdefault.Name = "COLORSELECTdefault"
+	COLORSELECTdefault.BackgroundColor3 = Color3.new(0.235,0.745,0.122)
+	COLORSELECTdefault.BorderColor3 = Color3.new(0,0,0)
+	COLORSELECTdefault.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	COLORSELECTdefault.Position = UDim2.new(0.083,0,0.826,0)
+	COLORSELECTdefault.Size = UDim2.new(0.897,0,0.192,0)
+	COLORSELECTdefault.Text = "Default (Green)"
+	COLORSELECTdefault.TextColor3 = Color3.new(0,0,0)
+	COLORSELECTdefault.TextScaled = true
+	COLORSELECTdefault.TextSize = 14
+	COLORSELECTdefault.TextWrapped = true
+end
+local COLORexit = Instance.new("TextButton",colorsFrame) do
+	COLORexit.Name = "COLORexit"
+	COLORexit.BackgroundColor3 = Color3.new(0.745,0,0)
+	COLORexit.BorderColor3 = Color3.new(0,0,0)
+	COLORexit.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	COLORexit.Position = UDim2.new(0.33,0,1.126,0)
+	COLORexit.Size = UDim2.new(0.393,0,0.192,0)
+	COLORexit.Text = "X"
+	COLORexit.TextColor3 = Color3.new(1,1,1)
+	COLORexit.TextScaled = true
+	COLORexit.TextSize = 14
+	COLORexit.TextWrapped = true
+end
+local circledirectional = Instance.new("Frame",HolderFrame) do
+	circledirectional.Name = "circledirectional"
+	circledirectional.BackgroundColor3 = Color3.new(0.263,0.757,0.208)
+	circledirectional.BorderColor3 = Color3.new(0,0,0)
+	circledirectional.BorderSizePixel = 0
+	circledirectional.Position = UDim2.new(-0.687,0,0.173,0)
+	circledirectional.Size = UDim2.new(0.654,0,0.654,0)
+end
 
-    local UICorner_12 = Instance.new("UICorner",TextButtonLEFT)
-    local TextButtonRIGHT = Instance.new("TextButton",movebuttFrame) do
-    	TextButtonRIGHT.Name = "TextButtonRIGHT"
-    	TextButtonRIGHT.BackgroundColor3 = Color3.new(0.843,0.055,1)
-    	TextButtonRIGHT.BorderColor3 = Color3.new(0,0,0)
-    	TextButtonRIGHT.BorderSizePixel = 0
-    	TextButtonRIGHT.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextButtonRIGHT.Position = UDim2.new(0,0,0.737,0)
-    	TextButtonRIGHT.Size = UDim2.new(0,72,0,50)
-    	TextButtonRIGHT.Text = "RIGHT"
-    	TextButtonRIGHT.TextColor3 = Color3.new(0,0,0)
-    	TextButtonRIGHT.TextScaled = true
-    	TextButtonRIGHT.TextSize = 14
-    	TextButtonRIGHT.TextWrapped = true
-    end
+local UICorner_11 = Instance.new("UICorner",circledirectional) do
+	UICorner_11.CornerRadius = UDim.new(0,99)
+end
+local innercircledir = Instance.new("Frame",circledirectional) do
+	innercircledir.Name = "innercircledir"
+	innercircledir.BackgroundColor3 = Color3.new(0.169,0.796,0.122)
+	innercircledir.BorderColor3 = Color3.new(0,0,0)
+	innercircledir.BorderSizePixel = 0
+	innercircledir.Position = UDim2.new(0.161,0,0.143,0)
+	innercircledir.Size = UDim2.new(0,100,0,100)
+end
 
-    local UICorner_13 = Instance.new("UICorner",TextButtonRIGHT)
-    local TextButtonFORWARD = Instance.new("TextButton",movebuttFrame) do
-    	TextButtonFORWARD.Name = "TextButtonFORWARD"
-    	TextButtonFORWARD.BackgroundColor3 = Color3.new(1,0.322,0.204)
-    	TextButtonFORWARD.BorderColor3 = Color3.new(0,0,0)
-    	TextButtonFORWARD.BorderSizePixel = 0
-    	TextButtonFORWARD.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextButtonFORWARD.Position = UDim2.new(0,0,0.971,0)
-    	TextButtonFORWARD.Size = UDim2.new(0,72,0,48)
-    	TextButtonFORWARD.Text = "FORWARD"
-    	TextButtonFORWARD.TextColor3 = Color3.new(0,0,0)
-    	TextButtonFORWARD.TextScaled = true
-    	TextButtonFORWARD.TextSize = 14
-    	TextButtonFORWARD.TextWrapped = true
-    end
+local UICorner_12 = Instance.new("UICorner",innercircledir) do
+	UICorner_12.CornerRadius = UDim.new(0,99)
+end
+local UIGradient_3 = Instance.new("UIGradient",innercircledir) do
+	UIGradient_3.Color = ColorSequence.new(Color3.new(0.839,0.839,0.839))
+	UIGradient_3.Transparency = NumberSequence.new(0.5)
+end
+local TextButtonUP = Instance.new("TextButton",circledirectional) do
+	TextButtonUP.Name = "TextButtonUP"
+	TextButtonUP.BackgroundColor3 = Color3.new(1,0,0)
+	TextButtonUP.BorderColor3 = Color3.new(0,0,0)
+	TextButtonUP.BorderSizePixel = 0
+	TextButtonUP.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextButtonUP.Position = UDim2.new(0.296,0,-0,0)
+	TextButtonUP.Size = UDim2.new(0.407,0,0.157,0)
+	TextButtonUP.Text = "UP"
+	TextButtonUP.TextColor3 = Color3.new(0,0,0)
+	TextButtonUP.TextScaled = true
+	TextButtonUP.TextSize = 14
+	TextButtonUP.TextWrapped = true
+end
 
-    local UICorner_14 = Instance.new("UICorner",TextButtonFORWARD)
-    local TextButtonBACK = Instance.new("TextButton",movebuttFrame) do
-    	TextButtonBACK.Name = "TextButtonBACK"
-    	TextButtonBACK.BackgroundColor3 = Color3.new(0.22,0.22,1)
-    	TextButtonBACK.BorderColor3 = Color3.new(0,0,0)
-    	TextButtonBACK.BorderSizePixel = 0
-    	TextButtonBACK.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
-    	TextButtonBACK.Position = UDim2.new(0,0,1.197,0)
-    	TextButtonBACK.Size = UDim2.new(0,72,0,47)
-    	TextButtonBACK.Text = "BACK"
-    	TextButtonBACK.TextColor3 = Color3.new(0,0,0)
-    	TextButtonBACK.TextScaled = true
-    	TextButtonBACK.TextSize = 14
-    	TextButtonBACK.TextWrapped = true
-    end
+local UICorner_13 = Instance.new("UICorner",TextButtonUP)
+local TextButtonDOWN = Instance.new("TextButton",circledirectional) do
+	TextButtonDOWN.Name = "TextButtonDOWN"
+	TextButtonDOWN.BackgroundColor3 = Color3.new(1,0.969,0)
+	TextButtonDOWN.BorderColor3 = Color3.new(0,0,0)
+	TextButtonDOWN.BorderSizePixel = 0
+	TextButtonDOWN.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextButtonDOWN.Position = UDim2.new(0.291,0,0.85,0)
+	TextButtonDOWN.Size = UDim2.new(0.407,0,0.157,0)
+	TextButtonDOWN.Text = "DOWN"
+	TextButtonDOWN.TextColor3 = Color3.new(0,0,0)
+	TextButtonDOWN.TextScaled = true
+	TextButtonDOWN.TextSize = 14
+	TextButtonDOWN.TextWrapped = true
+end
 
-    local UICorner_15 = Instance.new("UICorner",TextButtonBACK)
+local UICorner_14 = Instance.new("UICorner",TextButtonDOWN)
+local TextButtonLEFT = Instance.new("TextButton",circledirectional) do
+	TextButtonLEFT.Name = "TextButtonLEFT"
+	TextButtonLEFT.BackgroundColor3 = Color3.new(0.047,0.792,0.741)
+	TextButtonLEFT.BorderColor3 = Color3.new(0,0,0)
+	TextButtonLEFT.BorderSizePixel = 0
+	TextButtonLEFT.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextButtonLEFT.Position = UDim2.new(-0.194,0,0.42,0)
+	TextButtonLEFT.Size = UDim2.new(0.407,0,0.157,0)
+	TextButtonLEFT.Text = "LEFT"
+	TextButtonLEFT.TextColor3 = Color3.new(0,0,0)
+	TextButtonLEFT.TextScaled = true
+	TextButtonLEFT.TextSize = 14
+	TextButtonLEFT.TextWrapped = true
+end
+
+local UICorner_15 = Instance.new("UICorner",TextButtonLEFT)
+local TextButtonRIGHT = Instance.new("TextButton",circledirectional) do
+	TextButtonRIGHT.Name = "TextButtonRIGHT"
+	TextButtonRIGHT.BackgroundColor3 = Color3.new(0.843,0.055,1)
+	TextButtonRIGHT.BorderColor3 = Color3.new(0,0,0)
+	TextButtonRIGHT.BorderSizePixel = 0
+	TextButtonRIGHT.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextButtonRIGHT.Position = UDim2.new(0.782,0,0.421,0)
+	TextButtonRIGHT.Size = UDim2.new(0.407,0,0.157,0)
+	TextButtonRIGHT.Text = "RIGHT"
+	TextButtonRIGHT.TextColor3 = Color3.new(0,0,0)
+	TextButtonRIGHT.TextScaled = true
+	TextButtonRIGHT.TextSize = 14
+	TextButtonRIGHT.TextWrapped = true
+end
+
+local UICorner_16 = Instance.new("UICorner",TextButtonRIGHT)
+local TextButtonFORWARD = Instance.new("TextButton",circledirectional) do
+	TextButtonFORWARD.Name = "TextButtonFORWARD"
+	TextButtonFORWARD.BackgroundColor3 = Color3.new(1,0.322,0.204)
+	TextButtonFORWARD.BorderColor3 = Color3.new(0,0,0)
+	TextButtonFORWARD.BorderSizePixel = 0
+	TextButtonFORWARD.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextButtonFORWARD.Position = UDim2.new(0.291,0,0.285,0)
+	TextButtonFORWARD.Size = UDim2.new(0.407,0,0.207,0)
+	TextButtonFORWARD.Text = "FORWARD"
+	TextButtonFORWARD.TextColor3 = Color3.new(0,0,0)
+	TextButtonFORWARD.TextScaled = true
+	TextButtonFORWARD.TextSize = 14
+	TextButtonFORWARD.TextWrapped = true
+end
+
+local UICorner_17 = Instance.new("UICorner",TextButtonFORWARD)
+local TextButtonBACK = Instance.new("TextButton",circledirectional) do
+	TextButtonBACK.Name = "TextButtonBACK"
+	TextButtonBACK.BackgroundColor3 = Color3.new(0.22,0.22,1)
+	TextButtonBACK.BorderColor3 = Color3.new(0,0,0)
+	TextButtonBACK.BorderSizePixel = 0
+	TextButtonBACK.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
+	TextButtonBACK.Position = UDim2.new(0.291,0,0.516,0)
+	TextButtonBACK.Size = UDim2.new(0.407,0,0.207,0)
+	TextButtonBACK.Text = "BACK"
+	TextButtonBACK.TextColor3 = Color3.new(0,0,0)
+	TextButtonBACK.TextScaled = true
+	TextButtonBACK.TextSize = 14
+	TextButtonBACK.TextWrapped = true
+end
+
+local UICorner_18 = Instance.new("UICorner",TextButtonBACK)
 end
 
 create_exp_UI()
@@ -3120,7 +3233,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             	changeColorWhite()
             	task.wait()
             end)
-            
+
             local function changeColorPink()
             
             	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
@@ -3131,12 +3244,12 @@ local skybaseToggle = BaseTab:CreateToggle({
                 
             	end
             end
-            
+
             color2.MouseButton1Click:Connect(function()
             	changeColorPink()
             	task.wait()
             end)
-            
+
             local function changeColorYellow()
             	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
             
@@ -3146,12 +3259,12 @@ local skybaseToggle = BaseTab:CreateToggle({
                 
             	end
             end
-            
+
             color3.MouseButton1Click:Connect(function()
             	changeColorYellow()
             	task.wait()
             end)
-            
+
             local function changeColorDefault()
             	local target_plat = workspace:FindFirstChild("Grass") --workspace.Map.Ground
             
@@ -3161,12 +3274,12 @@ local skybaseToggle = BaseTab:CreateToggle({
                 
             	end
             end
-            
+
             color_def.MouseButton1Click:Connect(function()
             	changeColorDefault()
             	task.wait()
             end)
-            
+
             local function colorsExit()
             	color1.Visible = false
             	color2.Visible = false
@@ -3175,12 +3288,12 @@ local skybaseToggle = BaseTab:CreateToggle({
             	color_exit.Visible = false
             	color_activate.Visible = true
             end
-            
+
             color_exit.MouseButton1Click:Connect(function()
             	colorsExit()
             	task.wait()
             end)
-            
+
             local function colorsActivate()
             	color1.Visible = true
             	color2.Visible = true
@@ -3189,7 +3302,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             	color_exit.Visible = true
             	color_activate.Visible = false
             end
-            
+
             color_activate.MouseButton1Click:Connect(function()
             	colorsActivate()
             	task.wait()
