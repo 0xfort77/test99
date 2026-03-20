@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tfsh"
+local _Version = "Cyan-99 v1.textras"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -131,6 +131,7 @@ local TreeTab = Window:CreateTab("Trees", "trees")
 local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
 local SkullTab = Window:CreateTab("Skulls", "skull") -- Title, Image
 local BaseTab = Window:CreateTab("Skybase", "baseline")
+local ExtrasTab = Window:CreateTab("Extras", "star")
 local CREDITS = Window:CreateTab("Credits", "users") -- Title, Image
 
 
@@ -3396,7 +3397,75 @@ local removeskybaseButton = BaseTab:CreateButton({
     end,
 })
 
+-- Extras tab create 
 
+local mainextrasSection = ExtrasTab:CreateSection("Main/Crafting:")
+
+local craftingmenuButton = ExtrasTab:CreateButton({
+    Name = "Show Crafting Table",
+    Callback = function()
+        local crafting_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.CraftingTable
+
+        crafting_menu_path.Visble = true
+        crafting_menu_path.Active = true
+    end,
+})
+
+local fairyflowersmenuButton = ExtrasTab:CreateButton({
+    Name = "Show Flower Menu (Fairy)",
+    Callback = function()
+        local flowerfairy_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Flower
+
+        flowerfairy_menu_path.Visble = true
+        flowerfairy_menu_path.Active = true
+    end,
+})
+
+local skilltoolsmenuButton = ExtrasTab:CreateButton({
+    Name = "Show Buy Skill Tools",
+    Callback = function()
+        local skilltool_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.ToolSmith
+
+        skilltool_menu_path.Visble = true
+        skilltool_menu_path.Active = true
+    end,
+})
+
+local decoSection = ExtrasTab:CreateSection("Deco:")
+
+local furnituremenuButton = ExtrasTab:CreateButton({
+    Name = "Show Furniture Menu",
+    Callback = function()
+        local furn_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Furniture
+
+        furn_menu_path.Visble = true
+        furn_menu_path.Active = true
+    end,
+})
+
+local hallSection = ExtrasTab:CreateSection("Halloween:")
+
+local haloweencostumesmenuButton = ExtrasTab:CreateButton({
+    Name = "Halloween Costumes Menu",
+    Callback = function()
+        local halloweencostume_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.HalloweenCostumesFrame
+
+        halloweencostume_path.Visble = true
+        halloweencostume_path.Active = true
+    end,
+})
+
+local chrisSection = ExtrasTab:CreateSection("Christmas:")
+
+local santamenuButton = ExtrasTab:CreateButton({
+    Name = "Santa Sack Menu",
+    Callback = function()
+        local santasack_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.SantaSack
+
+        santasack_path.Visble = true
+        santasack_path.Active = true
+    end,
+})
 
 local creditstablabel1 = CREDITS:CreateLabel("Developer: 4NTHOcyan", 0)
 local creditstablabel2 = CREDITS:CreateLabel("Find all my game menus on  Discord.gg/cWhpEDYPUB", 0)
