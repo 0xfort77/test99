@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vwaittt"
+local _Version = "Cyan-99 v1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -302,7 +302,7 @@ local KILLToggle = MainTab:CreateToggle({
 
         while kill_flag do
             local weap_name_ = workspace[my_name]:WaitForChild("ToolHandle"):WaitForChild("OriginalItem").Value
-            print("equipped "..weap_name_)
+            print("equipped "..tostring(weap_name_))
             local includeparams = OverlapParams.new()
             local excludeparams = OverlapParams.new()
             includeparams.FilterType = Enum.RaycastFilterType.Include
