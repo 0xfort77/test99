@@ -3484,6 +3484,5 @@ local creditstablabel5 = CREDITS:CreateLabel("Thanks for using Cyan-99! All of y
 local creditstablabel6 = CREDITS:CreateLabel("Salamat sa paggamit ng Cyan-99! Malaking tulong at lubos ang inyong suporta.", 0)
 local creditstablabel7 = CREDITS:CreateLabel("Cyan-99를 이용해 주셔서 감사합니다! 여러분의 모든 지원에 진심으로 감사드립니다.", 0)
 local creditstablabel8 = CREDITS:CreateLabel("¡Gracias por usar Cyan-99! Agradecemos todo su apoyo.", 0)
-local creditstablabel9 = CREDITS:CreateLabel("Спасибо за использование Cyan-99! Ваша поддержка очень полезна и ценна.", 0)
 
 end
