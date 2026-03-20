@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vsbt2"
+local _Version = "Cyan-99 v1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2519,11 +2519,12 @@ local Paragraph = SkullTab:CreateParagraph({Title = "Important Notice", Content 
 
 local function create_exp_UI()
 
-    --20.03.2026 - 01:38 : 41
+    --20.03.2026 - 01:55 : 33
 
 local Interface_i = Instance.new("ScreenGui") do
 	Interface_i.Name = "Interface_i"
 	Interface_i.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    Interface_i.Parent = game.Players.LocalPlayer.PlayerGui
 end
 
 local HolderFrame = Instance.new("Frame",Interface_i) do
@@ -2564,7 +2565,7 @@ local TextLabeltopbinfo = Instance.new("TextLabel",TopbarFrame) do
 	TextLabeltopbinfo.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal)
 	TextLabeltopbinfo.Position = UDim2.new(0,1,0,1)
 	TextLabeltopbinfo.Size = UDim2.new(0.996,0,0.97,0)
-	TextLabeltopbinfo.Text = " 4NTHOSkybase.v2"
+	TextLabeltopbinfo.Text = " 4NTHOSkybase v2"
 	TextLabeltopbinfo.TextColor3 = Color3.new(1,1,1)
 	TextLabeltopbinfo.TextScaled = true
 	TextLabeltopbinfo.TextSize = 14
