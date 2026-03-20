@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vsbrev3"
+local _Version = "Cyan-99 vsbrev4"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3067,11 +3067,7 @@ local skybaseToggle = BaseTab:CreateToggle({
                     if ground.Transparency == 0.5 then
                         ground:Destroy()
                         print("deleted")
-                        create_plat_button.Selectable = true
-                        create_plat_button.Active = true
-                        create_plat_button.Interactable = true
-                        create_plat_button.Visible = true
-                        delete_plat_button.Visible = false
+                        
                     end
                 end
             
@@ -3079,6 +3075,11 @@ local skybaseToggle = BaseTab:CreateToggle({
 
             delete_plat_button.MouseButton1Click:Connect(function()
                 deletePlatform()
+                create_plat_button.Selectable = true
+                create_plat_button.Active = true
+                create_plat_button.Interactable = true
+                create_plat_button.Visible = true
+                delete_plat_button.Visible = false
                 task.wait()
             end)
 
