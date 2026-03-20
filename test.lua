@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vsbcolors"
+local _Version = "Cyan-99 v1.2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3227,7 +3227,7 @@ local skybaseToggle = BaseTab:CreateToggle({
 
                     if ground.Transparency == 0.5 then
                 
-	            	    ground.BrickColor = Color3.new(1, 1, 1)
+	            	    ground.BrickColor = BrickColor.new("White")
                     end
                 
 	            end
@@ -3245,7 +3245,7 @@ local skybaseToggle = BaseTab:CreateToggle({
 
                     if ground.Transparency == 0.5 then
                 
-            		    ground.BrickColor = Color3.new(1, 0.321569, 0.478431)
+            		    ground.BrickColor = BrickColor.new("Light pink")
                     end
                 
             	end
@@ -3261,7 +3261,7 @@ local skybaseToggle = BaseTab:CreateToggle({
 
                     if ground.Transparency == 0.5 then
                 
-            		    ground.BrickColor = Color3.new(1, 0.917647, 0.129412)
+            		    ground.BrickColor = BrickColor.new("Cool yellow")
                     end
                 
             	end
@@ -3277,7 +3277,7 @@ local skybaseToggle = BaseTab:CreateToggle({
 
                     if ground.Transparency == 0.5 then
                 
-            		    ground.BrickColor = Color3.new(0.172549, 0.882353, 0.133333)
+            		    ground.BrickColor = BrickColor.new("Parsley green")
                     end
                 
             	end
