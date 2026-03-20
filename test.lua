@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 vattribute"
+local _Version = "Cyan-99 vmulti-tp"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -615,6 +615,9 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                     HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
                     repeat
                         task.wait(6.5)
+                        HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
+                        task.wait(4)
+                        HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
                         if workspace.Map.Landmarks.Stronghold.Functional.Braziers.Brazier.Main.FireAttach.Fire.Enabled == false then
                             HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
@@ -664,7 +667,7 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
     end,
 })
 
---local strongholdtablabel1 = MainTab:CreateLabel("Stronghold Time: None", 0)
+local strongholdtablabel1 = MainTab:CreateLabel("Player will teleport around to ensure initiation", "rss")
 --
 --task.spawn(function()
 --    while true do
