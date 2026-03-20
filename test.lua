@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.2"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -70,6 +70,7 @@ local diamonds_flag = false
 local cultist_S_flag = false
 local auto_SH_flag = false
 local interface_flag = false
+local fishing_flag = false
 
 --workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[4].TouchZone
 --local jungle_key1 = workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[1].TouchZone
@@ -696,6 +697,38 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
 })
 
 local strongholdtablabel1 = MainTab:CreateLabel("Player will teleport around to ensure initiation", "rss")
+
+local fishSuccessArea = game:GetService("Players").LocalPlayer.PlayerGui.Interface.FishingCatchFrame.TimingBar.SuccessArea
+
+local Toggle = MainTab:CreateToggle({
+    Name = "Easy Fishing",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        fishing_flag = Value
+
+        if fishing_flag then
+            Rayfield:Notify({
+                Title = "Notification",
+                Content = "Easy Fishing enabled",
+                Duration = 10,
+                Image = 4483362458,
+            })
+        end
+
+        while fishing_flag do
+
+            task.wait()
+            fishSuccessArea.Position = UDim2.new(0.5, 0, 1.19999996e-07, 0)
+            fishSuccessArea.Size = UDim2.new(1, 0, 1, 0)
+            task.wait()
+
+        end
+
+    end,
+})
+
+
 --
 --task.spawn(function()
 --    while true do
@@ -3334,7 +3367,8 @@ local skybaseToggle = BaseTab:CreateToggle({
     end,
 })
 
-local warnlabel1 = BaseTab:CreateLabel("**ONLY ENABLE THIS ONCE**", 0)
+local warnlabel1 = BaseTab:CreateLabel("**ONLY ENABLE THIS TOGGLE ONCE**", 0)
+local warnlabel4 = BaseTab:CreateLabel("Then, select between Show or Hide Interface below", 0)
 local warnlabel2 = BaseTab:CreateLabel("**YOU WILL CREATE MULTIPLE PLATFORMS AND LAG**", 0)
 local warnlabel2 = BaseTab:CreateLabel("**work in progress :) thanks**", 0)
 
