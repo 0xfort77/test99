@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t"
+local _Version = "Cyan-99 v1.tui"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -714,6 +714,8 @@ local Toggle = MainTab:CreateToggle({
                 Duration = 10,
                 Image = 4483362458,
             })
+
+            local UICorner_F = Instance.new("UICorner",fishSuccessArea)
         end
 
         while fishing_flag do
