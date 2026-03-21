@@ -3488,5 +3488,8 @@ local creditstablabel1 = CREDITS:CreateLabel("Developer: 4NTHOcyan", 0)
 local creditstablabel2 = CREDITS:CreateLabel("Find all my game menus on  Discord.gg/cWhpEDYPUB", 0)
 local creditstablabel3 = CREDITS:CreateLabel("or  rscripts.net/@4NTHOcyan", 0)
 local creditstablabel4 = CREDITS:CreateLabel("-----", 0)
-local creditstablabel5 = CREDITS:CreateLabel("Thanks for using Cyan-99! All of your support is helpful and appreciated.", 0)
+local creditstablabel5 = CREDITS:CreateLabel("Thanks for using Cyan-99! All of your support is helpful and appreciated.", 0) -- edit here 3/21/26
+local creditstablabel6 = CREDITS:CreateLabel("Thanks for using Cyan-99! 2.", 0)
+local creditstablabel7 = CREDITS:CreateLabel("Thanks for using Cyan-99! 3.", 0)
+local creditstablabel8 = CREDITS:CreateLabel("Thanks for using Cyan-99! 4.", 0)
 end
