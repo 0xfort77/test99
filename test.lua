@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.trefSBui"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3055,13 +3055,13 @@ local skybaseToggle = BaseTab:CreateToggle({
             sky_ui_locals_.width_index = frame.maininnerFrame:FindFirstChild("TextBoxWidth")
 
             sky_ui_locals_.colorsframe = frame:FindFirstChild("colorsFrame")
-            sky_ui_locals_.color1 = colorsframe:FindFirstChild("COLORSELECTwhite")
-            sky_ui_locals_.color2 = colorsframe:FindFirstChild("COLORSELECTpink")
-            sky_ui_locals_.color3 = colorsframe:FindFirstChild("COLORSELECTyellow")
-            sky_ui_locals_.color_def = colorsframe:FindFirstChild("COLORSELECTdefault")
+            sky_ui_locals_.color1 = sky_ui_locals_.colorsframe:FindFirstChild("COLORSELECTwhite")
+            sky_ui_locals_.color2 = sky_ui_locals_.colorsframe:FindFirstChild("COLORSELECTpink")
+            sky_ui_locals_.color3 = sky_ui_locals_.colorsframe:FindFirstChild("COLORSELECTyellow")
+            sky_ui_locals_.color_def = sky_ui_locals_.colorsframe:FindFirstChild("COLORSELECTdefault")
 
-            sky_ui_locals_.color_activate = colorsframe:FindFirstChild("coloractivButton")
-            sky_ui_locals_.color_exit = colorsframe:FindFirstChild("COLORexit")
+            sky_ui_locals_.color_activate = sky_ui_locals_.colorsframe:FindFirstChild("coloractivButton")
+            sky_ui_locals_.color_exit = sky_ui_locals_.colorsframe:FindFirstChild("COLORexit")
 
             sky_ui_locals_.delete_plat_button.Visible = false
             sky_ui_locals_.color1.Visible = false
