@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1fsb1"
+local _Version = "Cyan-99 v1.tfsb2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3164,11 +3164,11 @@ local skybaseToggle = BaseTab:CreateToggle({
                 createPlatform()
                 print("platform created")
                 task.wait()
-                create_plat_button.Selectable = false
-                create_plat_button.Active = false
-                create_plat_button.Interactable = false
-                create_plat_button.Visible = false
-                delete_plat_button.Visible = true
+                sky_ui_locals_.create_plat_button.Selectable = false
+                sky_ui_locals_.create_plat_button.Active = false
+                sky_ui_locals_.create_plat_button.Interactable = false
+                sky_ui_locals_.create_plat_button.Visible = false
+                sky_ui_locals_.delete_plat_button.Visible = true
             end)
 
             -- deleting and replacing platform button
@@ -3187,11 +3187,11 @@ local skybaseToggle = BaseTab:CreateToggle({
 
             sky_ui_locals_.delete_plat_button.MouseButton1Click:Connect(function()
                 deletePlatform()
-                create_plat_button.Selectable = true
-                create_plat_button.Active = true
-                create_plat_button.Interactable = true
-                create_plat_button.Visible = true
-                delete_plat_button.Visible = false
+                sky_ui_locals_.create_plat_button.Selectable = true
+                sky_ui_locals_.create_plat_button.Active = true
+                sky_ui_locals_.create_plat_button.Interactable = true
+                sky_ui_locals_.create_plat_button.Visible = true
+                sky_ui_locals_.delete_plat_button.Visible = false
                 task.wait()
             end)
 
