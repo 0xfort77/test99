@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tfsb2"
+local _Version = "Cyan-99 v1.tFSB3"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3401,12 +3401,12 @@ local skybaseToggle = BaseTab:CreateToggle({
             end)
 
             local function colorsExit()
-            	color1.Visible = false
-            	color2.Visible = false
-            	color3.Visible = false
-            	color_def.Visible = false
-            	color_exit.Visible = false
-            	color_activate.Visible = true
+            	sky_ui_locals_.color1.Visible = false
+            	sky_ui_locals_.color2.Visible = false
+            	sky_ui_locals_.color3.Visible = false
+            	sky_ui_locals_.color_def.Visible = false
+            	sky_ui_locals_.color_exit.Visible = false
+            	sky_ui_locals_.color_activate.Visible = true
             end
 
             sky_ui_locals_.color_exit.MouseButton1Click:Connect(function()
@@ -3415,12 +3415,12 @@ local skybaseToggle = BaseTab:CreateToggle({
             end)
 
             local function colorsActivate()
-            	color1.Visible = true
-            	color2.Visible = true
-            	color3.Visible = true
-            	color_def.Visible = true
-            	color_exit.Visible = true
-            	color_activate.Visible = false
+            	sky_ui_locals_.color1.Visible = true
+            	sky_ui_locals_.color2.Visible = true
+            	sky_ui_locals_.color3.Visible = true
+            	sky_ui_locals_.color_def.Visible = true
+            	sky_ui_locals_.color_exit.Visible = true
+            	sky_ui_locals_.color_activate.Visible = false
             end
 
             sky_ui_locals_.color_activate.MouseButton1Click:Connect(function()
