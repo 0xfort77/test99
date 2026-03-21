@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.trefallbring"
+local _Version = "Cyan-99 v1.trefSaplings"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1259,9 +1259,23 @@ local chopToggle = TreeTab:CreateToggle({
 })
 local cuttingLabel = TreeTab:CreateLabel("Hold Strong Axe / Chainsaw for quicker results", "axe")
 
-local saplingsection = TreeTab:CreateSection("Plant Saplings:")
+local sapling_var_locals = {
+    saplingsection = "saplingsection",
+    treeplaceDropdown = "treeplaceDropdown",
+    UNIVERSAL_VECTOR = "UNIVERSAL_VECTOR",
+    radius = "radius",
+    test_number = "test_number",
+    angle = "angle",
+    x = "x",
+    z = "z",
+    args = "args",
+    plantSurroundButton = "plantSurroundButton",
+    saplingsLabel = "saplingsLabel",
+}
+
+sapling_var_locals.saplingsection = TreeTab:CreateSection("Plant Saplings:")
 local saplingindex
-local treeplaceDropdown = TreeTab:CreateDropdown({
+sapling_var_locals.treeplaceDropdown = TreeTab:CreateDropdown({
     Name = "Plant Location:",
     Options = {"Surround Base", "At Feet"},
     CurrentOption = Options,
@@ -1272,25 +1286,25 @@ local treeplaceDropdown = TreeTab:CreateDropdown({
     end,
 })
 
-local UNIVERSAL_VECTOR = Vector3.new(0, 0.5, 0)
-local radius = 130
+sapling_var_locals.UNIVERSAL_VECTOR = Vector3.new(0, 0.5, 0)
+sapling_var_locals.radius = 130
 
-local test_number = 0
+sapling_var_locals.test_number = 0
 
 local function plantSappscircle()
     for i = 0, 300, 1 do
 
-        local angle = i * (math.pi * 2) / 300
-        local x = UNIVERSAL_VECTOR.X + radius * math.cos(angle)
-        local z = UNIVERSAL_VECTOR.Z + radius * math.sin(angle)
+        sapling_var_locals.angle = i * (math.pi * 2) / 300
+        sapling_var_locals.x = sapling_var_locals.UNIVERSAL_VECTOR.X + sapling_var_locals.radius * math.cos(sapling_var_locals.angle)
+        sapling_var_locals.z = sapling_var_locals.UNIVERSAL_VECTOR.Z + sapling_var_locals.radius * math.sin(sapling_var_locals.angle)
 
-        local args = {
+        sapling_var_locals.args = {
             workspace.Items:FindFirstChild("Sapling") or workspace.Items:FindFirstChild("Brightwood Sapling"),
-            vector.create(x, UNIVERSAL_VECTOR.Y, z)
+            vector.create(sapling_var_locals.x, sapling_var_locals.UNIVERSAL_VECTOR.Y, sapling_var_locals.z)
         }
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlantItem"):InvokeServer(unpack(args))
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlantItem"):InvokeServer(unpack(sapling_var_locals.args))
         --print("planted")
-        test_number = test_number + 1
+        sapling_var_locals.test_number = sapling_var_locals.test_number + 1
         --print("test num: "..tostring(test_number))
     end
     task.wait(0.133)
@@ -1303,18 +1317,18 @@ local function plantSappsFeet()
 
     for i = 0, 300, 1 do
 
-        local args = {
+        sapling_var_locals.args = {
             workspace.Items:FindFirstChild("Sapling") or workspace.Items:FindFirstChild("Brightwood Sapling"),
             vector.create(HRP.CFrame.Position.X, 0.45, HRP.CFrame.Position.Z)
         }
-        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlantItem"):InvokeServer(unpack(args))
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlantItem"):InvokeServer(unpack(sapling_var_locals.args))
 
     end
     task.wait(0.133)
     print("done / 300")
 end
 
-local plantSurroundButton = TreeTab:CreateButton({
+sapling_var_locals.plantSurroundButton = TreeTab:CreateButton({
     Name = "Plant Saplings",
     Callback = function()
         if saplingindex == "Surround Base" then
@@ -2518,9 +2532,15 @@ local refreshChestsButton = ChestTab:CreateButton({
 
 --// Create Skulls auto Tab
 
-local Section1 = SkullTab:CreateSection("Produce Crystal Skull Keys:")
+local skulls_locals_ = {
+    Section1 = "Section1",
+    SkullPodiumToggle = "SkullPodiumToggle",
+    args = "args",
+}
 
-local SkullPodiumToggle = SkullTab:CreateToggle({
+skulls_locals_.Section1 = SkullTab:CreateSection("Produce Crystal Skull Keys:")
+
+skulls_locals_.SkullPodiumToggle = SkullTab:CreateToggle({
     Name = "[Auto] Skulls > Podium",
     CurrentValue = false,
     Flag = "SkullToggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
@@ -2547,16 +2567,16 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
 
                     --if index == 1 then
                     task.wait()
-                    local args = {
+                    skulls_locals_.args = {
                         workspace.Items:FindFirstChild("Crystal Skull Key")
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(skulls_locals_.args))
                     task.wait()
 
-                    local args = {
+                    skulls_locals_.args = {
                         workspace.Items:FindFirstChild("Crystal Skull Key")
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(skulls_locals_.args))
                     task.wait()
                     workspace.Items:FindFirstChild("Crystal Skull Key"):PivotTo(workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[p_index].TouchZone.CFrame * CFrame.new(0,1,0))
                     print("times moved: "..tostring(index))
@@ -2577,10 +2597,17 @@ local SkullPodiumToggle = SkullTab:CreateToggle({
 
     end,
 })
-local Label = SkullTab:CreateLabel("Opens the Jungle Temple every 5-6 minutes")
-local Label2 = SkullTab:CreateLabel(" --- Max Fire Recommended --- ")
-local Label3 = SkullTab:CreateLabel(" --- Didn't work? Try teleporting to the temple first --- ")
-local Paragraph = SkullTab:CreateParagraph({Title = "Important Notice", Content = "You must have atleast 3-4 skulls on the ground somewhere NOT in your sack. Do not interact with the crystal skulls. If you experience issues turn toggle to OFF and wait 6-7 minutes for the cycle to refresh."})
+
+local skulltab_label_locals = {
+    Label = "Label",
+    Label2 = "Label2",
+    Label3 = "Label3",
+    Paragraph = "Paragraph",
+}
+skulltab_label_locals.Label = SkullTab:CreateLabel("Opens the Jungle Temple every 5-6 minutes")
+skulltab_label_locals.Label2 = SkullTab:CreateLabel(" --- Max Fire Recommended --- ")
+skulltab_label_locals.Label3 = SkullTab:CreateLabel(" --- Didn't work? Try teleporting to the temple first --- ")
+skulltab_label_locals.Paragraph = SkullTab:CreateParagraph({Title = "Important Notice", Content = "You must have atleast 3-4 skulls on the ground somewhere NOT in your sack. Do not interact with the crystal skulls. If you experience issues turn toggle to OFF and wait 6-7 minutes for the cycle to refresh."})
 
 local function create_exp_UI()
 
