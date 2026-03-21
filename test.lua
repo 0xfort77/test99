@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tref3"
+local _Version = "Cyan-99 v1.trefSBui"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3023,33 +3023,53 @@ local skybaseToggle = BaseTab:CreateToggle({
 
             --// MAIN CREATE FUNCTION(S) & local vars
 
-            local create_plat_button = frame.maininnerFrame:FindFirstChild("TextButtoncreate")
-            local delete_plat_button = frame.maininnerFrame:FindFirstChild("TextButtondelete")
-            local move_plat_up = frame.circledirectional:FindFirstChild("TextButtonUP")
-            local move_plat_down = frame.circledirectional:FindFirstChild("TextButtonDOWN")
-            local move_plat_left = frame.circledirectional:FindFirstChild("TextButtonLEFT")
-            local move_plat_right = frame.circledirectional:FindFirstChild("TextButtonRIGHT")
-            local move_plat_forward = frame.circledirectional:FindFirstChild("TextButtonFORWARD")
-            local move_plat_back = frame.circledirectional:FindFirstChild("TextButtonBACK")
-            local length_index = frame.maininnerFrame:FindFirstChild("TextBoxLength")
-            local width_index = frame.maininnerFrame:FindFirstChild("TextBoxWidth")
+            local sky_ui_locals_ = {
+                create_plat_button = "create_plat_button",
+                delete_plat_button = "delete_plat_button",
+                move_plat_up = "move_plat_up",
+                move_plat_down = "move_plat_down",
+                move_plat_left = "move_plat_left",
+                move_plat_right = "move_plat_right",
+                move_plat_forward = "move_plat_forward",
+                move_plat_back = "move_plat_back",
+                length_index = "length_index",
+                width_index = "width_index",
+                colorsframe = "colorsframe",
+                color1 = "color1",
+                color2 = "color2",
+                color3 = "color3",
+                color_def = "color_def",
+                color_activate = "color_activate",
+                color_exit = "color_exit",
+            }
 
-            local colorsframe = frame:FindFirstChild("colorsFrame")
-            local color1 = colorsframe:FindFirstChild("COLORSELECTwhite")
-            local color2 = colorsframe:FindFirstChild("COLORSELECTpink")
-            local color3 = colorsframe:FindFirstChild("COLORSELECTyellow")
-            local color_def = colorsframe:FindFirstChild("COLORSELECTdefault")
+            sky_ui_locals_.create_plat_button = frame.maininnerFrame:FindFirstChild("TextButtoncreate")
+            sky_ui_locals_.delete_plat_button = frame.maininnerFrame:FindFirstChild("TextButtondelete")
+            sky_ui_locals_.move_plat_up = frame.circledirectional:FindFirstChild("TextButtonUP")
+            sky_ui_locals_.move_plat_down = frame.circledirectional:FindFirstChild("TextButtonDOWN")
+            sky_ui_locals_.move_plat_left = frame.circledirectional:FindFirstChild("TextButtonLEFT")
+            sky_ui_locals_.move_plat_right = frame.circledirectional:FindFirstChild("TextButtonRIGHT")
+            sky_ui_locals_.move_plat_forward = frame.circledirectional:FindFirstChild("TextButtonFORWARD")
+            sky_ui_locals_.move_plat_back = frame.circledirectional:FindFirstChild("TextButtonBACK")
+            sky_ui_locals_.length_index = frame.maininnerFrame:FindFirstChild("TextBoxLength")
+            sky_ui_locals_.width_index = frame.maininnerFrame:FindFirstChild("TextBoxWidth")
 
-            local color_activate = colorsframe:FindFirstChild("coloractivButton")
-            local color_exit = colorsframe:FindFirstChild("COLORexit")
+            sky_ui_locals_.colorsframe = frame:FindFirstChild("colorsFrame")
+            sky_ui_locals_.color1 = colorsframe:FindFirstChild("COLORSELECTwhite")
+            sky_ui_locals_.color2 = colorsframe:FindFirstChild("COLORSELECTpink")
+            sky_ui_locals_.color3 = colorsframe:FindFirstChild("COLORSELECTyellow")
+            sky_ui_locals_.color_def = colorsframe:FindFirstChild("COLORSELECTdefault")
 
-            delete_plat_button.Visible = false
-            color1.Visible = false
-            color2.Visible = false
-            color3.Visible = false
-            color_def.Visible = false
-            color_exit.Visible = false
-            color_activate.Visible = true
+            sky_ui_locals_.color_activate = colorsframe:FindFirstChild("coloractivButton")
+            sky_ui_locals_.color_exit = colorsframe:FindFirstChild("COLORexit")
+
+            sky_ui_locals_.delete_plat_button.Visible = false
+            sky_ui_locals_.color1.Visible = false
+            sky_ui_locals_.color2.Visible = false
+            sky_ui_locals_.color3.Visible = false
+            sky_ui_locals_.color_def.Visible = false
+            sky_ui_locals_.color_exit.Visible = false
+            sky_ui_locals_.color_activate.Visible = true
 
             -- inputs
 
@@ -3106,7 +3126,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             end
 
 
-            create_plat_button.MouseButton1Click:Connect(function()
+            sky_ui_locals_.create_plat_button.MouseButton1Click:Connect(function()
                 createPlatform()
                 print("platform created")
                 task.wait()
@@ -3131,7 +3151,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             
             end
 
-            delete_plat_button.MouseButton1Click:Connect(function()
+            sky_ui_locals_.delete_plat_button.MouseButton1Click:Connect(function()
                 deletePlatform()
                 create_plat_button.Selectable = true
                 create_plat_button.Active = true
@@ -3159,7 +3179,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             
             end
 
-            move_plat_up.MouseButton1Click:Connect(function()
+            sky_ui_locals_.move_plat_up.MouseButton1Click:Connect(function()
                 movePlatUp()
                 task.wait()
             end)
@@ -3182,7 +3202,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             
             end
 
-            move_plat_down.MouseButton1Click:Connect(function()
+            sky_ui_locals_.move_plat_down.MouseButton1Click:Connect(function()
                 movePlatDown()
                 task.wait()
             end)
@@ -3205,7 +3225,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             
             end	
 
-            move_plat_left.MouseButton1Click:Connect(function()
+            sky_ui_locals_.move_plat_left.MouseButton1Click:Connect(function()
                 movePlatLeft()
                 task.wait()
             end)
@@ -3227,7 +3247,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             
             end
 
-            move_plat_right.MouseButton1Click:Connect(function()
+            sky_ui_locals_.move_plat_right.MouseButton1Click:Connect(function()
                 movePlatRight()
                 task.wait()
             end)
@@ -3250,7 +3270,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             
             end	
 
-            move_plat_forward.MouseButton1Click:Connect(function()
+            sky_ui_locals_.move_plat_forward.MouseButton1Click:Connect(function()
                 movePlatForward()
                 task.wait()
             end)
@@ -3273,7 +3293,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             
             end	
 
-            move_plat_back.MouseButton1Click:Connect(function()
+            sky_ui_locals_.move_plat_back.MouseButton1Click:Connect(function()
                 movePlatBackward()
                 task.wait()
             end)
@@ -3292,7 +3312,7 @@ local skybaseToggle = BaseTab:CreateToggle({
 	
             end
 
-            color1.MouseButton1Click:Connect(function()
+            sky_ui_locals_.color1.MouseButton1Click:Connect(function()
             	changeColorWhite()
             	task.wait()
             end)
@@ -3309,7 +3329,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             	end
             end
 
-            color2.MouseButton1Click:Connect(function()
+            sky_ui_locals_.color2.MouseButton1Click:Connect(function()
             	changeColorPink()
             	task.wait()
             end)
@@ -3325,7 +3345,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             	end
             end
 
-            color3.MouseButton1Click:Connect(function()
+            sky_ui_locals_.color3.MouseButton1Click:Connect(function()
             	changeColorYellow()
             	task.wait()
             end)
@@ -3341,7 +3361,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             	end
             end
 
-            color_def.MouseButton1Click:Connect(function()
+            sky_ui_locals_.color_def.MouseButton1Click:Connect(function()
             	changeColorDefault()
             	task.wait()
             end)
@@ -3355,7 +3375,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             	color_activate.Visible = true
             end
 
-            color_exit.MouseButton1Click:Connect(function()
+            sky_ui_locals_.color_exit.MouseButton1Click:Connect(function()
             	colorsExit()
             	task.wait()
             end)
@@ -3369,7 +3389,7 @@ local skybaseToggle = BaseTab:CreateToggle({
             	color_activate.Visible = false
             end
 
-            color_activate.MouseButton1Click:Connect(function()
+            sky_ui_locals_.color_activate.MouseButton1Click:Connect(function()
             	colorsActivate()
             	task.wait()
             end)
@@ -3392,10 +3412,17 @@ local skybaseToggle = BaseTab:CreateToggle({
     end,
 })
 
-local warnlabel1 = BaseTab:CreateLabel("**ONLY ENABLE THIS TOGGLE ONCE**", 0)
-local warnlabel4 = BaseTab:CreateLabel("Then, select between Show or Hide Interface below", 0)
-local warnlabel2 = BaseTab:CreateLabel("**YOU WILL CREATE MULTIPLE PLATFORMS AND LAG**", 0)
-local warnlabel2 = BaseTab:CreateLabel("**work in progress :) thanks**", 0)
+local basetab_warnlocals = {
+    warnlabel1 = "warnlabel1",
+    warnlabel2 = "warnlabel2",
+    warnlabel3 = "warnlabel3",
+    warnlabel4 = "warnlabel4",
+}
+
+basetab_warnlocals.warnlabel1 = BaseTab:CreateLabel("**ONLY ENABLE THIS TOGGLE ONCE**", 0)
+basetab_warnlocals.warnlabel2 = BaseTab:CreateLabel("Then, select between Show or Hide Interface below", 0)
+basetab_warnlocals.warnlabel3 = BaseTab:CreateLabel("**YOU WILL CREATE MULTIPLE PLATFORMS AND LAG**", 0)
+basetab_warnlocals.warnlabel4 = BaseTab:CreateLabel("**work in progress :) thanks**", 0)
 
 local showskybaseButton = BaseTab:CreateButton({
     Name = "Show Interface",
