@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t"
+local _Version = "Cyan-99 v1.trefallbring"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1801,15 +1801,15 @@ local highendweaponsButton = BringTab:CreateButton({
             for _, w_tool in pairs(workspace.Items:GetChildren()) do
 
                 if w_tool.Name == "Giant Sack" or w_tool.Name == "Strong Axe" or w_tool.Name == "Rifle" or w_tool.Name == "Revolver" or w_tool.Name == "Strong Flashlight" or w_tool.Name == "Old Rod" or w_tool.Name == "Spear" or w_tool.Name == "Tactical Shotgun" or w_tool.Name == "Morningstar" then
-                    local args = {
+                    bring_items_locals.args = {
                         w_tool
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         w_tool
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     w_tool:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1819,15 +1819,15 @@ local highendweaponsButton = BringTab:CreateButton({
             for _, w_tool in pairs(workspace.Items:GetChildren()) do
 
                 if w_tool.Name == "Giant Sack" or w_tool.Name == "Strong Axe" or w_tool.Name == "Rifle" or w_tool.Name == "Revolver" or w_tool.Name == "Strong Flashlight" or w_tool.Name == "Old Rod" or w_tool.Name == "Spear" or w_tool.Name == "Tactical Shotgun" or w_tool.Name == "Morningstar" then
-                    local args = {
+                    bring_items_locals.args = {
                         w_tool
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         w_tool
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     w_tool:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1837,15 +1837,15 @@ local highendweaponsButton = BringTab:CreateButton({
             for _, w_tool in pairs(workspace.Items:GetChildren()) do
 
                 if w_tool.Name == "Giant Sack" or w_tool.Name == "Strong Axe" or w_tool.Name == "Rifle" or w_tool.Name == "Revolver" or w_tool.Name == "Strong Flashlight" or w_tool.Name == "Old Rod" or w_tool.Name == "Spear" or w_tool.Name == "Tactical Shotgun" or w_tool.Name == "Morningstar" then
-                    local args = {
+                    bring_items_locals.args = {
                         w_tool
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         w_tool
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     w_tool:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1864,15 +1864,15 @@ local highendammoButton = BringTab:CreateButton({
             for _, w_ammo in pairs(workspace.Items:GetChildren()) do
 
                 if w_ammo.Name == "Rifle Ammo" or w_ammo.Name == "Revolver Ammo" then
-                    local args = {
+                    bring_items_locals.args = {
                         w_ammo
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         w_ammo
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     w_ammo:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1882,15 +1882,15 @@ local highendammoButton = BringTab:CreateButton({
             for _, w_ammo in pairs(workspace.Items:GetChildren()) do
 
                 if w_ammo.Name == "Rifle Ammo" or w_ammo.Name == "Revolver Ammo" then
-                    local args = {
+                    bring_items_locals.args = {
                         w_ammo
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         w_ammo
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     w_ammo:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1900,15 +1900,15 @@ local highendammoButton = BringTab:CreateButton({
             for _, w_ammo in pairs(workspace.Items:GetChildren()) do
 
                 if w_ammo.Name == "Rifle Ammo" or w_ammo.Name == "Revolver Ammo" then
-                    local args = {
+                    bring_items_locals.args = {
                         w_ammo
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         w_ammo
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     w_ammo:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1927,15 +1927,15 @@ local highendammoButton = BringTab:CreateButton({
             for _, pelt1 in pairs(workspace.Items:GetChildren()) do
 
                 if pelt1.Name == "Bunny Foot" or pelt1.Name == "Wolf Pelt" or pelt1.Name == "Alpha Wolf Pelt" or pelt1.Name == "Bear Pelt" then
-                    local args = {
+                    bring_items_locals.args = {
                         pelt1
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         pelt1
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     pelt1:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1945,15 +1945,15 @@ local highendammoButton = BringTab:CreateButton({
             for _, pelt1 in pairs(workspace.Items:GetChildren()) do
 
                 if pelt1.Name == "Bunny Foot" or pelt1.Name == "Wolf Pelt" or pelt1.Name == "Alpha Wolf Pelt" or pelt1.Name == "Bear Pelt" then
-                    local args = {
+                    bring_items_locals.args = {
                         pelt1
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         pelt1
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     pelt1:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1963,15 +1963,15 @@ local highendammoButton = BringTab:CreateButton({
             for _, pelt1 in pairs(workspace.Items:GetChildren()) do
 
                 if pelt1.Name == "Bunny Foot" or pelt1.Name == "Wolf Pelt" or pelt1.Name == "Alpha Wolf Pelt" or pelt1.Name == "Bear Pelt" then
-                    local args = {
+                    bring_items_locals.args = {
                         pelt1
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         pelt1
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     pelt1:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
                 end
@@ -1990,15 +1990,15 @@ local meatsncakeButton = BringTab:CreateButton({
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
                 if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" then
-                    local args = {
+                    bring_items_locals.args = {
                         food_item
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         food_item
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     food_item:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
                 end   
@@ -2009,15 +2009,15 @@ local meatsncakeButton = BringTab:CreateButton({
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
                 if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" then
-                    local args = {
+                    bring_items_locals.args = {
                         food_item
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         food_item
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     food_item:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
                 end   
@@ -2027,15 +2027,15 @@ local meatsncakeButton = BringTab:CreateButton({
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
                 if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" then
-                    local args = {
+                    bring_items_locals.args = {
                         food_item
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    local args = {
+                    bring_items_locals.args = {
                         food_item
                     }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     food_item:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
                 end   
