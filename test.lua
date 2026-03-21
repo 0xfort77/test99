@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tref2"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3416,24 +3416,24 @@ local removeskybaseButton = BaseTab:CreateButton({
 -- Extras tab create 
 
 local extrastab_locals = {
-    warnlabel1ex = "warnlabel1ex"
-    warnlabel2ex = "warnlabel2ex"
-    mainextrasSection = "mainextrasSection"
-    craftingmenuButton = "craftingmenuButton"
-    crafting_menu_path = "crafting_menu_path"
-    fairyflowersmenuButton = "fairyflowersmenuButton"
-    flowerfairy_menu_path = "flowerfairy_menu_path"
-    skilltoolsmenuButton = "skilltoolsmenuButton"
-    skilltool_menu_path = "skilltool_menu_path"
-    decoSection = "decoSection"
-    furnituremenuButton = "furnituremenuButton"
-    furn_menu_path = "furn_menu_path"
-    hallSection = "hallSection"
-    haloweencostumesmenuButton = "haloweencostumesmenuButton"
-    halloweencostume_path = "halloweencostume_path"
-    chrisSection = "chrisSection"
-    santamenuButton = "santamenuButton"
-    santasack_path = "santasack_path"
+    warnlabel1ex = "warnlabel1ex",
+    warnlabel2ex = "warnlabel2ex",
+    mainextrasSection = "mainextrasSection",
+    craftingmenuButton = "craftingmenuButton",
+    crafting_menu_path = "crafting_menu_path",
+    fairyflowersmenuButton = "fairyflowersmenuButton",
+    flowerfairy_menu_path = "flowerfairy_menu_path",
+    skilltoolsmenuButton = "skilltoolsmenuButton",
+    skilltool_menu_path = "skilltool_menu_path",
+    decoSection = "decoSection",
+    furnituremenuButton = "furnituremenuButton",
+    furn_menu_path = "furn_menu_path",
+    hallSection = "hallSection",
+    haloweencostumesmenuButton = "haloweencostumesmenuButton",
+    halloweencostume_path = "halloweencostume_path",
+    chrisSection = "chrisSection",
+    santamenuButton = "santamenuButton",
+    santasack_path = "santasack_path",
 
 }
 extrastab_locals.warnlabel1ex = ExtrasTab:CreateLabel("NOTE: ", 0)
