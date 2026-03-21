@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t"
+local _Version = "Cyan-99 v1.tref2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3414,74 +3414,96 @@ local removeskybaseButton = BaseTab:CreateButton({
 })
 
 -- Extras tab create 
-local warnlabel1ex = ExtrasTab:CreateLabel("NOTE: ", 0)
-local warnlabel2ex = ExtrasTab:CreateLabel("Before you enable any menus, you MUST open the Crafting Table menu manually atleast once :)", 0)
 
-local mainextrasSection = ExtrasTab:CreateSection("Main/Crafting:")
+local extrastab_locals = {
+    warnlabel1ex = "warnlabel1ex"
+    warnlabel2ex = "warnlabel2ex"
+    mainextrasSection = "mainextrasSection"
+    craftingmenuButton = "craftingmenuButton"
+    crafting_menu_path = "crafting_menu_path"
+    fairyflowersmenuButton = "fairyflowersmenuButton"
+    flowerfairy_menu_path = "flowerfairy_menu_path"
+    skilltoolsmenuButton = "skilltoolsmenuButton"
+    skilltool_menu_path = "skilltool_menu_path"
+    decoSection = "decoSection"
+    furnituremenuButton = "furnituremenuButton"
+    furn_menu_path = "furn_menu_path"
+    hallSection = "hallSection"
+    haloweencostumesmenuButton = "haloweencostumesmenuButton"
+    halloweencostume_path = "halloweencostume_path"
+    chrisSection = "chrisSection"
+    santamenuButton = "santamenuButton"
+    santasack_path = "santasack_path"
 
-local craftingmenuButton = ExtrasTab:CreateButton({
+}
+extrastab_locals.warnlabel1ex = ExtrasTab:CreateLabel("NOTE: ", 0)
+extrastab_locals.warnlabel2ex = ExtrasTab:CreateLabel("Before you enable any menus, you MUST open the Crafting Table menu manually atleast once :)", 0)
+
+extrastab_locals.mainextrasSection = ExtrasTab:CreateSection("Main/Crafting:")
+
+extrastab_locals.craftingmenuButton = ExtrasTab:CreateButton({
     Name = "Show Crafting Table",
     Callback = function()
-        local crafting_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.CraftingTable
+        extrastab_locals.crafting_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.CraftingTable
 
-        crafting_menu_path.Visible = true
-        crafting_menu_path.Active = true
+        extrastab_locals.crafting_menu_path.Visible = true
+        extrastab_locals.crafting_menu_path.Active = true
     end,
 })
 
-local fairyflowersmenuButton = ExtrasTab:CreateButton({
+extrastab_locals. = ExtrasTab:CreateButton({
     Name = "Show Flower Menu (Fairy)",
     Callback = function()
-        local flowerfairy_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Flower
+        extrastab_locals. = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Flower
 
-        flowerfairy_menu_path.Visible = true
-        flowerfairy_menu_path.Active = true
+        extrastab_locals..Visible = true
+        extrastab_locals..Active = true
     end,
 })
 
-local skilltoolsmenuButton = ExtrasTab:CreateButton({
+extrastab_locals.skilltoolsmenuButton = ExtrasTab:CreateButton({
     Name = "Show Buy Skill Tools",
     Callback = function()
-        local skilltool_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.ToolSmith
+        extrastab_locals.skilltool_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.ToolSmith
 
-        skilltool_menu_path.Visible = true
-        skilltool_menu_path.Active = true
+        extrastab_locals.skilltool_menu_path.Visible = true
+        extrastab_locals.skilltool_menu_path.Active = true
     end,
 })
 
-local decoSection = ExtrasTab:CreateSection("Deco:")
+extrastab_locals.decoSection = ExtrasTab:CreateSection("Deco:")
 
-local furnituremenuButton = ExtrasTab:CreateButton({
+extrastab_locals.furnituremenuButton = ExtrasTab:CreateButton({
     Name = "Show Furniture Menu",
     Callback = function()
-        local furn_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Furniture
+        extrastab_locals.furn_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Furniture
 
-        furn_menu_path.Visible = true
-        furn_menu_path.Active = true
+        extrastab_locals.furn_menu_path.Visible = true
+        extrastab_locals.furn_menu_path.Active = true
     end,
 })
 
-local hallSection = ExtrasTab:CreateSection("Halloween:")
+extrastab_locals.hallSection = ExtrasTab:CreateSection("Halloween:")
 
-local haloweencostumesmenuButton = ExtrasTab:CreateButton({
+extrastab_locals.haloweencostumesmenuButton = ExtrasTab:CreateButton({
     Name = "Halloween Costumes Menu",
     Callback = function()
-        local halloweencostume_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.HalloweenCostumesFrame
+        extrastab_locals.halloweencostume_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.HalloweenCostumesFrame
 
-        halloweencostume_path.Visible = true
-        halloweencostume_path.Active = true
+        extrastab_locals.halloweencostume_path.Visible = true
+        extrastab_locals.halloweencostume_path.Active = true
     end,
 })
 
-local chrisSection = ExtrasTab:CreateSection("Christmas:")
+extrastab_locals.chrisSection = ExtrasTab:CreateSection("Christmas:")
 
-local santamenuButton = ExtrasTab:CreateButton({
+extrastab_locals.santamenuButton = ExtrasTab:CreateButton({
     Name = "Santa Sack Menu",
     Callback = function()
-        local santasack_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.SantaSack
+        extrastab_locals.santasack_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.SantaSack
 
-        santasack_path.Visible = true
-        santasack_path.Active = true
+        extrastab_locals.santasack_path.Visible = true
+        extrastab_locals.santasack_path.Active = true
     end,
 })
 
