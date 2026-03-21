@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tREC"
+local _Version = "Cyan-99 v1.tREC100"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1827,10 +1827,10 @@ local auto_recyclerToggle = BringTab:CreateToggle({
 
         while recycler_flag_s do
 
-            task.wait(6.666)
+            task.wait(6.999)
             local args = {
 	            workspace:WaitForChild("Structures"):WaitForChild("Recycler"),
-	            "TotalGreenGems"
+	            "TotalGems"
             }
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestRecycleMaterial"):FireServer(unpack(args))
 
