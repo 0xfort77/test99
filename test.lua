@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tinit"
+local _Version = "Cyan-99 v1.t+SHbug"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -138,7 +138,6 @@ local CREDITS = Window:CreateTab("Credits", "users") -- Title, Image
 
 local scr_bench_init_ = workspace.Map.Campground.CraftingBench.TouchZone.ProximityAttachment.ProximityInteraction
 scr_bench_init_.HoldDuration = 0
-scr_bench_init_.MaxActivationDistance = 1000
 scr_bench_init_.RequiresLineOfSight = false
 task.wait()
 fireproximityprompt(scr_bench_init_)
@@ -549,11 +548,12 @@ local cultVolcanoToggle = MainTab:CreateToggle({
 
             else
                 Rayfield:Notify({
-                Title = "Notification",
-                Content = "No Lava detected!",
-                Duration = 10,
-                Image = 4483362458,
-            })
+                    Title = "Notification",
+                    Content = "No Lava detected!",
+                    Duration = 10,
+                    Image = 4483362458,
+                })
+                task.wait(4.5)
             end
             task.wait(0.25)
 
@@ -658,17 +658,21 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                         task.wait(4)
                         --HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,26,0)
                         if workspace.Map.Landmarks.Stronghold.Functional.Braziers.Brazier.Main.FireAttach.Fire.Enabled == false then
+
+                            local temporary_camera_obj = workspace.Camera
+                            temporary_camera_obj.CameraType = Enum.CameraType.Scriptable
+                            task.wait()
+                            temporary_camera_obj.CFrame = CFrame.new(562.789612, 69.0633926, -435.971954, -0.935387075, -0.348253071, 0.0614066347, 0, 0.173648775, 0.98480773, -0.353625447, 0.921176434, -0.162428841)
+
                             HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
                             local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
-                            if d_chest_prox then
-                                d_chest_prox.RequiresLineOfSight = false
-                                task.wait(1)
-                                fireproximityprompt(d_chest_prox)
-                                task.wait(1)
-                            else
-                                continue
-                            end
+                            task.wait()
+                            d_chest_prox.RequiresLineOfSight = false
+                            task.wait(1)
+                            fireproximityprompt(d_chest_prox)
+                            task.wait(1)
+
                             for _, d in pairs(workspace.Items:GetChildren()) do
                                 if d.Name == "Diamond" then
                                     local args = {
@@ -678,6 +682,8 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                                 end
                             end
                             task.wait(1)
+                            temporary_camera_obj.CameraType = Enum.CameraType.Custom
+                            task.wait()
                             HRP.CFrame = FIREZONE.CFrame * CFrame.new(0,6,0)
                             task.wait()
                             done_sh = true
@@ -3407,6 +3413,8 @@ local removeskybaseButton = BaseTab:CreateButton({
 })
 
 -- Extras tab create 
+local warnlabel1ex = ExtrasTab:CreateLabel("NOTE: ", 0)
+local warnlabel2ex = ExtrasTab:CreateLabel("Before you enable any menus, you MUST open the Crafting Bench menu once", 0)
 
 local mainextrasSection = ExtrasTab:CreateSection("Main/Crafting:")
 
