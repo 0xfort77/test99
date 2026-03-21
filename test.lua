@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFG2"
+local _Version = "Cyan-99 v1.tFG="
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1741,7 +1741,7 @@ local FFButton = BringTab:CreateButton({
     
             for _, FF_gem in pairs(workspace.Items:GetChildren()) do
 
-                if FF_gem.Name == "Gem of the Forest Fragment" or FF_gem.Name = "Gem of the Forest" then
+                if FF_gem.Name == "Gem of the Forest Fragment" or FF_gem.Name == "Gem of the Forest" then
 
                     bring_items_locals.args = {
 	                    FF_gem
@@ -1763,7 +1763,7 @@ local FFButton = BringTab:CreateButton({
         elseif bring_index == "Scrapper" then
             for _, FF_gem in pairs(workspace.Items:GetChildren()) do
 
-                if FF_gem.Name == "Gem of the Forest Fragment" or FF_gem.Name = "Gem of the Forest" then
+                if FF_gem.Name == "Gem of the Forest Fragment" or FF_gem.Name == "Gem of the Forest" then
 
                     bring_items_locals.args = {
 	                    FF_gem
@@ -1785,7 +1785,7 @@ local FFButton = BringTab:CreateButton({
         elseif bring_index == "Fire" then
             for _, FF_gem in pairs(workspace.Items:GetChildren()) do
 
-                if FF_gem.Name == "Gem of the Forest Fragment" or FF_gem.Name = "Gem of the Forest" then
+                if FF_gem.Name == "Gem of the Forest Fragment" or FF_gem.Name == "Gem of the Forest" then
 
                     bring_items_locals.args = {
 	                    FF_gem
