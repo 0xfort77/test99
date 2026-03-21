@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.trefSaplings"
+local _Version = "Cyan-99 v1.testsappl"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1319,7 +1319,7 @@ local function plantSappsFeet()
 
         sapling_var_locals.args = {
             workspace.Items:FindFirstChild("Sapling") or workspace.Items:FindFirstChild("Brightwood Sapling"),
-            vector.create(HRP.CFrame.Position.X, 0.45, HRP.CFrame.Position.Z)
+            vector.create(HRP.CFrame.Position.X, HRP.CFrame.Position.Y - 5, HRP.CFrame.Position.Z)
         }
         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlantItem"):InvokeServer(unpack(sapling_var_locals.args))
 
