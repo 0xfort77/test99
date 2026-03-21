@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t+SHbug"
+local _Version = "Cyan-99 v1.tshbug2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -662,7 +662,7 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                             local temporary_camera_obj = workspace.Camera
                             temporary_camera_obj.CameraType = Enum.CameraType.Scriptable
                             task.wait()
-                            temporary_camera_obj.CFrame = CFrame.new(562.789612, 69.0633926, -435.971954, -0.935387075, -0.348253071, 0.0614066347, 0, 0.173648775, 0.98480773, -0.353625447, 0.921176434, -0.162428841)
+                            temporary_camera_obj.CFrame = CFrame.new(562.174438, 62.9329605, -435.395081, -0.999985576, 0.00528905867, -0.000932605646, 0, 0.173648536, 0.98480773, 0.00537065091, 0.984793544, -0.173646033)
 
                             HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
