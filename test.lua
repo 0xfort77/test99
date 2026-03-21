@@ -4,7 +4,7 @@ if game.PlaceId == place_id then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tshbug2"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3483,14 +3483,9 @@ local santamenuButton = ExtrasTab:CreateButton({
         santasack_path.Active = true
     end,
 })
-
 local creditstablabel1 = CREDITS:CreateLabel("Developer: 4NTHOcyan", 0)
 local creditstablabel2 = CREDITS:CreateLabel("Find all my game menus on  Discord.gg/cWhpEDYPUB", 0)
 local creditstablabel3 = CREDITS:CreateLabel("or  rscripts.net/@4NTHOcyan", 0)
 local creditstablabel4 = CREDITS:CreateLabel("-----", 0)
 local creditstablabel5 = CREDITS:CreateLabel("Thanks for using Cyan-99! All of your support is helpful and appreciated.", 0)
-local creditstablabel6 = CREDITS:CreateLabel("Salamat sa paggamit ng Cyan-99! Malaking tulong at lubos ang inyong suporta.", 0)
-local creditstablabel7 = CREDITS:CreateLabel("Cyan-99를 이용해 주셔서 감사합니다! 여러분의 모든 지원에 진심으로 감사드립니다.", 0)
-local creditstablabel8 = CREDITS:CreateLabel("¡Gracias por usar Cyan-99! Agradecemos todo su apoyo.", 0)
-
 end
