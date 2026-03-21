@@ -3484,12 +3484,22 @@ local santamenuButton = ExtrasTab:CreateButton({
         santasack_path.Active = true
     end,
 })
-local creditstablabel1 = CREDITS:CreateLabel("Developer: 4NTHOcyan", 0)
-local creditstablabel2 = CREDITS:CreateLabel("Find all my game menus on  Discord.gg/cWhpEDYPUB", 0)
-local creditstablabel3 = CREDITS:CreateLabel("or  rscripts.net/@4NTHOcyan", 0)
-local creditstablabel4 = CREDITS:CreateLabel("-----", 0)
-local creditstablabel5 = CREDITS:CreateLabel("Thanks for using Cyan-99! All of your support is helpful and appreciated.", 0) -- edit here 3/21/26
-local creditstablabel6 = CREDITS:CreateLabel("Thanks for using Cyan-99! 2.", 0)
-local creditstablabel7 = CREDITS:CreateLabel("Thanks for using Cyan-99! 3.", 0)
-local creditstablabel8 = CREDITS:CreateLabel("Thanks for using Cyan-99! 4.", 0)
+
+local creditstab_locals = {cred_label1 = "creditlabel1",
+    cred_label2 = "creditlabel2",
+    cred_label3 = "creditlabel3",
+    cred_label4 = "creditlabel4",
+    cred_label5 = "creditlabel5",
+    cred_label6 = "creditlabel6",
+    cred_label7 = "creditlabel7",
+    cred_label8 = "creditlabel8",
+}
+creditstab_locals.cred_label1 = CREDITS:CreateLabel("Developer: 4NTHOcyan", 0)
+creditstab_locals.cred_label2 = CREDITS:CreateLabel("Find all my game menus on  Discord.gg/cWhpEDYPUB", 0)
+creditstab_locals.cred_label3 = CREDITS:CreateLabel("or  rscripts.net/@4NTHOcyan", 0)
+creditstab_locals.cred_label4 = CREDITS:CreateLabel("-----", 0)
+creditstab_locals.cred_label5 = CREDITS:CreateLabel("Thanks for using Cyan-99! All of your support is helpful and appreciated.", 0) -- edit here 3/21/26
+creditstab_locals.cred_label6 = CREDITS:CreateLabel("Thanks for using Cyan-99! 2.", 0)
+creditstab_locals.cred_label7 = CREDITS:CreateLabel("Thanks for using Cyan-99! 3.", 0)
+creditstab_locals.cred_label8 = CREDITS:CreateLabel("Thanks for using Cyan-99! 4.", 0)
 end
