@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFSB3"
+local _Version = "Cyan-99 v1.tREC"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -72,6 +72,8 @@ local cultist_S_flag = false
 local auto_SH_flag = false
 local interface_flag = false
 local fishing_flag = false
+local recycler_flag = false
+local recycler_flag_s = false
 
 --workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[4].TouchZone
 --local jungle_key1 = workspace.Map.Landmarks["Jungle Temple"].Functional.Podiums:GetChildren()[1].TouchZone
@@ -1803,6 +1805,88 @@ local FFButton = BringTab:CreateButton({
 
             end
         end
+    end,
+})
+
+local autorecsection = BringTab:CreateSection("(New!) Recycler:")
+
+local auto_recyclerToggle = BringTab:CreateToggle({
+    Name = "[Auto] Cultist Gems > Scrap",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        recycler_flag_s = Value
+        if recycler_flag_s then
+            Rayfield:Notify({
+                Title = "Notification",
+                Content = "Cultist Gems > Scrap enabled",
+                Duration = 6.5,
+                Image = 4483362458,
+            })
+        end
+
+        while recycler_flag_s do
+
+            task.wait(6.666)
+            local args = {
+	            workspace:WaitForChild("Structures"):WaitForChild("Recycler"),
+	            "TotalGreenGems"
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestRecycleMaterial"):FireServer(unpack(args))
+
+            if not recycler_flag_s then
+                Rayfield:Notify({
+                    Title = "Notification",
+                    Content = "Cultist Gems > Scrap disabled",
+                    Duration = 6.5,
+                    Image = 4483362458,
+                })
+                task.wait()
+            end
+
+        end
+
+
+    end,
+})
+
+local auto_recyclerToggle = BringTab:CreateToggle({
+    Name = "[Auto] Forest Fragments > Cultist Gems",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        recycler_flag = Value
+        if recycler_flag then
+            Rayfield:Notify({
+                Title = "Notification",
+                Content = "Forest Fragments > Cultist Gems enabled",
+                Duration = 6.5,
+                Image = 4483362458,
+            })
+        end
+
+        while recycler_flag do
+
+            task.wait(6.666)
+            local args = {
+	            workspace:WaitForChild("Structures"):WaitForChild("Recycler"),
+	            "TotalGreenGems"
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestRecycleMaterial"):FireServer(unpack(args))
+
+            if not recycler_flag then
+                Rayfield:Notify({
+                    Title = "Notification",
+                    Content = "Forest Fragments > Cultist Gems disabled",
+                    Duration = 6.5,
+                    Image = 4483362458,
+                })
+
+            end
+
+        end
+
+
     end,
 })
 
