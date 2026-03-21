@@ -3414,7 +3414,7 @@ local removeskybaseButton = BaseTab:CreateButton({
 
 -- Extras tab create 
 local warnlabel1ex = ExtrasTab:CreateLabel("NOTE: ", 0)
-local warnlabel2ex = ExtrasTab:CreateLabel("Before you enable any menus, you MUST open the Crafting Bench menu once", 0)
+local warnlabel2ex = ExtrasTab:CreateLabel("Before you enable any menus, you MUST open the Crafting Table menu manually atleast once :)", 0)
 
 local mainextrasSection = ExtrasTab:CreateSection("Main/Crafting:")
 
