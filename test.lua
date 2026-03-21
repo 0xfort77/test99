@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t"
+local _Version = "Cyan-99 v1.tref3"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3451,13 +3451,13 @@ extrastab_locals.craftingmenuButton = ExtrasTab:CreateButton({
     end,
 })
 
-extrastab_locals. = ExtrasTab:CreateButton({
+extrastab_locals.fairyflowersmenuButton = ExtrasTab:CreateButton({
     Name = "Show Flower Menu (Fairy)",
     Callback = function()
-        extrastab_locals. = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Flower
+        extrastab_locals.flowerfairy_menu_path = game:GetService("Players").LocalPlayer.PlayerGui.Interface.Flower
 
-        extrastab_locals..Visible = true
-        extrastab_locals..Active = true
+        extrastab_locals.flowerfairy_menu_path.Visible = true
+        extrastab_locals.flowerfairy_menu_path.Active = true
     end,
 })
 
