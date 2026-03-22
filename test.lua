@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tDrag"
+local _Version = "Cyan-99 v1.tLOGS1.5"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -755,67 +755,6 @@ local Toggle = MainTab:CreateToggle({
     end,
 })
 
-local collectflowersButton = MainTab:CreateButton({
-    Name = "Collect Flowers",
-    Callback = function()
-        Rayfield:Notify({
-            Title = "Notification",
-            Content = "Collecting flowers",
-            Duration = 10,
-            Image = 4483362458,
-        })
-        task.wait()
-        -- :GetChildren()[54]:GetChildren()[6]
-        for _, flRing1 in pairs(workspace.Map.Landmarks:GetChildren()) do
-            if flRing1.Name == "FlowerRing1" then
-                for _, f in pairs(flRing1:GetChildren()) do
-
-                    if f.Name == "Flower" then
-                        local args = {
-	                        f
-                        }
-                        game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(args))
-
-                        local args = {
-	                        f
-                        }
-                        game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(args))
-
-                        f:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
-                        task.wait() 
-
-                    end
-
-                end
-
-            end
-
-        end
-
-        for _, flower in pairs(workspace.Map.Foliage:GetChildren()) do
-
-            if flower:IsA("Model") and flower.Name == "Flower" then
-                local args = {
-	                        flower
-                        }
-                        game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(args))
-
-                        local args = {
-	                        flower
-                        }
-                        game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(args))
-
-                        flower:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
-                task.wait()
-
-            end
-            task.wait()
-        end
-        print("f done")
-    end,
-})
-
-
 --
 --task.spawn(function()
 --    while true do
@@ -1559,7 +1498,7 @@ local allLogsButton = BringTab:CreateButton({   --// CRASH AREA BELOW
                     }
                     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    logg:PivotTo(workbench_loc.CFrame * CFrame.new(0, 20, 0))
+                    logg:PivotTo(workbench_loc.CFrame * CFrame.new(0, 1.5, 0))
                 end 
             end
             task.wait()
