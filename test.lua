@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tflower"
+local _Version = "Cyan-99 v1.flowert"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -771,7 +771,7 @@ local collectflowersButton = MainTab:CreateButton({
             if flower:IsA("Model") and flower.Name == "Flower" then
 
                 local args = {
-	                flower
+	                flower.Clickbox
                 }
                 game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickFlower"):InvokeServer(unpack(args))
                 task.wait()
@@ -779,6 +779,7 @@ local collectflowersButton = MainTab:CreateButton({
             end
             task.wait()
         end
+        print("f done")
     end,
 })
 
