@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tLOGS1.5"
+local _Version = "Cyan-99 v1.testLh&sH"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -648,7 +648,7 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
                 if internal_time == "00s" then
                     local init_sh = false
                     local done_sh = false
-                    for i=1, 5 do
+                    for i=1, 4 do
                         HRP.CFrame = workspace.Map.Landmarks.Stronghold.Functional.EnemyWaves12.Wave1.TriggerZone.CFrame * CFrame.new(0,13,0)
                         task.wait(6.5)
                         --task.wait()
@@ -669,11 +669,16 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
 
                             HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
-                            local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
-                            task.wait()
-                            d_chest_prox.RequiresLineOfSight = false
-                            task.wait(1)
-                            fireproximityprompt(d_chest_prox)
+                            if workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment:FindFirstChild("ProximityInteraction") then
+                                local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
+                                task.wait()
+                                d_chest_prox.RequiresLineOfSight = false
+                                task.wait(1)
+                                fireproximityprompt(d_chest_prox)
+                            else
+                                continue
+                                print("no chest cont.")
+                            end
                             task.wait(1)
 
                             for _, d in pairs(workspace.Items:GetChildren()) do
@@ -3665,7 +3670,7 @@ creditstab_locals.cred_label2 = CREDITS:CreateLabel("Find all my game menus on  
 creditstab_locals.cred_label3 = CREDITS:CreateLabel("or  rscripts.net/@4NTHOcyan", 0)
 creditstab_locals.cred_label4 = CREDITS:CreateLabel("-----", 0)
 creditstab_locals.cred_label5 = CREDITS:CreateLabel("Thanks for using Cyan-99! All of your support is helpful and appreciated.", 0) -- edit here 3/21/26
-creditstab_locals.cred_label6 = CREDITS:CreateLabel("Thanks for using Cyan-99! 2.", 0)
-creditstab_locals.cred_label7 = CREDITS:CreateLabel("Thanks for using Cyan-99! 3.", 0)
-creditstab_locals.cred_label8 = CREDITS:CreateLabel("Thanks for using Cyan-99! 4.", 0)
+creditstab_locals.cred_label6 = CREDITS:CreateLabel("¡Gracias por usar Cyan-99! Todo su apoyo es útil y muy apreciado.", 0)
+creditstab_locals.cred_label7 = CREDITS:CreateLabel("Cyan-99를 이용해 주셔서 감사합니다! 여러분의 모든 성원은 큰 도움이 되며, 깊이 감사드립니다.", 0)
+creditstab_locals.cred_label8 = CREDITS:CreateLabel("Salamat sa paggamit ng Cyan-99! Malaking tulong at lubos ang inyong suporta.", 0)
 end
