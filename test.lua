@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFG="
+local _Version = "Cyan-99 v1.tflower"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -752,6 +752,33 @@ local Toggle = MainTab:CreateToggle({
 
         end
 
+    end,
+})
+
+local collectflowersButton = MainTab:CreateButton({
+    Name = "Collect Flowers",
+    Callback = function()
+        Rayfield:Notify({
+            Title = "Notification",
+            Content = "Collecting flowers",
+            Duration = 10,
+            Image = 4483362458,
+        })
+        task.wait()
+
+        for _, flower in pairs(workspace.Map.Foliage:GetChildren()) do
+
+            if flower:IsA("Model") and flower.Name == "Flower" then
+
+                local args = {
+	                flower
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickFlower"):InvokeServer(unpack(args))
+                task.wait()
+
+            end
+            task.wait()
+        end
     end,
 })
 
@@ -1828,11 +1855,11 @@ local auto_recyclerToggle = BringTab:CreateToggle({
         while recycler_flag_s do
 
             task.wait(6.999)
-            local args = {
+            bring_items_locals.args = {
 	            workspace:WaitForChild("Structures"):WaitForChild("Recycler"),
 	            "TotalGems"
             }
-            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestRecycleMaterial"):FireServer(unpack(args))
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestRecycleMaterial"):FireServer(unpack(bring_items_locals.args))
 
             if not recycler_flag_s then
                 Rayfield:Notify({
@@ -1868,11 +1895,11 @@ local auto_recyclerToggle = BringTab:CreateToggle({
         while recycler_flag do
 
             task.wait(6.666)
-            local args = {
+            bring_items_locals.args = {
 	            workspace:WaitForChild("Structures"):WaitForChild("Recycler"),
 	            "TotalGreenGems"
             }
-            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestRecycleMaterial"):FireServer(unpack(args))
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestRecycleMaterial"):FireServer(unpack(bring_items_locals.args))
 
             if not recycler_flag then
                 Rayfield:Notify({
