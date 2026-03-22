@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t444"
+local _Version = "Cyan-99 v1.tDrag"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -771,15 +771,17 @@ local collectflowersButton = MainTab:CreateButton({
                 for _, f in pairs(flRing1:GetChildren()) do
 
                     if f.Name == "Flower" then
-                        univ_flower_clickbox = f:FindFirstChild("Clickbox")
-
-                        firesignal(MouseButton1Click, univ_flower_clickbox)
-                        task.wait()
                         local args = {
 	                        f
                         }
-                        --flower.Parent = nil
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickFlower"):InvokeServer(unpack(args))
+                        game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(args))
+
+                        local args = {
+	                        f
+                        }
+                        game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(args))
+
+                        f:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
                         task.wait() 
 
                     end
@@ -793,15 +795,17 @@ local collectflowersButton = MainTab:CreateButton({
         for _, flower in pairs(workspace.Map.Foliage:GetChildren()) do
 
             if flower:IsA("Model") and flower.Name == "Flower" then
-                print("drag>remote")
-
-                firesignal(MouseButton1Click, flower.Clickbox)
-                task.wait()
                 local args = {
-	                flower
-                }
-                --flower.Parent = nil
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickFlower"):InvokeServer(unpack(args))
+	                        flower
+                        }
+                        game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(args))
+
+                        local args = {
+	                        flower
+                        }
+                        game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(args))
+
+                        flower:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
                 task.wait()
 
             end
