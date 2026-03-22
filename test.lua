@@ -669,16 +669,13 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
 
                             HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
-                            if workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment:FindFirstChild("ProximityInteraction") ~= nil then
-                                local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
-                                task.wait()
-                                d_chest_prox.RequiresLineOfSight = false
-                                task.wait(1)
-                                fireproximityprompt(d_chest_prox)
-                            else
-                                continue
-                                print("no chest cont.")
-                            end
+
+                            local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
+                            task.wait()
+                            d_chest_prox.RequiresLineOfSight = false
+                            task.wait(1)
+                            fireproximityprompt(d_chest_prox)
+
                             task.wait(1)
 
                             for _, d in pairs(workspace.Items:GetChildren()) do
