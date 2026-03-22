@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.testLh&sH"
+local _Version = "Cyan-99 v1.tlsh"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -669,7 +669,7 @@ local autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.Stronghol
 
                             HRP.CFrame = workspace.Items["Stronghold Diamond Chest"].Platform.CFrame * CFrame.new(0,6,0)
                             task.wait()
-                            if workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment:FindFirstChild("ProximityInteraction") then
+                            if workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment:FindFirstChild("ProximityInteraction") ~= nil then
                                 local d_chest_prox = workspace.Items["Stronghold Diamond Chest"].Main.ProximityAttachment.ProximityInteraction
                                 task.wait()
                                 d_chest_prox.RequiresLineOfSight = false
