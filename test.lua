@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tq2"
+local _Version = "Cyan-99 v1.tq33"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -150,25 +150,22 @@ task.wait()
 --// create Lib tab -- information & misc.
 local libsection1 = LibTab:CreateSection("Quests:")
 
-if player:GetAttribute("TrackedQuest") then
-    local quest = player:GetAttribute("TrackedQuest")
-else
-    break
+local quest_att = player:GetAttribute2()
+for ident, _ in pairs(quest_att) do
+
+    if ident == "TrackedQuest" then
+        local quest1 = _
+    end
+    if ident == "TrackedQuest2" then
+        local quest2 = _
+    end
+    if ident == "TrackedQuest3" then
+        local quest3 = _
+    end
+
 end
 
-if player:GetAttribute("TrackedQuest2") then
-    local quest2 = player:GetAttribute("TrackedQuest2")
-else
-    break
-end
-
-if player:GetAttribute("TrackedQuest3") then
-    local quest3 = player:GetAttribute("TrackedQuest3")
-else
-    break
-end
-
-local q1Label = LibTab:CreateLabel(tostring(quest), "rewind")
+local q1Label = LibTab:CreateLabel(tostring(quest1), "rewind")
 local q2Label = LibTab:CreateLabel(tostring(quest2), "rewind")
 local q3Label = LibTab:CreateLabel(tostring(quest3), "rewind")
 
