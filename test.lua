@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tq4"
+local _Version = "Cyan-99 v1.tcharr"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -150,7 +150,7 @@ task.wait()
 --// create Lib tab -- information & misc.
 local libsection1 = LibTab:CreateSection("Quests:")
 
-local quest_att = player:GetAttributes()
+local quest_att = charr:GetAttributes()
 for ident, _ in pairs(quest_att) do
 
     if ident == "TrackedQuest" then
@@ -3758,5 +3758,6 @@ creditstab_locals.cred_label5 = CREDITS:CreateLabel("Thanks for using Cyan-99! A
 creditstab_locals.cred_label6 = CREDITS:CreateLabel("¡Gracias por usar Cyan-99! Todo su apoyo es útil y muy apreciado.", 0)
 creditstab_locals.cred_label7 = CREDITS:CreateLabel("Cyan-99를 이용해 주셔서 감사합니다! 여러분의 모든 성원은 큰 도움이 되며, 깊이 감사드립니다.", 0)
 creditstab_locals.cred_label8 = CREDITS:CreateLabel("Salamat sa paggamit ng Cyan-99! Malaking tulong at lubos ang inyong suporta.", 0)
-creditstab_locals.cred_label9 = CREDITS:CreateLabel("THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.")
+creditstab_locals.cred_label9 = CREDITS:CreateParagraph({Title = "Legal Notice:", Content ="THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."})
+
 end
