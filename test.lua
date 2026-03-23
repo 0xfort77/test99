@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.twallsSlider1"
+local _Version = "Cyan-99 v1.twallnotes"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3111,8 +3111,8 @@ local baseRadiusSlider = BaseTab:CreateSlider({
 local univ_vector = Vector3.new(0, 0.65, 0)
 local univ_cframe = CFrame.new(0, 0.65, 0)
 
-local logwallsButton = BaseTab:CreateButton({
-    Name = "Auto Place Log Walls",
+local logwallsCIRCLEButton = BaseTab:CreateButton({
+    Name = "[Circle] Auto Place Log Walls",
     Callback = function()
         for i = 1, walls_index do
 
@@ -3144,7 +3144,7 @@ local logwallsButton = BaseTab:CreateButton({
         end
     end,
 })
-
+local descriptlogwallblueprintParagraph = BaseTab:CreateParagraph({Title = "Note:", Content = "Placement is based on the number of Log Wall Blueprints you have.\n40 Walls ~ 75studs\n70 Walls ~ 130studs (MAX)"})
 
 local baseSection21 = BaseTab:CreateSection("(New!) SkyBase:")
 create_exp_UI()
