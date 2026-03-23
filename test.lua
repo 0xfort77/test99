@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tbare"
+local _Version = "Cyan-99 v1.tbare90"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3105,7 +3105,7 @@ local logwallsButton = BaseTab:CreateButton({
             print("loop attempt")
             print(tostring(i))
 
-            local radius = 100
+            local radius = 75
 
             local angle = i * (math.pi * 2) / 50
 
@@ -3119,10 +3119,10 @@ local logwallsButton = BaseTab:CreateButton({
                 game:GetService("Players").LocalPlayer.Inventory:FindFirstChild("Log Wall Blueprint"),
             {
                 Valid = true,
-                CFrame = CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(10), 0),
+                CFrame = CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(90), 0),
                 Position = vector.create(x, univ_vector.Y, z)
             },
-                CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(10), 0)
+                CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(90), 0)
             }
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlaceStructure"):InvokeServer(unpack(args))
 
