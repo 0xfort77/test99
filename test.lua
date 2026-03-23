@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tlookAt"
+local _Version = "Cyan-99 v1.tLA"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3119,10 +3119,10 @@ local logwallsButton = BaseTab:CreateButton({
                 game:GetService("Players").LocalPlayer.Inventory:FindFirstChild("Log Wall Blueprint"),
             {
                 Valid = true,
-                CFrame = CFrame.lookAt(CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(90), 0),CFrame.new(0,0,0)),
+                CFrame = CFrame.lookAt(vector.create(x, univ_vector.Y, z) ,CFrame.new(0,0,0)),--* CFrame.Angles(0, math.rad(90), 0)),
                 Position = vector.create(x, univ_vector.Y, z)
             },
-                CFrame.lookAt(CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(90), 0),CFrame.new(0,0,0)) -- CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(90) - 40, 0)
+                CFrame.lookAt(vector.create(x, univ_vector.Y, z) ,CFrame.new(0,0,0)) -- CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(90) - 40, 0)
             }
             game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlaceStructure"):InvokeServer(unpack(args))
 
