@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tlsh"
+local _Version = "Cyan-99 v1.tblueprinttest1"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -127,13 +127,14 @@ Rayfield:Notify({
     Image = "file-heart",
 })
 
+local LibTab = Window:CreateTab("", "library") -- Title, Image
 local MainTab = Window:CreateTab("Main", "blend") -- Title, Image
 local BringTab = Window:CreateTab("Bring", "briefcase") -- Title, Image
 local MoveTab = Window:CreateTab("Teleport", "move") -- Title, Image
 local TreeTab = Window:CreateTab("Trees", "trees")
 local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
 local SkullTab = Window:CreateTab("Skulls", "skull") -- Title, Image
-local BaseTab = Window:CreateTab("Skybase", "baseline")
+local BaseTab = Window:CreateTab("Base", "baseline")
 local ExtrasTab = Window:CreateTab("Extras", "star")
 local CREDITS = Window:CreateTab("Credits", "users") -- Title, Image
 
@@ -145,6 +146,13 @@ scr_bench_init_.RequiresLineOfSight = false
 task.wait()
 fireproximityprompt(scr_bench_init_)
 task.wait()
+
+--// create Lib tab -- information & misc.
+
+--stronghold timer?
+--tips and tricks
+--quests?
+--
 
 --// create main tab 
 
@@ -1500,7 +1508,7 @@ local allLogsButton = BringTab:CreateButton({   --// CRASH AREA BELOW
                     }
                     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    logg:PivotTo(workbench_loc.CFrame * CFrame.new(0, 1.5, 0))
+                    logg:PivotTo(workbench_loc.CFrame * CFrame.new(0, 2, 0))
                 end 
             end
             task.wait()
@@ -1562,7 +1570,7 @@ local allGearsButton = BringTab:CreateButton({
                     }
                     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
-                    gear_item:PivotTo(workbench_loc.CFrame * CFrame.new(0, 20, 0))
+                    gear_item:PivotTo(workbench_loc.CFrame * CFrame.new(0, 2, 0))
                 end 
             end
             task.wait()
@@ -2692,7 +2700,7 @@ local skulltab_label_locals = {
 skulltab_label_locals.Label = SkullTab:CreateLabel("Opens the Jungle Temple every 5-6 minutes")
 skulltab_label_locals.Label2 = SkullTab:CreateLabel(" --- Max Fire Recommended --- ")
 skulltab_label_locals.Label3 = SkullTab:CreateLabel(" --- Didn't work? Try teleporting to the temple first --- ")
-skulltab_label_locals.Paragraph = SkullTab:CreateParagraph({Title = "Important Notice", Content = "You must have atleast 3-4 skulls on the ground somewhere NOT in your sack. Do not interact with the crystal skulls. If you experience issues turn toggle to OFF and wait 6-7 minutes for the cycle to refresh."})
+skulltab_label_locals.Paragraph = SkullTab:CreateParagraph({Title = "Important Notice", Content = "You must have atleast 3-4 skulls on the ground somewhere NOT in your sack. Do not interact with the crystal skulls."})
 
 local function create_exp_UI()
 
@@ -3080,6 +3088,53 @@ end
 local UICorner_18 = Instance.new("UICorner",TextButtonBACK)
 end
 
+local main_base_locals = {
+    "",
+}
+
+local baseSection21 = BaseTab:CreateSection("Base:")
+
+local univ_vector = Vector3.new(0, 0.55, 0)
+
+local logwallsButton = BaseTab:CreateButton({
+    Name = "Auto Place Log Walls",
+    Callback = function()
+        for _, blue in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
+
+            if blue.Name == "Log Wall Blueprint" then
+                local radius = 130
+
+                local angle = i * (math.pi * 2) / 45
+                local x = univ_vector.X + radius * math.cos(angle)
+                local z = univ_vector.Z + radius * math.sin(angle)
+                print("found log wall blueprint")
+
+                for i = 1, 45 do
+                    print("loop attempt")
+
+                    local args = {
+	                    blue,
+                    {
+                        Valid = true,
+                        CFrame = CFrame.new(x, univ_vector.Y, z) * CFrame.Angles(0,0,math.rad(10)),
+                        Position = vector.create(x, univ_vector.Y, z)
+                    },
+	                    CFrame.new(0, 0, 0) * CFrame.Angles(0,0,math.rad(10))
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlaceStructure"):InvokeServer(unpack(args))
+
+                end
+
+
+
+            end
+
+        end
+    end,
+})
+
+
+local baseSection21 = BaseTab:CreateSection("(New!) SkyBase:")
 create_exp_UI()
 task.wait()
 local _interface = game.Players.LocalPlayer.PlayerGui.Interface_i
