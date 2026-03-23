@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tLW9"
+local _Version = "Cyan-99 v1.tLLWW99"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3113,7 +3113,7 @@ local logwallsButton = BaseTab:CreateButton({
 
                     local radius = 100
 
-                    local angle = i * (math.pi * 2) / 100
+                    local angle = i * (math.pi * 2) / 45
                     local x = univ_vector.X + radius * math.cos(angle)
                     local z = univ_vector.Z + radius * math.sin(angle)
 
@@ -3124,8 +3124,8 @@ local logwallsButton = BaseTab:CreateButton({
 	                    blue,
                     {
                         Valid = true,
-                        CFrame = CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(10), 0),
-                        Position = vector.create(x, univ_vector.Y, z)
+                        CFrame = CFrame.new(x, univ_cframe.Y, z) * CFrame.Angles(0, math.rad(10), 0),
+                        Position = vector.create(x, univ_vector.Y, z) * Vector3.new(0, math.rad(10), 0)
                     },
 	                    CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(10), 0)
                     }
