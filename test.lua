@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tSignwait"
+local _Version = "Cyan-99 v1.tBiome"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -173,14 +173,9 @@ for ident, questt in pairs(quest_att) do
 
 end
 
---print(tostring(quest1))
---print(tostring(quest2))
---print(tostring(quest3))
+-- tips and tricks
 
---stronghold timer?
---tips and tricks
-
---
+-- stronghold timer
 local SHsection1 = LibTab:CreateSection("Misc:")
 
 local SHtimerLabel = LibTab:CreateLabel("Stronghold: not found", "timer")
@@ -189,18 +184,28 @@ task.spawn(function()
         if stronghold_loc:FindFirstChild("Stronghold") then
 
             local sh_display_time = workspace.Map.Landmarks.Stronghold.Functional:WaitForChild("Sign").SurfaceGui.Frame.Body.Text
-            print(sh_display_time)
-            local formattedTime = string.format("Stronghold Time: %q", sh_display_time)
+            --print(sh_display_time)
+            local formattedTime = string.format("Stronghold Time: %s", sh_display_time)
             SHtimerLabel:Set(formattedTime, "timer")
             task.wait(0.5)
 
         end
         task.wait(0.5)
-        print("sh not found")
+        --print("sh not found")
     end
 end)
 
---pcall(sHtimer)
+local world_attributes = workspace:GetAttributes()
+
+for id, attr in pairs(world_attributes) do
+
+    if id == "Biome" then
+
+        local defBiomeLabel = LibTab:CreateLabel("Default Biome: "..attr, "globe")
+
+    end
+
+end
 
 --// create main tab 
 
