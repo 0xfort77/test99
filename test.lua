@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tprint"
+local _Version = "Cyan-99 v1.tprint222"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -151,9 +151,9 @@ task.wait()
 local libsection1 = LibTab:CreateSection("Quests:")
 
 local quest_att = player:GetAttributes()
-print("...\n\n"..quest_att.."\n\n...")
-for ident, _ in pairs(quest_att) do
 
+for ident, _ in pairs(quest_att) do
+    print(tostring(ident).." - ".._)
     if ident == "TrackedQuest" then
         local quest1 = _
     end
