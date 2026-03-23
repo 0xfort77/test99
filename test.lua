@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tLLWW99"
+local _Version = "Cyan-99 v1.tLW10"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3100,14 +3100,14 @@ local univ_cframe = CFrame.new(0, 0.55, 0)
 local logwallsButton = BaseTab:CreateButton({
     Name = "Auto Place Log Walls",
     Callback = function()
-        for i = 1, 45 do
-            for _, blue in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
+        
+        for _, blue in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
             
-                if blue.Name == "Log Wall Blueprint" then
+            if blue.Name == "Log Wall Blueprint" then
                 
-                    print("found log wall blueprint")
+                print("found log wall blueprint")
 
-                
+                for i = 1, 45 do
                     print("loop attempt")
                     print(tostring(i))
 
@@ -3124,20 +3124,18 @@ local logwallsButton = BaseTab:CreateButton({
 	                    blue,
                     {
                         Valid = true,
-                        CFrame = CFrame.new(x, univ_cframe.Y, z) * CFrame.Angles(0, math.rad(10), 0),
+                        CFrame = CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(10), 0),
                         Position = vector.create(x, univ_vector.Y, z) * Vector3.new(0, math.rad(10), 0)
                     },
-	                    CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(10), 0)
+	                    CFrame
                     }
                     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlaceStructure"):InvokeServer(unpack(args))
-                else
-                    continue
                 end
 
 
-
+            else
+                continue
             end
-
         end
     end,
 })
