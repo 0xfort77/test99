@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFlame.55"
+local _Version = "Cyan-99 v1.tFlanewUPD"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -210,7 +210,8 @@ local defFlameLabel = LibTab:CreateLabel("Flame: waiting...", "globe")
 
 task.spawn(function()
     while true do
-        for f_id, event in pairs(world_attributes) do
+        local upd_wrld_att = workspace:GetAttributes()
+        for f_id, event in pairs(upd_wrld_att) do
 
             if f_id == "SelectedEvent" then
                 defFlameLabel:Set("Flame: "..event, "globe")
