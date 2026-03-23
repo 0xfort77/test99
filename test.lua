@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tblueprinttest1"
+local _Version = "Cyan-99 v1.tlogwall2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3102,15 +3102,18 @@ local logwallsButton = BaseTab:CreateButton({
         for _, blue in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
 
             if blue.Name == "Log Wall Blueprint" then
-                local radius = 130
-
-                local angle = i * (math.pi * 2) / 45
-                local x = univ_vector.X + radius * math.cos(angle)
-                local z = univ_vector.Z + radius * math.sin(angle)
+                
                 print("found log wall blueprint")
 
                 for i = 1, 45 do
                     print("loop attempt")
+                    print(tostring(i))
+
+                    local radius = 130
+
+                    local angle = i * (math.pi * 2) / 45
+                    local x = univ_vector.X + radius * math.cos(angle)
+                    local z = univ_vector.Z + radius * math.sin(angle)
 
                     local args = {
 	                    blue,
