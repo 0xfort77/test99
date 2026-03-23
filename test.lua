@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFlamefinal?"
+local _Version = "Cyan-99 v1.tFlamedetect"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -204,14 +204,24 @@ for id, attr in pairs(world_attributes) do
         local defBiomeLabel = LibTab:CreateLabel("Biome: "..attr, "globe")
 
     end
-
-    if id == "SelectedEvent" then
-
-        local defFlameLabel = LibTab:CreateLabel("Default Flame: "..attr, "globe")
-
-    end
-
 end
+
+local defFlameLabel = LibTab:CreateLabel("Flame: waiting...", "globe")
+
+task.spawn(function()
+    while true do
+        for f_id, event in pairs(world_attributes) do
+
+            if f_id == "SelectedEvent" then
+                defFlameLabel:Set("Flame: "..event, "globe")
+                task.wait(5.555)
+            end
+
+        end
+        task.wait(5.555)
+        --print("flame not found")
+    end
+end)
 
 local miscMoreLabel = LibTab:CreateLabel("More Coming Soon!", 0)
 
