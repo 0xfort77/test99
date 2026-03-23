@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tinttabtypeOF"
+local _Version = "Cyan-99 v1.tWelcome!"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -148,7 +148,11 @@ fireproximityprompt(scr_bench_init_)
 task.wait()
 
 --// create Lib tab -- information & misc.
-local libsection1 = LibTab:CreateSection("Quests:")
+local libsection1 = LibTab:CreateSection("Hello!")
+
+local welcomeLabel = LibTab:CreateLabel("Welcome "..player.DisplayName.."!", "activity")
+
+local libsection1 = LibTab:CreateSection("Quests (beta):")
 
 local quest_att = player:GetAttributes()
 
