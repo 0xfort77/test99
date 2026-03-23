@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tSHtimerChild2"
+local _Version = "Cyan-99 v1.tSignwait"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -186,9 +186,9 @@ local SHsection1 = LibTab:CreateSection("Misc:")
 local SHtimerLabel = LibTab:CreateLabel("Stronghold: not found", "timer")
 task.spawn(function()
     while true do
-        if workspace.Map.Landmarks.Stronghold.Functional:FindFirstChild("Sign"):FindFirstChild("SurfaceGui") then
+        if stronghold_loc:FindFirstChild("Stronghold") then
 
-            local sh_display_time = workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text
+            local sh_display_time = workspace.Map.Landmarks.Stronghold.Functional:WaitForChild("Sign").SurfaceGui.Frame.Body.Text
             print(sh_display_time)
             local formattedTime = string.format("Stronghold Time: %q", sh_display_time)
             SHtimerLabel:Set(formattedTime, "timer")
