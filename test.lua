@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t12"
+local _Version = "Cyan-99 v1.tbare"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3101,42 +3101,31 @@ local logwallsButton = BaseTab:CreateButton({
     Name = "Auto Place Log Walls",
     Callback = function()
         for i = 1, 50 do
-            for _, blue in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
-            
-                if blue.Name == "Log Wall Blueprint" then
-                
-                    print("found log wall blueprint")
 
-                
-                    print("loop attempt")
-                    print(tostring(i))
+            print("loop attempt")
+            print(tostring(i))
 
-                    local radius = 100
+            local radius = 100
 
-                    local angle = i * (math.pi * 2) / 100
-                    local x = univ_vector.X + radius * math.cos(angle)
-                    local z = univ_vector.Z + radius * math.sin(angle)
+            local angle = i * (math.pi * 2) / 50
 
-                    local xc = univ_cframe.X + radius * math.cos(angle)
-                    local xz = univ_cframe.Z + radius * math.sin(angle)
+            local x = univ_vector.X + radius * math.cos(angle)
+            local z = univ_vector.Z + radius * math.sin(angle)
 
-                    local args = {
-	                    blue,
-                    {
-                        Valid = true,
-                        CFrame = CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(math.rad(10), 0, 0),
-                        Position = vector.create(x, univ_vector.Y, z)
-                    },
-	                    CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(math.rad(10),0,0)
-                    }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlaceStructure"):InvokeServer(unpack(args))
-                else
-                    continue
-                end
+            local xc = univ_cframe.X + radius * math.cos(angle)
+            local xz = univ_cframe.Z + radius * math.sin(angle)
 
+            local args = {
+                game:GetService("Players").LocalPlayer.Inventory:FindFirstChild("Log Wall Blueprint"),
+            {
+                Valid = true,
+                CFrame = CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(10), 0),
+                Position = vector.create(x, univ_vector.Y, z)
+            },
+                CFrame.new(xc, univ_cframe.Y, xz) * CFrame.Angles(0, math.rad(10), 0)
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPlaceStructure"):InvokeServer(unpack(args))
 
-
-            end
 
         end
     end,
