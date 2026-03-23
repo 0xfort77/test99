@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.twallnotes"
+local _Version = "Cyan-99 v1.tq3"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -148,6 +148,29 @@ fireproximityprompt(scr_bench_init_)
 task.wait()
 
 --// create Lib tab -- information & misc.
+local libsection1 = LibTab:CreateSection("Quests:")
+
+if not player.TrackedQuest then
+    break
+else
+    local quest = player.TrackedQuest
+end
+
+if not player.TrackedQuest2 then
+    break
+else
+    local quest2 = player.TrackedQuest2
+end
+
+if not player.TrackedQuest3 then
+    break
+else
+    local quest3 = player.TrackedQuest3
+end
+
+local q1Label = LibTab:CreateLabel(tostring(quest), "rewind")
+local q2Label = LibTab:CreateLabel(tostring(quest2), "rewind")
+local q3Label = LibTab:CreateLabel(tostring(quest3), "rewind")
 
 --stronghold timer?
 --tips and tricks
@@ -3100,7 +3123,7 @@ local baseRadiusSlider = BaseTab:CreateSlider({
     Name = "Walls",
     Range = {40, 70},
     Increment = 5,
-    Suffix = "# of Blueprints",
+    Suffix = " Blueprints",
     CurrentValue = 40,
     Flag = "Slider1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
@@ -3144,7 +3167,7 @@ local logwallsCIRCLEButton = BaseTab:CreateButton({
         end
     end,
 })
-local descriptlogwallblueprintParagraph = BaseTab:CreateParagraph({Title = "Note:", Content = "Placement is based on the number of Log Wall Blueprints you have.\n40 Walls ~ 75studs\n70 Walls ~ 130studs (MAX)"})
+local descriptlogwallblueprintParagraph = BaseTab:CreateParagraph({Title = "Note:", Content = "Placement is based on the number of Log Wall Blueprints you have.\n40 Walls ~ 75 studs radius\n70 Walls ~ 130 studs radius (MAX)"})
 
 local baseSection21 = BaseTab:CreateSection("(New!) SkyBase:")
 create_exp_UI()
@@ -3728,6 +3751,7 @@ local creditstab_locals = {cred_label1 = "creditlabel1",
     cred_label6 = "creditlabel6",
     cred_label7 = "creditlabel7",
     cred_label8 = "creditlabel8",
+    cred_label9 = "creditlabel9",
 }
 creditstab_locals.cred_label1 = CREDITS:CreateLabel("Developer: 4NTHOcyan", 0)
 creditstab_locals.cred_label2 = CREDITS:CreateLabel("Find all my game menus on  Discord.gg/cWhpEDYPUB", 0)
@@ -3737,4 +3761,5 @@ creditstab_locals.cred_label5 = CREDITS:CreateLabel("Thanks for using Cyan-99! A
 creditstab_locals.cred_label6 = CREDITS:CreateLabel("¡Gracias por usar Cyan-99! Todo su apoyo es útil y muy apreciado.", 0)
 creditstab_locals.cred_label7 = CREDITS:CreateLabel("Cyan-99를 이용해 주셔서 감사합니다! 여러분의 모든 성원은 큰 도움이 되며, 깊이 감사드립니다.", 0)
 creditstab_locals.cred_label8 = CREDITS:CreateLabel("Salamat sa paggamit ng Cyan-99! Malaking tulong at lubos ang inyong suporta.", 0)
+creditstab_locals.cred_label9 = CREDITS:CreateLabel("THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.")
 end
