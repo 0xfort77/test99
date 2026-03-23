@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tConcat"
+local _Version = "Cyan-99 v1.tConcat23"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -167,9 +167,9 @@ for ident, _ in pairs(quest_att) do
 
 end
 
-local q1Label = LibTab:CreateLabel(quest1, "rewind")
-local q2Label = LibTab:CreateLabel(quest2, "rewind")
-local q3Label = LibTab:CreateLabel(quest3, "rewind")
+local q1Label = LibTab:CreateLabel(tostring(quest1), "rewind")
+local q2Label = LibTab:CreateLabel(tostring(quest2), "rewind")
+local q3Label = LibTab:CreateLabel(tostring(quest3), "rewind")
 
 --stronghold timer?
 --tips and tricks
