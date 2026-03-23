@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tCAT555"
+local _Version = "Cyan-99 v1.tIF6"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -156,7 +156,7 @@ for ident, _ in pairs(quest_att) do
     print(tostring(ident).." - "..tostring(_))
     ident = tostring(ident)
     if ident == "TrackedQuest" then
-        local quest1 = tostring(_)
+        local quest1 = tostring(_) 
     end
     if ident == "TrackedQuest2" then
         local quest2 = tostring(_)
@@ -166,11 +166,15 @@ for ident, _ in pairs(quest_att) do
     end
 
 end
-
-local q1Label = LibTab:CreateLabel(quest1, "rewind")
-local q2Label = LibTab:CreateLabel(quest2, "rewind")
-local q3Label = LibTab:CreateLabel(quest3, "rewind")
-
+if quest1 ~= nil then
+    local q1Label = LibTab:CreateLabel(quest1, "rewind")
+end
+if quest2 ~= nil then
+    local q2Label = LibTab:CreateLabel(quest2, "rewind")
+end
+if quest3 ~= nil then
+    local q3Label = LibTab:CreateLabel(quest3, "rewind")
+end
 --stronghold timer?
 --tips and tricks
 --quests?
