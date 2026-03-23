@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tBiome"
+local _Version = "Cyan-99 v1.tFlamefinal?"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -201,11 +201,19 @@ for id, attr in pairs(world_attributes) do
 
     if id == "Biome" then
 
-        local defBiomeLabel = LibTab:CreateLabel("Default Biome: "..attr, "globe")
+        local defBiomeLabel = LibTab:CreateLabel("Biome: "..attr, "globe")
+
+    end
+
+    if id == "SelectedEvent" then
+
+        local defFlameLabel = LibTab:CreateLabel("Default Flame: "..attr, "globe")
 
     end
 
 end
+
+local miscMoreLabel = LibTab:CreateLabel("More Coming Soon!", 0)
 
 --// create main tab 
 
@@ -3180,7 +3188,7 @@ local logwallsCIRCLEButton = BaseTab:CreateButton({
         end
     end,
 })
-local descriptlogwallblueprintParagraph = BaseTab:CreateParagraph({Title = "Note:", Content = "Placement is based on the number of Log Wall Blueprints you have.\n40 Walls ~ 75 studs radius\n70 Walls ~ 130 studs radius (MAX)"})
+local descriptlogwallblueprintParagraph = BaseTab:CreateParagraph({Title = "Note:", Content = "Placement is based on the number of Log Wall Blueprints you have.\n40 Walls ~ 75 studs radius\n70 Walls ~ 130 studs radius (MAX)\nTorches are not necessary."})
 
 local baseSection21 = BaseTab:CreateSection("(New!) SkyBase:")
 create_exp_UI()
