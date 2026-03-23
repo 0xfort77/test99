@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFlamedetect"
+local _Version = "Cyan-99 v1.tFlame.55"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -218,7 +218,7 @@ task.spawn(function()
             end
 
         end
-        task.wait(5.555)
+        task.wait(0.5)
         --print("flame not found")
     end
 end)
