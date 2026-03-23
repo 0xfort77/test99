@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tLA@"
+local _Version = "Cyan-99 v1.twallsSlider1"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3094,20 +3094,34 @@ local main_base_locals = {
 
 local baseSection21 = BaseTab:CreateSection("Base:")
 
-local univ_vector = Vector3.new(0, 0.55, 0)
-local univ_cframe = CFrame.new(0, 0.55, 0)
+local walls_index
+
+local baseRadiusSlider = BaseTab:CreateSlider({
+    Name = "Walls",
+    Range = {40, 70},
+    Increment = 5,
+    Suffix = "# of Blueprints",
+    CurrentValue = 40,
+    Flag = "Slider1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        walls_index = Value
+    end,
+})
+
+local univ_vector = Vector3.new(0, 0.65, 0)
+local univ_cframe = CFrame.new(0, 0.65, 0)
 
 local logwallsButton = BaseTab:CreateButton({
     Name = "Auto Place Log Walls",
     Callback = function()
-        for i = 1, 50 do
+        for i = 1, walls_index do
 
-            print("loop attempt")
+            task.wait()
             print(tostring(i))
 
-            local radius = 50
+            local radius = walls_index
 
-            local angle = i * (math.pi * 2) / 50
+            local angle = i * (math.pi * 2) / walls_index
 
             local x = univ_vector.X + radius * math.cos(angle)
             local z = univ_vector.Z + radius * math.sin(angle)
