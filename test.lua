@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tWelcome!"
+local _Version = "Cyan-99 v1.tSHtry1"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -157,30 +157,50 @@ local libsection1 = LibTab:CreateSection("Quests (beta):")
 local quest_att = player:GetAttributes()
 
 for ident, questt in pairs(quest_att) do
-    print(tostring(ident).." - "..tostring(questt))
+    --print(tostring(ident).." - "..tostring(questt))
     --ident = tostring(ident)
-    print(type(ident))
-    print(type(questt))
-    if ident == "TrackedQuest" then
-        local q1Label = LibTab:CreateLabel(questt, "rewind") 
+    --print(type(ident))
+    --print(type(questt))
+    if ident == "TrackedQuest1" then
+        local q1Label = LibTab:CreateLabel(questt, "diamond") 
     end
     if ident == "TrackedQuest2" then
-        local q2Label = LibTab:CreateLabel(questt, "rewind")
+        local q2Label = LibTab:CreateLabel(questt, "diamond")
     end
     if ident == "TrackedQuest3" then
-        local q3Label = LibTab:CreateLabel(questt, "rewind")
+        local q3Label = LibTab:CreateLabel(questt, "diamond")
     end
 
 end
 
-print(tostring(quest1))
-print(tostring(quest2))
-print(tostring(quest3))
+--print(tostring(quest1))
+--print(tostring(quest2))
+--print(tostring(quest3))
 
 --stronghold timer?
 --tips and tricks
---quests?
+
 --
+local SHsection1 = LibTab:CreateSection("Misc:")
+
+local SHtimerLabel = LibTab:CreateLabel("Stronghold: not found", "timer")
+task.spawn(function()
+    while true do
+        if stronghold_loc:FindFirstChild("Stronghold") then
+
+            local sh_display_time = workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text
+            print(sh_display_time)
+            local formattedTime = string.format("Stronghold Time: %q", sh_display_time)
+            SHtimerLabel:Set("Stronghold: "..tostring(formattedTime), "timer")
+            task.wait(0.5)
+            
+        end
+        task.wait(0.5)
+        
+    end
+end)
+
+--pcall(sHtimer)
 
 --// create main tab 
 
@@ -794,24 +814,7 @@ local Toggle = MainTab:CreateToggle({
 })
 
 --
---task.spawn(function()
---    while true do
---        if stronghold_loc:FindFirstChild("Stronghold") then
---
---            task.wait(1)
---            local sh_display_time = workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text
---            print(sh_display_time)
---            local formattedTime = string.format("Stronghold Time: %q", sh_display_time)
---            if not sh_display_time then
---                break
---            end
---        end
---        task.wait()
---        strongholdtablabel1:Set(tostring(formattedTime))
---    end
---end)
 
---pcall(sHtimer)
 
 --// Create Move teleport Tab
 
