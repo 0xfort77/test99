@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tLW5"
+local _Version = "Cyan-99 v1.tLW6"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3111,9 +3111,9 @@ local logwallsButton = BaseTab:CreateButton({
                     print("loop attempt")
                     print(tostring(i))
 
-                    local radius = 130
+                    local radius = 100
 
-                    local angle = i * (math.pi * 2) / 45
+                    local angle = i * (math.pi * 2) / 100
                     local x = univ_vector.X + radius * math.cos(angle)
                     local z = univ_vector.Z + radius * math.sin(angle)
 
