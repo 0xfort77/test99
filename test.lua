@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tprint"
+local _Version = "Cyan-99 v1.tSprintTS"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -156,20 +156,20 @@ for ident, _ in pairs(quest_att) do
     print(tostring(ident).." - "..tostring(_))
     ident = tostring(ident)
     if ident == "TrackedQuest" then
-        local quest1 = tostring(_) 
+        local quest1 = _ 
     end
     if ident == "TrackedQuest2" then
-        local quest2 = tostring(_)
+        local quest2 = _
     end
     if ident == "TrackedQuest3" then
-        local quest3 = tostring(_)
+        local quest3 = _
     end
 
 end
 
-print(quest1)
-print(quest2)
-print(quest3)
+print(tostring(quest1))
+print(tostring(quest2))
+print(tostring(quest3))
 
 if quest1 ~= nil then
     local q1Label = LibTab:CreateLabel(quest1, "rewind")
