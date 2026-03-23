@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tlogwall2"
+local _Version = "Cyan-99 v1.tLW3"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3100,12 +3100,12 @@ local logwallsButton = BaseTab:CreateButton({
     Name = "Auto Place Log Walls",
     Callback = function()
         for _, blue in pairs(game:GetService("Players").LocalPlayer.Inventory:GetChildren()) do
-
-            if blue.Name == "Log Wall Blueprint" then
+            for i = 1, 45 do
+                if blue.Name == "Log Wall Blueprint" then
                 
-                print("found log wall blueprint")
+                    print("found log wall blueprint")
 
-                for i = 1, 45 do
+                
                     print("loop attempt")
                     print(tostring(i))
 
@@ -3116,7 +3116,7 @@ local logwallsButton = BaseTab:CreateButton({
                     local z = univ_vector.Z + radius * math.sin(angle)
 
                     local args = {
-	                    blue,
+	                    Instance.new(game:GetService("ReplicatedStorage").Assets.StructureTemplates["Log Wall"]),
                     {
                         Valid = true,
                         CFrame = CFrame.new(x, univ_vector.Y, z) * CFrame.Angles(0,0,math.rad(10)),
