@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tSHtry1"
+local _Version = "Cyan-99 v1.tSHprint"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -191,12 +191,12 @@ task.spawn(function()
             local sh_display_time = workspace.Map.Landmarks.Stronghold.Functional.Sign.SurfaceGui.Frame.Body.Text
             print(sh_display_time)
             local formattedTime = string.format("Stronghold Time: %q", sh_display_time)
-            SHtimerLabel:Set("Stronghold: "..tostring(formattedTime), "timer")
+            SHtimerLabel:Set(formattedTime, "timer")
             task.wait(0.5)
-            
+
         end
         task.wait(0.5)
-        
+        print("sh not found")
     end
 end)
 
