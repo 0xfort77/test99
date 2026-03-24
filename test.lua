@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFlanewUPD"
+local _Version = "Cyan-99 v1.t620trial"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -183,7 +183,7 @@ task.spawn(function()
     while true do
         if stronghold_loc:FindFirstChild("Stronghold") then
 
-            local sh_display_time = workspace.Map.Landmarks.Stronghold.Functional:WaitForChild("Sign").SurfaceGui.Frame.Body.Text
+            local sh_display_time = workspace.Map.Landmarks.Stronghold:WaitForChild("Functional"):WaitForChild("Sign").SurfaceGui.Frame.Body.Text
             --print(sh_display_time)
             local formattedTime = string.format("Stronghold Time: %s", sh_display_time)
             SHtimerLabel:Set(formattedTime, "timer")
@@ -206,7 +206,7 @@ for id, attr in pairs(world_attributes) do
     end
 end
 
-local defFlameLabel = LibTab:CreateLabel("Flame: waiting...", "globe")
+local defFlameLabel = LibTab:CreateLabel("Flame Event: waiting...", "globe")
 
 task.spawn(function()
     while true do
@@ -214,12 +214,12 @@ task.spawn(function()
         for f_id, event in pairs(upd_wrld_att) do
 
             if f_id == "SelectedEvent" then
-                defFlameLabel:Set("Flame: "..event, "globe")
+                defFlameLabel:Set("Flame Event: "..event, "globe")
                 task.wait(5.555)
             end
 
         end
-        task.wait(0.5)
+        task.wait(0.66)
         --print("flame not found")
     end
 end)
@@ -424,7 +424,7 @@ local KILLToggle = MainTab:CreateToggle({
                 --includeparams.CollisionGroup = "NPCs"
                 excludeparams.FilterType = Enum.RaycastFilterType.Exclude
                 excludeparams.FilterDescendantsInstances = {}
-                excludeparams.MaxParts = 220 -- changed
+                excludeparams.MaxParts = 620 -- #original 220 ~ heartbeatkill #trial 620 
                 local worldrootradius = workspace:GetPartBoundsInBox(HRP.CFrame, Vector3.new(180,60,180), includeparams, excludeparams)
 
                 for _, v in pairs(worldrootradius) do
@@ -3163,8 +3163,8 @@ local baseRadiusSlider = BaseTab:CreateSlider({
     end,
 })
 
-local univ_vector = Vector3.new(0, 0.65, 0)
-local univ_cframe = CFrame.new(0, 0.65, 0)
+local univ_vector = Vector3.new(0, 0.45, 0)
+local univ_cframe = CFrame.new(0, 0.45, 0)
 
 local logwallsCIRCLEButton = BaseTab:CreateButton({
     Name = "[Circle] Auto Place Log Walls",
@@ -3784,8 +3784,10 @@ local creditstab_locals = {cred_label1 = "creditlabel1",
     cred_label7 = "creditlabel7",
     cred_label8 = "creditlabel8",
     cred_label9 = "creditlabel9",
+    cred_label10 = "creditlabel10",
 }
 creditstab_locals.cred_label1 = CREDITS:CreateLabel("Developer: 4NTHOcyan", 0)
+creditstab_locals.cred_label10 = CREDITS:CreateLabel("Copyright © 2026 4NTHOcyan", 0)
 creditstab_locals.cred_label2 = CREDITS:CreateLabel("Find all my game menus on  Discord.gg/cWhpEDYPUB", 0)
 creditstab_locals.cred_label3 = CREDITS:CreateLabel("or  rscripts.net/@4NTHOcyan", 0)
 creditstab_locals.cred_label4 = CREDITS:CreateLabel("-----", 0)
