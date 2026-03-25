@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tPun33"
+local _Version = "Cyan-99 v1.tpunish444"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3791,6 +3791,9 @@ extrastab_locals.santamenuButton = ExtrasTab:CreateButton({
         extrastab_locals.santasack_path.Active = true
     end,
 })
+
+local secretTabsection = = ExtrasTab:CreateSection("Secret:")
+
 local current_sec_value = ""
 local secretTextInput = ExtrasTab:CreateInput({
     Name = "Password",
@@ -3840,7 +3843,7 @@ local secretTextInput = ExtrasTab:CreateInput({
 
                         for i = 1, 20 do
 
-	                        args = {
+	                        local args = {
 	                        	beartrap
 	                        }
 	                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
@@ -3853,6 +3856,11 @@ local secretTextInput = ExtrasTab:CreateInput({
 	                        fireproximityprompt(bear_prox)
 	                        task.wait(0.44)
                         end
+                        local args1 = {
+	                        beartrap
+                        }
+                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickUpStructure"):InvokeServer(unpack(args1))
+                        task.wait()
 
                     end
 
