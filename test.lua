@@ -3856,13 +3856,14 @@ local secretTextInput = ExtrasTab:CreateInput({
 	                        fireproximityprompt(bear_prox)
 	                        task.wait(0.44)
                         end
-                        local args1 = {
-	                        beartrap
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickUpStructure"):InvokeServer(unpack(args1))
-                        task.wait()
+                        
 
                     end
+                    local args = {
+                        beartrap
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickUpStructure"):InvokeServer(unpack(args))
+                    task.wait()
 
                 end,
             })
