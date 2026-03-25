@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tPun"
+local _Version = "Cyan-99 v1.tPunish2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3791,7 +3791,7 @@ extrastab_locals.santamenuButton = ExtrasTab:CreateButton({
         extrastab_locals.santasack_path.Active = true
     end,
 })
-
+local current_sec_value = ""
 local secretTextInput = ExtrasTab:CreateInput({
     Name = "Password",
     CurrentValue = "",
@@ -3799,7 +3799,8 @@ local secretTextInput = ExtrasTab:CreateInput({
     RemoveTextAfterFocusLost = false,
     Flag = "Input1",
     Callback = function(Text)
-        if Text == "punish" then                        -- The function that takes place when the input is changed
+        current_sec_value = Text
+        if current_sec_value == "punish" then                        -- The function that takes place when the input is changed
 
 
             local function ReturnPeople()
