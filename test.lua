@@ -3859,11 +3859,6 @@ local secretTextInput = ExtrasTab:CreateInput({
                         
 
                     end
-                    local args = {
-                        beartrap
-                    }
-                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickUpStructure"):InvokeServer(unpack(args))
-                    task.wait()
 
                 end,
             })
