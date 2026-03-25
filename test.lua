@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tflamesetwait"
+local _Version = "Cyan-99 v1.textrawaits"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -283,7 +283,7 @@ task.spawn(function()
             --         local secondaryFlame = LibTab:CreateLabel("Additional Flame: RedChest", "globe")
             --     end
             -- end
-
+            task.wait(0.66)
 
         end
         task.wait(0.66)
