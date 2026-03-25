@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tPunish2"
+local _Version = "Cyan-99 v1.tPun33"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3819,9 +3819,9 @@ local secretTextInput = ExtrasTab:CreateInput({
 
             local punish_player_index
             local Dropdown = ExtrasTab:CreateDropdown({
-                Name = "Dropdown Example",
-                Options = Names,
-                CurrentOption = Options,
+                Name = "Players",
+                Options = ReturnPeople(),
+                CurrentOption = "",
                 MultipleOptions = false,
                 Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
                 Callback = function(Options)
