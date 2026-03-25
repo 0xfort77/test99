@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFlameset620"
+local _Version = "Cyan-99 v1.tflamesetwait"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -239,36 +239,43 @@ task.spawn(function()
             if f_id == "Flame_Blue_Flame" then
                 if event == true then
                     defFlameLabel2:Set("Additional Flame: Blue", "globe")
+                    task.wait(5.555)
                 end
             end
             if f_id == "Flame_Coinsplosion_Flame" then
                 if event == true then
                     defFlameLabel3:Set("Additional Flame: Coinsplosion", "globe")
+                    task.wait(5.555)
                 end
             end
             if f_id == "Flame_Fairy_Flame" then
                 if event == true then
                     defFlameLabel4:Set("Additional Flame: Fairy", "globe")
+                    task.wait(5.555)
                 end
             end
             if f_id == "Flame_Fishing_Flame" then
                 if event == true then
                     defFlameLabel5:Set("Additional Flame: Fishing", "globe")
+                    task.wait(5.555)
                 end
             end
             if f_id == "Flame_Valentines_Flame" then
                 if event == true then
                     defFlameLabel6:Set("Additional Flame: Valentines", "globe")
+                    task.wait(5.555)
                 end
             end
             if f_id == "Flame_Pet_Flame" then
                 if event == true then
                     defFlameLabel7:Set("Additional Flame: Pet", "globe")
+                    task.wait(5.555)
                 end
             end
             if f_id == "Flame_Thanksgiving_Flame" then
                 if event == true then
                     defFlameLabel8:Set("Additional Flame: Thanksgiving", "globe")
+                    task.wait(5.555)
                 end
             end
             -- if f_id == table.find(flames_table, "Flame_RedChest_Flame") then
