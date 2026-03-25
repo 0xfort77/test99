@@ -3792,14 +3792,14 @@ extrastab_locals.santamenuButton = ExtrasTab:CreateButton({
     end,
 })
 
-local secretTabsection = = ExtrasTab:CreateSection("Secret:")
+local secretTabsection = ExtrasTab:CreateSection("Secret:")
 
 local current_sec_value = ""
 local secretTextInput = ExtrasTab:CreateInput({
     Name = "Password",
     CurrentValue = "",
     PlaceholderText = "¿ secret ¿",
-    RemoveTextAfterFocusLost = false,
+    RemoveTextAfterFocusLost = true,
     Flag = "Input1",
     Callback = function(Text)
         current_sec_value = Text
@@ -3856,7 +3856,11 @@ local secretTextInput = ExtrasTab:CreateInput({
 	                        fireproximityprompt(bear_prox)
 	                        task.wait(0.44)
                         end
-                        
+                        local args1 = {
+	                        beartrap
+                        }
+                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestPickUpStructure"):InvokeServer(unpack(args1))
+                        task.wait()
 
                     end
 
