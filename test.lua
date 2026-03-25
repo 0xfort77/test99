@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.taddFlame+620"
+local _Version = "Cyan-99 v1.tFlameset620"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -207,6 +207,13 @@ for id, attr in pairs(world_attributes) do
 end
 
 local defFlameLabel = LibTab:CreateLabel("Flame Event: waiting...", "globe")
+local defFlameLabel2 = LibTab:CreateLabel("Additional Flame: none...", "globe")
+local defFlameLabel3 = LibTab:CreateLabel("Additional Flame: none...", "globe")
+local defFlameLabel4 = LibTab:CreateLabel("Additional Flame: none...", "globe")
+local defFlameLabel5 = LibTab:CreateLabel("Additional Flame: none...", "globe")
+local defFlameLabel6 = LibTab:CreateLabel("Additional Flame: none...", "globe")
+local defFlameLabel7 = LibTab:CreateLabel("Additional Flame: none...", "globe")
+local defFlameLabel8 = LibTab:CreateLabel("Additional Flame: none...", "globe")
 
 local flames_table = {
     Flame_Blue_Flame = "Flame_Blue_Flame",
@@ -231,37 +238,37 @@ task.spawn(function()
 
             if f_id == "Flame_Blue_Flame" then
                 if event == true then
-                    local secondaryFlame = LibTab:CreateLabel("Additional Flame: Blue", "globe")
+                    defFlameLabel2:Set("Additional Flame: Blue", "globe")
                 end
             end
             if f_id == "Flame_Coinsplosion_Flame" then
                 if event == true then
-                    local secondaryFlame = LibTab:CreateLabel("Additional Flame: Coinsplosion", "globe")
+                    defFlameLabel3:Set("Additional Flame: Coinsplosion", "globe")
                 end
             end
             if f_id == "Flame_Fairy_Flame" then
                 if event == true then
-                    local secondaryFlame = LibTab:CreateLabel("Additional Flame: Fairy", "globe")
+                    defFlameLabel4:Set("Additional Flame: Fairy", "globe")
                 end
             end
             if f_id == "Flame_Fishing_Flame" then
                 if event == true then
-                    local secondaryFlame = LibTab:CreateLabel("Additional Flame: Fishing", "globe")
+                    defFlameLabel5:Set("Additional Flame: Fishing", "globe")
                 end
             end
             if f_id == "Flame_Valentines_Flame" then
                 if event == true then
-                    local secondaryFlame = LibTab:CreateLabel("Additional Flame: Valentines", "globe")
+                    defFlameLabel6:Set("Additional Flame: Valentines", "globe")
                 end
             end
             if f_id == "Flame_Pet_Flame" then
                 if event == true then
-                    local secondaryFlame = LibTab:CreateLabel("Additional Flame: Pet", "globe")
+                    defFlameLabel7:Set("Additional Flame: Pet", "globe")
                 end
             end
             if f_id == "Flame_Thanksgiving_Flame" then
                 if event == true then
-                    local secondaryFlame = LibTab:CreateLabel("Additional Flame: Thanksgiving", "globe")
+                    defFlameLabel8:Set("Additional Flame: Thanksgiving", "globe")
                 end
             end
             -- if f_id == table.find(flames_table, "Flame_RedChest_Flame") then
