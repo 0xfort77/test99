@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tSecret1"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -171,7 +171,7 @@ libtab_locals.libsection1 = LibTab:CreateSection("Quests (beta):")
 
 libtab_locals.quest_att = player:GetAttributes()
 
-for ident, questt in pairs(quest_att) do
+for ident, questt in pairs(libtab_locals.quest_att) do
     --print(tostring(ident).." - "..tostring(questt))
     --ident = tostring(ident)
     --print(type(ident))
