@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.treformat1"
+local _Version = "Cyan-99 v1.testTrap"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3842,24 +3842,24 @@ local secretTextInput = ExtrasTab:CreateInput({
 
                     if workspace:FindFirstChild(punish_player_index) then
 
-                        for i = 1, 20 do
+                        repeat
                             if not workspace:FindFirstChild(punish_player_index) then
-                                break
+                                local playerdead = true
                             end
 
-	                        local args = {
-	                        	beartrap
-	                        }
-	                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+	                        --local args = {
+	                        --	beartrap
+	                        --}
+	                        --game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
 	                        beartrap:PivotTo(workspace:FindFirstChild(punish_player_index):FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-1,0))
-	                        local args = {
-	                        	beartrap
-	                        }
-	                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+	                        --local args = {
+	                        --	beartrap
+	                        --}
+	                        --game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
                             task.wait()
 	                        fireproximityprompt(bear_prox)
 	                        task.wait(0.44)
-                        end
+                        until playerdead
 
                     end
 
