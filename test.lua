@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tB3"
+local _Version = "Cyan-99 v1.tVB1"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3836,8 +3836,8 @@ local secretTextInput = ExtrasTab:CreateInput({
             local beartrapButton = ExtrasTab:CreateButton({
                 Name = "Bear Trap Selected Player",
                 Callback = function()
-                    local beartrap = workspace.Structures:FindFirstChild("Bear Trap")
-                    local bear_prox = workspace.Structures:FindFirstChild("Bear Trap"):WaitForChild("Main").ProximityAttachment.ProximityInteraction
+                    local beartrap = workspace.Structures:FindFirstChild("Bear Trap") or workspace.Structures:FindFirstChild("Volcanic Bear Trap")
+                    local bear_prox = workspace.Structures:FindFirstChild("Bear Trap"):WaitForChild("Main").ProximityAttachment.ProximityInteraction or workspace.Structures:FindFirstChild("Volcanic Bear Trap"):WaitForChild("Main").ProximityAttachment.ProximityInteraction
 
                     if workspace:FindFirstChild(punish_player_index) then
 
