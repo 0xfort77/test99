@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tVBBB"
+local _Version = "Cyan-99 v1.tVBreak"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3842,6 +3842,9 @@ local secretTextInput = ExtrasTab:CreateInput({
                     if workspace:FindFirstChild(punish_player_index) then
 
                         for i = 1, 20 do
+                            if not workspace:FindFirstChild(punish_player_index) then
+                                break
+                            end
 
 	                        local args = {
 	                        	beartrap
