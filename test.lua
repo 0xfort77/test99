@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tVBreak"
+local _Version = "Cyan-99 v1.treformat1"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -131,11 +131,12 @@ local LibTab = Window:CreateTab("", "library") -- Title, Image
 local MainTab = Window:CreateTab("Main", "blend") -- Title, Image
 local BringTab = Window:CreateTab("Bring", "briefcase") -- Title, Image
 local MoveTab = Window:CreateTab("Teleport", "move") -- Title, Image
+local ExtrasTab = Window:CreateTab("Extras", "star")
 local TreeTab = Window:CreateTab("Trees", "trees")
 local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
 local SkullTab = Window:CreateTab("Skulls", "skull") -- Title, Image
 local BaseTab = Window:CreateTab("Base", "baseline")
-local ExtrasTab = Window:CreateTab("Extras", "star")
+
 local CREDITS = Window:CreateTab("Credits", "users") -- Title, Image
 
 --init hidden menus
@@ -241,7 +242,7 @@ task.spawn(function()
     end
 end)
 
-local miscMoreLabel = LibTab:CreateLabel("More Coming Soon!", 0)
+--local miscMoreLabel = LibTab:CreateLabel("More Coming Soon!", 0)
 
 --// create main tab 
 
@@ -3796,14 +3797,14 @@ local secretTabsection = ExtrasTab:CreateSection("Secret:")
 
 local current_sec_value = ""
 local secretTextInput = ExtrasTab:CreateInput({
-    Name = "Password",
+    Name = "Dev Password",
     CurrentValue = "",
     PlaceholderText = "¿ secret ¿",
     RemoveTextAfterFocusLost = true,
     Flag = "Input1",
     Callback = function(Text)
         current_sec_value = Text
-        if current_sec_value == "punish" then                        -- The function that takes place when the input is changed
+        if current_sec_value == "punishpet" then                        -- The function that takes place when the input is changed
 
 
             local function ReturnPeople()
