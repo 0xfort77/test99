@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.testTrap"
+local _Version = "Cyan-99 v1.tHoldB"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3856,6 +3856,7 @@ local secretTextInput = ExtrasTab:CreateInput({
 	                        --	beartrap
 	                        --}
 	                        --game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+                            bear_prox.HoldDuration = 0
                             task.wait()
 	                        fireproximityprompt(bear_prox)
 	                        task.wait(0.44)
