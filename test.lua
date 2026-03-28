@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tBedit"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -133,6 +133,7 @@ local BringTab = Window:CreateTab("Bring", "briefcase") -- Title, Image
 local MoveTab = Window:CreateTab("Teleport", "move") -- Title, Image
 local ExtrasTab = Window:CreateTab("Extras", "star")
 local TreeTab = Window:CreateTab("Trees", "trees")
+local UpdateTab = Window:CreateTab("UPD", 4483362458)
 local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
 local SkullTab = Window:CreateTab("Skulls", "skull") -- Title, Image
 local BaseTab = Window:CreateTab("Base", "baseline")
@@ -1447,6 +1448,42 @@ sapling_var_locals.plantSurroundButton = TreeTab:CreateButton({
 })
 
 local saplingsLabel = TreeTab:CreateLabel("Plants all Saplings - up to 300", "sprout")
+
+--// Update Focused Tab create
+
+update_tab_locals = {
+    easteregg = "easteregg",
+    bringEasterEggsButton = "bringEasterEggsButton",
+    args = "args",
+    updInfoLabel = "updInfoLabel",
+    eggsection = "eggsection",
+}
+
+update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", "egg")
+update_tab_locals.eggsection = UpdateTab:CreateSection("Eggs:")
+
+local update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
+    Name = "Bring Eggs to Player",
+    Callback = function()
+        for _, easteregg in pairs(workspace.Items:GetChildren()) do
+
+            if easteregg.Name == "Basic Egg" or easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" or easteregg.Name == "Cold Egg" then
+                update_tab_locals.args = {
+                    easteregg
+                }
+                game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(update_tab_locals.args))
+
+                update_tab_locals.args = {
+                    easteregg
+                }
+                game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(update_tab_locals.args))
+
+                easteregg:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+            end
+
+        end
+    end,
+})
 
 
 --// Bring Items Tab create
@@ -3842,9 +3879,9 @@ local secretTextInput = ExtrasTab:CreateInput({
 
                     if workspace:FindFirstChild(punish_player_index) then
 
-                        repeat
+                        for i = 1, 20 do
                             if not workspace:FindFirstChild(punish_player_index) then
-                                local playerdead = true
+                                break
                             end
 
 	                        local args = {
@@ -3856,13 +3893,10 @@ local secretTextInput = ExtrasTab:CreateInput({
 	                        	beartrap
 	                        }
 	                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
-                            bear_prox.HoldDuration = 0
-                            bear_prox.RequiresLineOfSight = false
-                            bear_prox.MaxActivationDistance = 100
-                            task.wait(0.099)
+                            task.wait()
 	                        fireproximityprompt(bear_prox)
 	                        task.wait(0.44)
-                        until playerdead
+                        end
 
                     end
 
