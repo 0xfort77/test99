@@ -1457,6 +1457,8 @@ update_tab_locals = {
     args = "args",
     updInfoLabel = "updInfoLabel",
     eggsection = "eggsection",
+    peltsection = "peltsection",
+    bringEasterPelts = "bringEasterPelts",
 }
 
 update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", "egg")
@@ -1482,6 +1484,32 @@ update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
             end
 
         end
+    end,
+})
+
+update_tab_locals.peltsection = UpdateTab:CreateSection("Pelts:")
+update_tab_locals.bringEasterPelts = UpdateTab:CreateButton({
+    Name = "Bring Easter Pelts to Player",
+    Callback = function()
+        for _, easterPelt in pairs(workspace.Items:GetChildren()) do
+
+            if easterPelt.Name == "Easter Wolf Pelt" or easterPelt.Name == "Easter Alpha Wolf Pelt" or easterPelt.Name == "Easter Bear Pelt" then
+                update_tab_locals.args = {
+                    easterPelt
+                }
+                game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(update_tab_locals.args))
+
+                update_tab_locals.args = {
+                    easterPelt
+                }
+                game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(update_tab_locals.args))
+
+                easterPelt:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+                task.wait()
+            end
+
+        end
+
     end,
 })
 
