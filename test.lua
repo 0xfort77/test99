@@ -1467,7 +1467,7 @@ update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
     Callback = function()
         for _, easteregg in pairs(workspace.Items:GetChildren()) do
 
-            if easteregg.Name == "Basic Egg" or easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" or easteregg.Name == "Cold Egg" then
+            if easteregg.Name == "Basic Egg" or easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" or easteregg.Name == "Alien Egg" then
                 update_tab_locals.args = {
                     easteregg
                 }
