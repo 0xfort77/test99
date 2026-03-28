@@ -1462,7 +1462,7 @@ update_tab_locals = {
 update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", "egg")
 update_tab_locals.eggsection = UpdateTab:CreateSection("Eggs:")
 
-local update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
+update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
     Name = "Bring Eggs to Player",
     Callback = function()
         for _, easteregg in pairs(workspace.Items:GetChildren()) do
