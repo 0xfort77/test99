@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFestSS"
+local _Version = "Cyan-99 v1.tnoSpace"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1573,15 +1573,15 @@ update_tab_locals.bringEasterPelts = UpdateTab:CreateButton({
 })
 
 update_tab_locals.cultsection = UpdateTab:CreateSection("Festive Cultists:")
-update_tab_locals.festcult_flag = false
+local festcult_flag = false
 update_tab_locals.festivecultToggle = UpdateTab:CreateToggle({
     Name = "Auto Sacrifice 🐰",
     CurrentValue = false,
     Flag = "cultFFToggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
-        update_tab_locals.festcult_flag = Value
+        festcult_flag = Value
 
-        if update_tab_locals.festcult_flag then
+        if festcult_flag then
             Rayfield:Notify({
                 Title = "Notification",
                 Content = "Auto Sacrifice 🐰 enabled",
@@ -1591,21 +1591,21 @@ update_tab_locals.festivecultToggle = UpdateTab:CreateToggle({
 
         end
 
-        while update_tab_locals.festcult_flag do
+        while festcult_flag do
 
             task.wait(0.15)
             if workspace.Map.Landmarks.Volcano.Functional:FindFirstChild("Lava") then
 
 
                 for _, cult in pairs(workspace.Items:GetChildren()) do
-                    if cult.Name == "Cultist" or cult.Name == "Crossbow Cultist" then
-                        if cult:FindFirstChild("Bunny Ears") then
-                            local args = {
-	                            cult,
-	                            workspace:WaitForChild("Map"):WaitForChild("Landmarks"):WaitForChild("Volcano"):WaitForChild("Functional"):WaitForChild("Lava")
-                            }
-                            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestLavaBurnItem"):InvokeServer(unpack(args))
-                        end
+                    if cult.Name == "Cultist" and cult:FindFirstChild("BunnyEars") or cult.Name == "Crossbow Cultist" and cult:FindFirstChild("BunnyEars") then
+                        
+                        local args = {
+                            cult,
+                            workspace:WaitForChild("Map"):WaitForChild("Landmarks"):WaitForChild("Volcano"):WaitForChild("Functional"):WaitForChild("Lava")
+                        }
+                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestLavaBurnItem"):InvokeServer(unpack(args))
+                      
                     end
 
                 end
