@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tDD"
+local _Version = "Cyan-99 v1.tBEinside"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1481,11 +1481,6 @@ local function basiceggs()
     return basicS
 end
 
-local function basiceggcframe(split)
-    local split = string.split(basiceggselected, ",")
-    return Vector3.new(split[1],split[2],split[3])
-end
-
 update_tab_locals.basicEggDropdown = UpdateTab:CreateDropdown({
     Name = "Basic Eggs",
     Options = basiceggs(),
@@ -1494,6 +1489,11 @@ update_tab_locals.basicEggDropdown = UpdateTab:CreateDropdown({
     Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Options)
         local basiceggselected = Options[1]
+        task.wait()
+        local function basiceggcframe(split)
+            local split = string.split(basiceggselected, ",")
+            return Vector3.new(split[1],split[2],split[3])
+        end
         task.wait()
         HRP.CFrame = CFrame.new(basiceggcframe(basiceggselected) + Vector3.new(0,5,0))
         task.wait()
