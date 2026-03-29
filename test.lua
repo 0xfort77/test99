@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tEggREFRESH"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -133,7 +133,7 @@ local BringTab = Window:CreateTab("Bring", "briefcase") -- Title, Image
 local MoveTab = Window:CreateTab("Teleport", "move") -- Title, Image
 local ExtrasTab = Window:CreateTab("Extras", "star")
 local TreeTab = Window:CreateTab("Trees", "trees")
-local UpdateTab = Window:CreateTab("UPD", 4483362458)
+local UpdateTab = Window:CreateTab("UPD", "rabbit")
 local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
 local SkullTab = Window:CreateTab("Skulls", "skull") -- Title, Image
 local BaseTab = Window:CreateTab("Base", "baseline")
@@ -1465,7 +1465,7 @@ update_tab_locals = {
     refreshbasicSbutton = "refreshbasicSbutton",
 }
 
-update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions (some features bugged)", "egg")
+update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", "egg")
 update_tab_locals.eggsection = UpdateTab:CreateSection("Eggs:")
 
 local function basiceggs()
