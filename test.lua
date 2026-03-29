@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tBEinside"
+local _Version = "Cyan-99 v1.tEggREFRESH"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1462,6 +1462,7 @@ update_tab_locals = {
     basicEggDropdown = "basicEggDropdown",
     basiceggfunction = "basiceggfunction",
     new_basic_egg = "new_basic_egg",
+    refreshbasicSbutton = "refreshbasicSbutton",
 }
 
 update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions (some features bugged)", "egg")
@@ -1497,6 +1498,24 @@ update_tab_locals.basicEggDropdown = UpdateTab:CreateDropdown({
         task.wait()
         HRP.CFrame = CFrame.new(basiceggcframe(basiceggselected) + Vector3.new(0,5,0))
         task.wait()
+    end,
+})
+
+update_tab_locals.refreshbasicSbutton = UpdateTab:CreateButton({
+    Name = "Refresh List",
+    Callback = function()
+        local basicS = {}
+        for _, easteregg in pairs(workspace.Items:GetChildren()) do
+            if easteregg.Name == "Basic Egg" then
+                update_tab_locals.new_basic_egg = easteregg:GetPivot().Position
+                if not update_tab_locals.new_basic_egg then break end
+                if not table.find(basicS, tostring(update_tab_locals.new_basic_egg)) then
+                    table.insert(basicS, tostring(update_tab_locals.new_basic_egg))
+                end
+            end
+        end
+        update_tab_locals.basicEggDropdown:Refresh(basicS)
+        return basicS
     end,
 })
 
