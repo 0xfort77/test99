@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tToggleV"
+local _Version = "Cyan-99 v1.toggle22"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -628,7 +628,7 @@ local cultVolcanoToggle = MainTab:CreateToggle({
                 Image = 4483362458,
             })
 
-            festivecultToggle:Set(false)
+            --festivecultToggle:Set(false)
         end
 
         while cultist_S_flag do
