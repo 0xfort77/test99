@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t"
+local _Version = "Cyan-99 v1.tDD"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1459,17 +1459,53 @@ update_tab_locals = {
     eggsection = "eggsection",
     peltsection = "peltsection",
     bringEasterPelts = "bringEasterPelts",
+    basicEggDropdown = "basicEggDropdown",
+    basiceggfunction = "basiceggfunction",
+    new_basic_egg = "new_basic_egg",
 }
 
-update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", "egg")
+update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions (some features bugged)", "egg")
 update_tab_locals.eggsection = UpdateTab:CreateSection("Eggs:")
 
+local function basiceggs()
+    local basicS = {}
+    for _, easteregg in pairs(workspace.Items:GetChildren()) do
+        if easteregg.Name == "Basic Egg" then
+            update_tab_locals.new_basic_egg = easteregg:GetPivot().Position
+            if not update_tab_locals.new_basic_egg then break end
+            if not table.find(basicS, tostring(update_tab_locals.new_basic_egg)) then
+                table.insert(basicS, tostring(update_tab_locals.new_basic_egg))
+            end
+        end
+    end
+    return basicS
+end
+
+local function basiceggcframe(split)
+    local split = string.split(basiceggselected, ",")
+    return Vector3.new(split[1],split[2],split[3])
+end
+
+update_tab_locals.basicEggDropdown = UpdateTab:CreateDropdown({
+    Name = "Basic Eggs",
+    Options = basiceggs(),
+    CurrentOption = Options,
+    MultipleOptions = false,
+    Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Options)
+        local basiceggselected = Options[1]
+        task.wait()
+        HRP.CFrame = CFrame.new(basiceggcframe(basiceggselected) + Vector3.new(0,5,0))
+        task.wait()
+    end,
+})
+
 update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
-    Name = "Bring Eggs to Player",
+    Name = "Bring Uncommon Eggs to Player",
     Callback = function()
         for _, easteregg in pairs(workspace.Items:GetChildren()) do
 
-            if easteregg.Name == "Basic Egg" or easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" or easteregg.Name == "Alien Egg" then
+            if easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" then
                 update_tab_locals.args = {
                     easteregg
                 }
