@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tnoSpace"
+local _Version = "Cyan-99 v1.tToggleV"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -628,6 +628,7 @@ local cultVolcanoToggle = MainTab:CreateToggle({
                 Image = 4483362458,
             })
 
+            festivecultToggle:Set(false)
         end
 
         while cultist_S_flag do
@@ -1464,7 +1465,6 @@ update_tab_locals = {
     new_basic_egg = "new_basic_egg",
     refreshbasicSbutton = "refreshbasicSbutton",
     cultsection = "cultsection",
-    festivecultToggle = "festivecultToggle",
     festcult_flag = "festcult_flag",
     cultist_desc = "cultist_desc",
 }
@@ -1574,7 +1574,7 @@ update_tab_locals.bringEasterPelts = UpdateTab:CreateButton({
 
 update_tab_locals.cultsection = UpdateTab:CreateSection("Festive Cultists:")
 local festcult_flag = false
-update_tab_locals.festivecultToggle = UpdateTab:CreateToggle({
+local festivecultToggle = UpdateTab:CreateToggle({
     Name = "Auto Sacrifice 🐰",
     CurrentValue = false,
     Flag = "cultFFToggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
@@ -1589,6 +1589,7 @@ update_tab_locals.festivecultToggle = UpdateTab:CreateToggle({
                 Image = 4483362458,
             })
 
+            cultVolcanoToggle:Set(false)
         end
 
         while festcult_flag do
