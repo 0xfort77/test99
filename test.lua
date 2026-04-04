@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tEasterweek2"
+local _Version = "Cyan-99 v1.tupdCarrot"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1523,6 +1523,8 @@ update_tab_locals = {
     festcult_flag = "festcult_flag",
     cultist_desc = "cultist_desc",
     eggsafehouseButton = "eggsafehouseButton",
+    carrotsection = "carrotsection",
+    bringtheCarrotsButton = "bringtheCarrotsButton",
 }
 
 update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", "egg")
@@ -1608,7 +1610,8 @@ update_tab_locals.eggsafehouseButton = UpdateTab:CreateButton({
         if workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe") then
             if workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top") then
 
-                HRP.CFrame = workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top").CFrame * CFrame.new(0,30,0)
+                HRP.CFrame = workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top").CFrame * CFrame.new(0,40,0)
+
                 task.wait()
 
             else
@@ -1626,6 +1629,30 @@ update_tab_locals.eggsafehouseButton = UpdateTab:CreateButton({
                 Duration = 8,
                 Image = 4483362458,
             })
+        end
+    end,
+})
+
+update_tab_locals.carrotsection = UpdateTab:CreateSection("Carrots:")
+
+update_tab_locals.bringtheCarrotsButton = UpdateTab:CreateButton({
+    Name = "Bring Carrots to Player",
+    Callback = function()
+        for _, carrot in pairs(workspace.Items:GetChildren()) do
+
+            if carrot.Name == "Carrot" then
+                local args = {
+                    carrot
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+
+                local args = {
+                    carrot
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+
+                carrot:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+            end   
         end
     end,
 })
