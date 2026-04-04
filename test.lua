@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tamingDsize"
+local _Version = "Cyan-99 v1.tEasterweek2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -132,7 +132,7 @@ local LibTab = Window:CreateTab("", "library") -- Title, Image
 local MainTab = Window:CreateTab("Main", "blend") -- Title, Image
 local BringTab = Window:CreateTab("Bring", "briefcase") -- Title, Image
 local MoveTab = Window:CreateTab("Teleport", "move") -- Title, Image
-local ExtrasTab = Window:CreateTab("Extras", "star")
+local ExtrasTab = Window:CreateTab("Menus", "star")
 local TreeTab = Window:CreateTab("Trees", "trees")
 local UpdateTab = Window:CreateTab("UPD", "rabbit")
 local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
@@ -1522,6 +1522,7 @@ update_tab_locals = {
     cultsection = "cultsection",
     festcult_flag = "festcult_flag",
     cultist_desc = "cultist_desc",
+    eggsafehouseButton = "eggsafehouseButton",
 }
 
 update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", "egg")
@@ -1583,7 +1584,7 @@ update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
     Callback = function()
         for _, easteregg in pairs(workspace.Items:GetChildren()) do
 
-            if easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" then
+            if easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" or easteregg.Name == "Firefly Egg" then
                 update_tab_locals.args = {
                     easteregg
                 }
@@ -1597,6 +1598,34 @@ update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
                 easteregg:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
             end
 
+        end
+    end,
+})
+
+update_tab_locals.eggsafehouseButton = UpdateTab:CreateButton({
+    Name = "Teleport to Bunny's Safehouse",
+    Callback = function()
+        if workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe") then
+            if workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top") then
+
+                HRP.CFrame = workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top").CFrame * CFrame.new(0,30,0)
+                task.wait()
+
+            else
+                Rayfield:Notify({
+                    Title = "Notification",
+                    Content = "No Easter Bunny Safehouse detected",
+                    Duration = 8,
+                    Image = 4483362458,
+                })
+            end
+        else
+            Rayfield:Notify({
+                Title = "Notification",
+                Content = "No Easter Bunny Safehouse detected",
+                Duration = 8,
+                Image = 4483362458,
+            })
         end
     end,
 })
@@ -2401,7 +2430,7 @@ local meatsncakeButton = BringTab:CreateButton({
         if bring_index == "Player" then
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
-                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" then
+                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" then
                     bring_items_locals.args = {
                         food_item
                     }
@@ -2420,7 +2449,7 @@ local meatsncakeButton = BringTab:CreateButton({
         elseif bring_index == "Scrapper" then
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
-                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" then
+                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" then
                     bring_items_locals.args = {
                         food_item
                     }
@@ -2438,7 +2467,7 @@ local meatsncakeButton = BringTab:CreateButton({
         elseif bring_index == "Fire" then
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
-                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" then
+                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" then
                     bring_items_locals.args = {
                         food_item
                     }
