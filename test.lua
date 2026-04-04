@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tamingà"
+local _Version = "Cyan-99 v1.tamingB"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -881,7 +881,7 @@ maintab_locals.fishingToggle = MainTab:CreateToggle({
 })
 
 local tamingsuccessArea = game:GetService("Players").LocalPlayer.PlayerGui.Interface.TamingFluteFrame.SuccessBar.Bar
-tamingsuccessArea.UICorner = UDim2.new(0, 10)
+--tamingsuccessArea.UICorner = UDim2.new(0, 10)
 
 maintab_locals.tamingToggle = MainTab:CreateToggle({
     Name = "Easy Taming 🐾",
