@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tamingSize//"
+local _Version = "Cyan-99 v1.tamingDsize"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -903,7 +903,7 @@ maintab_locals.tamingToggle = MainTab:CreateToggle({
         while taming_flag do
 
             task.wait()
-            tamingsuccessArea.Position = UDim2.new(0, 1, 0, 1)
+            tamingsuccessArea.Position = UDim2.new(0.5, 0, 0, 0)
             tamingsuccessArea.Size = UDim2.new(1, 0, 1, 0)
             task.wait()
 
