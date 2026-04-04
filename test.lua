@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tamingB"
+local _Version = "Cyan-99 v1.tamingC1"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -880,8 +880,9 @@ maintab_locals.fishingToggle = MainTab:CreateToggle({
     end,
 })
 
-local tamingsuccessArea = game:GetService("Players").LocalPlayer.PlayerGui.Interface.TamingFluteFrame.SuccessBar.Bar
---tamingsuccessArea.UICorner = UDim2.new(0, 10)
+local tamingsuccessArea = game:GetService("Players").LocalPlayer.PlayerGui.Interface.TamingFluteFrame.TimingBar.SuccessArea
+local UICorner_T = Instance.new("UICorner",tamingsuccessArea)
+UICorner_T.CornerRadius = UDim.new(0, 20)
 
 maintab_locals.tamingToggle = MainTab:CreateToggle({
     Name = "Easy Taming 🐾",
@@ -1643,7 +1644,7 @@ local festivecultToggle = UpdateTab:CreateToggle({
                 Image = 4483362458,
             })
 
-            cultVolcanoToggle:Set(false)
+            maintab_locals.cultVolcanoToggle:Set(false)
         end
 
         while festcult_flag do
