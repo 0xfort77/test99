@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tWaypoints"
+local _Version = "Cyan-99 v1.tWP2"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -1192,7 +1192,7 @@ local setwaypointButton1 = MoveTab:CreateButton({
     Name = "[1] Store Waypoint",
     Callback = function()
         local set_hrp_cord = HRP.CFrame
-        hrp_table["HRP1"] = set_hrp_cord
+        HRP_table["HRP1"] = set_hrp_cord
 
         travelwaypointButton1:Set("⏩ Waypoint 1")
     end,
@@ -1225,7 +1225,7 @@ local setwaypointButton2 = MoveTab:CreateButton({
     Name = "[2] Store Waypoint",
     Callback = function()
         local set_hrp_cord = HRP.CFrame
-        hrp_table["HRP2"] = set_hrp_cord
+        HRP_table["HRP2"] = set_hrp_cord
 
         travelwaypointButton2:Set("⏩ Waypoint 2")
     end,
@@ -1258,7 +1258,7 @@ local setwaypointButton3 = MoveTab:CreateButton({
     Name = "[3] Store Waypoint",
     Callback = function()
         local set_hrp_cord = HRP.CFrame
-        hrp_table["HRP3"] = set_hrp_cord
+        HRP_table["HRP3"] = set_hrp_cord
 
         travelwaypointButton1:Set("⏩ Waypoint 3")
     end,
