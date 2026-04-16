@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tupdCarrot"
+local _Version = "Cyan-99 v1.tWaypoints"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -134,11 +134,11 @@ local BringTab = Window:CreateTab("Bring", "briefcase") -- Title, Image
 local MoveTab = Window:CreateTab("Teleport", "move") -- Title, Image
 local ExtrasTab = Window:CreateTab("Menus", "star")
 local TreeTab = Window:CreateTab("Trees", "trees")
-local UpdateTab = Window:CreateTab("UPD", "rabbit")
+
 local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
 local SkullTab = Window:CreateTab("Skulls", "skull") -- Title, Image
 local BaseTab = Window:CreateTab("Base", "baseline")
-
+local UpdateTab = Window:CreateTab("UPD", 4483362458)
 local CREDITS = Window:CreateTab("Credits", "users") -- Title, Image
 
 --init hidden menus
@@ -1155,6 +1155,116 @@ local Cave1Button = MoveTab:CreateButton({
     end,
 })
 
+local waypontsection = MoveTab:CreateSection("Custom Waypoints:") --// Waypoints
+
+
+local HRP_table = {
+    HRP0 = "nil",
+    HRP1 = "nil",
+    HRP2 = "nil",
+    HRP3 = "nil",
+}
+
+local travelwaypointButton1 = MoveTab:CreateButton({
+    Name = "Not Ready!",
+    Callback = function()
+        for key, value in pairs(HRP_table) do
+            if key == "HRP1" then
+                if value == "nil" then
+                    Rayfield:Notify({
+                        Title = "Notification",
+                        Content = "No waypoint set!",
+                        Duration = 10,
+                        Image = 4483362458,
+                    })
+
+                else
+                    HRP.CFrame = value
+                end
+                
+            end
+        end
+
+    end,
+})
+
+local setwaypointButton1 = MoveTab:CreateButton({
+    Name = "[1] Store Waypoint",
+    Callback = function()
+        local set_hrp_cord = HRP.CFrame
+        hrp_table["HRP1"] = set_hrp_cord
+
+        travelwaypointButton1:Set("⏩ Waypoint 1")
+    end,
+})
+
+local travelwaypointButton2 = MoveTab:CreateButton({
+    Name = "Not Ready!",
+    Callback = function()
+        for key, value in pairs(HRP_table) do
+            if key == "HRP2" then
+                if value == "nil" then
+                    Rayfield:Notify({
+                        Title = "Notification",
+                        Content = "No waypoint set!",
+                        Duration = 10,
+                        Image = 4483362458,
+                    })
+
+                else
+                    HRP.CFrame = value
+                end
+                
+            end
+        end
+
+    end,
+})
+
+local setwaypointButton2 = MoveTab:CreateButton({
+    Name = "[2] Store Waypoint",
+    Callback = function()
+        local set_hrp_cord = HRP.CFrame
+        hrp_table["HRP2"] = set_hrp_cord
+
+        travelwaypointButton2:Set("⏩ Waypoint 2")
+    end,
+})
+
+local travelwaypointButton3 = MoveTab:CreateButton({
+    Name = "Not Ready!",
+    Callback = function()
+        for key, value in pairs(HRP_table) do
+            if key == "HRP3" then
+                if value == "nil" then
+                    Rayfield:Notify({
+                        Title = "Notification",
+                        Content = "No waypoint set!",
+                        Duration = 10,
+                        Image = 4483362458,
+                    })
+
+                else
+                    HRP.CFrame = value
+                end
+                
+            end
+        end
+
+    end,
+})
+
+local setwaypointButton3 = MoveTab:CreateButton({
+    Name = "[3] Store Waypoint",
+    Callback = function()
+        local set_hrp_cord = HRP.CFrame
+        hrp_table["HRP3"] = set_hrp_cord
+
+        travelwaypointButton1:Set("⏩ Waypoint 3")
+    end,
+})
+
+
 local movesection2 = MoveTab:CreateSection("Lost Children:") --// CHILDREN
 
 local function kid1_loc()
@@ -1508,235 +1618,227 @@ local saplingsLabel = TreeTab:CreateLabel("Plants all Saplings - up to 300", "sp
 --// Update Focused Tab create
 
 update_tab_locals = {
-    easteregg = "easteregg",
-    bringEasterEggsButton = "bringEasterEggsButton",
-    args = "args",
+    local_variable = "local_variable",
     updInfoLabel = "updInfoLabel",
-    eggsection = "eggsection",
-    peltsection = "peltsection",
-    bringEasterPelts = "bringEasterPelts",
-    basicEggDropdown = "basicEggDropdown",
-    basiceggfunction = "basiceggfunction",
-    new_basic_egg = "new_basic_egg",
-    refreshbasicSbutton = "refreshbasicSbutton",
-    cultsection = "cultsection",
-    festcult_flag = "festcult_flag",
-    cultist_desc = "cultist_desc",
-    eggsafehouseButton = "eggsafehouseButton",
-    carrotsection = "carrotsection",
-    bringtheCarrotsButton = "bringtheCarrotsButton",
+    updInfoLabel2 = "updInfoLabel2",
+    updInfoLabel3 = "updInfoLabel3",
+    discord_lecture = "discord_lecture",
 }
 
-update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", "egg")
-update_tab_locals.eggsection = UpdateTab:CreateSection("Eggs:")
+update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", 4483362458)
+update_tab_locals.updInfoLabel2 = UpdateTab:CreateLabel("Game update pending...", 4483362458)
+update_tab_locals.updInfoLabel3 = UpdateTab:CreateLabel("Please check back soon", 4483362458)
+update_tab_locals.discord_lecture = UpdateTab:CreateSection("Join the Discord for a chance to win a free Key every week!")
+--
+--local function basiceggs()
+--    local basicS = {}
+--    for _, easteregg in pairs(workspace.Items:GetChildren()) do
+--        if easteregg.Name == "Basic Egg" then
+--            update_tab_locals.new_basic_egg = easteregg:GetPivot().Position
+--            if not update_tab_locals.new_basic_egg then break end
+--            if not table.find(basicS, tostring(update_tab_locals.new_basic_egg)) then
+--                table.insert(basicS, tostring(update_tab_locals.new_basic_egg))
+--            end
+--        end
+--    end
+--    return basicS
+--end
+--
+--update_tab_locals.basicEggDropdown = UpdateTab:CreateDropdown({
+--    Name = "Basic Eggs",
+--    Options = basiceggs(),
+--    CurrentOption = Options,
+--    MultipleOptions = false,
+--    Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+--    Callback = function(Options)
+--        local basiceggselected = Options[1]
+--        task.wait()
+--        local function basiceggcframe(split)
+--            local split = string.split(basiceggselected, ",")
+--            return Vector3.new(split[1],split[2],split[3])
+--        end
+--        task.wait()
+--        HRP.CFrame = CFrame.new(basiceggcframe(basiceggselected) + Vector3.new(0,5,0))
+--        task.wait()
+--    end,
+--})
+--
+--update_tab_locals.refreshbasicSbutton = UpdateTab:CreateButton({
+--    Name = "Refresh List",
+--    Callback = function()
+--        local basicS = {}
+--        for _, easteregg in pairs(workspace.Items:GetChildren()) do
+--            if easteregg.Name == "Basic Egg" then
+--                update_tab_locals.new_basic_egg = easteregg:GetPivot().Position
+--                if not update_tab_locals.new_basic_egg then break end
+--                if not table.find(basicS, tostring(update_tab_locals.new_basic_egg)) then
+--                    table.insert(basicS, tostring(update_tab_locals.new_basic_egg))
+--                end
+--            end
+--        end
+--        update_tab_locals.basicEggDropdown:Refresh(basicS)
+--        return basicS
+--    end,
+--})
+--
+--update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
+--    Name = "Bring Uncommon Eggs to Player",
+--    Callback = function()
+--        for _, easteregg in pairs(workspace.Items:GetChildren()) do
+--
+--            if easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" or easteregg.Name == "Firefly Egg" then
+--                update_tab_locals.args = {
+--                    easteregg
+--                }
+--                game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(update_tab_locals.args))
+--
+--                update_tab_locals.args = {
+--                    easteregg
+--                }
+--                game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(update_tab_locals.args))
+--
+--                easteregg:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+--            end
+--
+--        end
+--    end,
+--})
+--
+--update_tab_locals.eggsafehouseButton = UpdateTab:CreateButton({
+--    Name = "Teleport to Bunny's Safehouse",
+--    Callback = function()
+--        if workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe") then
+--            if workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top") then
+--
+--                HRP.CFrame = workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top").CFrame * CFrame.new(0,40,0)
+--
+--                task.wait()
+--
+--            else
+--                Rayfield:Notify({
+--                    Title = "Notification",
+--                    Content = "No Easter Bunny Safehouse detected",
+--                    Duration = 8,
+--                    Image = 4483362458,
+--                })
+--            end
+--        else
+--            Rayfield:Notify({
+--                Title = "Notification",
+--                Content = "No Easter Bunny Safehouse detected",
+--                Duration = 8,
+--                Image = 4483362458,
+--            })
+--        end
+--    end,
+--})
+--
+--update_tab_locals.carrotsection = UpdateTab:CreateSection("Carrots:")
+--
+--update_tab_locals.bringtheCarrotsButton = UpdateTab:CreateButton({
+--    Name = "Bring Carrots to Player",
+--    Callback = function()
+--        for _, carrot in pairs(workspace.Items:GetChildren()) do
+--
+--            if carrot.Name == "Carrot" then
+--                local args = {
+--                    carrot
+--                }
+--                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
+--
+--                local args = {
+--                    carrot
+--                }
+--                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
+--
+--                carrot:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+--            end   
+--        end
+--    end,
+--})
+--
+--update_tab_locals.peltsection = UpdateTab:CreateSection("Pelts:")
+--update_tab_locals.bringEasterPelts = UpdateTab:CreateButton({
+--    Name = "Bring Easter Pelts to Player",
+--    Callback = function()
+--        for _, easterPelt in pairs(workspace.Items:GetChildren()) do
+--
+--            if easterPelt.Name == "Easter Wolf Pelt" or easterPelt.Name == "Easter Alpha Wolf Pelt" or easterPelt.Name == "Easter Bear Pelt" then
+--                update_tab_locals.args = {
+--                    easterPelt
+--                }
+--                game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(update_tab_locals.args))
+--
+--                update_tab_locals.args = {
+--                    easterPelt
+--                }
+--                game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(update_tab_locals.args))
+--
+--                easterPelt:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+--                task.wait()
+--            end
+--
+--        end
+--
+--    end,
+--})
+--
+--update_tab_locals.cultsection = UpdateTab:CreateSection("Festive Cultists:")
+--local festcult_flag = false
+--local festivecultToggle = UpdateTab:CreateToggle({
+--    Name = "Auto Sacrifice ",
+--    CurrentValue = false,
+--    Flag = "cultFFToggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+--    Callback = function(Value)
+--        festcult_flag = Value
+--
+--        if festcult_flag then
+--            Rayfield:Notify({
+--                Title = "Notification",
+--                Content = "Auto Sacrifice  enabled",
+--                Duration = 10,
+--                Image = 4483362458,
+--            })
+--
+--            maintab_locals.cultVolcanoToggle:Set(false)
+--        end
+--
+--        while festcult_flag do
+--
+--            task.wait(0.15)
+--            if workspace.Map.Landmarks.Volcano.Functional:FindFirstChild("Lava") then
+--
+--
+--                for _, cult in pairs(workspace.Items:GetChildren()) do
+--                    if cult.Name == "Cultist" and cult:FindFirstChild("BunnyEars") or cult.Name == "Crossbow Cultist" and cult:FindFirstChild("BunnyEars") then
+--                        
+--                        local args = {
+--                            cult,
+--                            workspace:WaitForChild("Map"):WaitForChild("Landmarks"):WaitForChild("Volcano"):WaitForChild("Functional"):WaitForChild("Lava")
+--                        }
+--                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestLavaBurnItem"):InvokeServer(unpack(args))
+--                      
+--                    end
+--
+--                end
+--
+--            else
+--                Rayfield:Notify({
+--                    Title = "Notification",
+--                    Content = "No Lava detected!",
+--                    Duration = 10,
+--                    Image = 4483362458,
+--                })
+--                task.wait(4.5)
+--            end
+--            task.wait(0.25)
+--
+--        end
+--    end,
+--})
+--update_tab_locals.cultist_desc = UpdateTab:CreateLabel("Produces Volcanic Eggs (Volcano Biome Only)", "flame")
 
-local function basiceggs()
-    local basicS = {}
-    for _, easteregg in pairs(workspace.Items:GetChildren()) do
-        if easteregg.Name == "Basic Egg" then
-            update_tab_locals.new_basic_egg = easteregg:GetPivot().Position
-            if not update_tab_locals.new_basic_egg then break end
-            if not table.find(basicS, tostring(update_tab_locals.new_basic_egg)) then
-                table.insert(basicS, tostring(update_tab_locals.new_basic_egg))
-            end
-        end
-    end
-    return basicS
-end
 
-update_tab_locals.basicEggDropdown = UpdateTab:CreateDropdown({
-    Name = "Basic Eggs",
-    Options = basiceggs(),
-    CurrentOption = Options,
-    MultipleOptions = false,
-    Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Options)
-        local basiceggselected = Options[1]
-        task.wait()
-        local function basiceggcframe(split)
-            local split = string.split(basiceggselected, ",")
-            return Vector3.new(split[1],split[2],split[3])
-        end
-        task.wait()
-        HRP.CFrame = CFrame.new(basiceggcframe(basiceggselected) + Vector3.new(0,5,0))
-        task.wait()
-    end,
-})
-
-update_tab_locals.refreshbasicSbutton = UpdateTab:CreateButton({
-    Name = "Refresh List",
-    Callback = function()
-        local basicS = {}
-        for _, easteregg in pairs(workspace.Items:GetChildren()) do
-            if easteregg.Name == "Basic Egg" then
-                update_tab_locals.new_basic_egg = easteregg:GetPivot().Position
-                if not update_tab_locals.new_basic_egg then break end
-                if not table.find(basicS, tostring(update_tab_locals.new_basic_egg)) then
-                    table.insert(basicS, tostring(update_tab_locals.new_basic_egg))
-                end
-            end
-        end
-        update_tab_locals.basicEggDropdown:Refresh(basicS)
-        return basicS
-    end,
-})
-
-update_tab_locals.bringEasterEggsButton = UpdateTab:CreateButton({
-    Name = "Bring Uncommon Eggs to Player",
-    Callback = function()
-        for _, easteregg in pairs(workspace.Items:GetChildren()) do
-
-            if easteregg.Name == "Lightning Egg" or easteregg.Name == "Basketball Egg" or easteregg.Name == "Frog Egg" or easteregg.Name == "Firefly Egg" then
-                update_tab_locals.args = {
-                    easteregg
-                }
-                game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(update_tab_locals.args))
-
-                update_tab_locals.args = {
-                    easteregg
-                }
-                game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(update_tab_locals.args))
-
-                easteregg:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
-            end
-
-        end
-    end,
-})
-
-update_tab_locals.eggsafehouseButton = UpdateTab:CreateButton({
-    Name = "Teleport to Bunny's Safehouse",
-    Callback = function()
-        if workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe") then
-            if workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top") then
-
-                HRP.CFrame = workspace.Map.Landmarks:FindFirstChild("Easter Bunny's Safe").Pedestal:FindFirstChild("Top").CFrame * CFrame.new(0,40,0)
-
-                task.wait()
-
-            else
-                Rayfield:Notify({
-                    Title = "Notification",
-                    Content = "No Easter Bunny Safehouse detected",
-                    Duration = 8,
-                    Image = 4483362458,
-                })
-            end
-        else
-            Rayfield:Notify({
-                Title = "Notification",
-                Content = "No Easter Bunny Safehouse detected",
-                Duration = 8,
-                Image = 4483362458,
-            })
-        end
-    end,
-})
-
-update_tab_locals.carrotsection = UpdateTab:CreateSection("Carrots:")
-
-update_tab_locals.bringtheCarrotsButton = UpdateTab:CreateButton({
-    Name = "Bring Carrots to Player",
-    Callback = function()
-        for _, carrot in pairs(workspace.Items:GetChildren()) do
-
-            if carrot.Name == "Carrot" then
-                local args = {
-                    carrot
-                }
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(args))
-
-                local args = {
-                    carrot
-                }
-                game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(args))
-
-                carrot:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
-            end   
-        end
-    end,
-})
-
-update_tab_locals.peltsection = UpdateTab:CreateSection("Pelts:")
-update_tab_locals.bringEasterPelts = UpdateTab:CreateButton({
-    Name = "Bring Easter Pelts to Player",
-    Callback = function()
-        for _, easterPelt in pairs(workspace.Items:GetChildren()) do
-
-            if easterPelt.Name == "Easter Wolf Pelt" or easterPelt.Name == "Easter Alpha Wolf Pelt" or easterPelt.Name == "Easter Bear Pelt" then
-                update_tab_locals.args = {
-                    easterPelt
-                }
-                game:GetService("ReplicatedStorage").RemoteEvents.RequestStartDraggingItem:FireServer(unpack(update_tab_locals.args))
-
-                update_tab_locals.args = {
-                    easterPelt
-                }
-                game:GetService("ReplicatedStorage").RemoteEvents.StopDraggingItem:FireServer(unpack(update_tab_locals.args))
-
-                easterPelt:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
-                task.wait()
-            end
-
-        end
-
-    end,
-})
-
-update_tab_locals.cultsection = UpdateTab:CreateSection("Festive Cultists:")
-local festcult_flag = false
-local festivecultToggle = UpdateTab:CreateToggle({
-    Name = "Auto Sacrifice 🐰",
-    CurrentValue = false,
-    Flag = "cultFFToggle1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
-        festcult_flag = Value
-
-        if festcult_flag then
-            Rayfield:Notify({
-                Title = "Notification",
-                Content = "Auto Sacrifice 🐰 enabled",
-                Duration = 10,
-                Image = 4483362458,
-            })
-
-            maintab_locals.cultVolcanoToggle:Set(false)
-        end
-
-        while festcult_flag do
-
-            task.wait(0.15)
-            if workspace.Map.Landmarks.Volcano.Functional:FindFirstChild("Lava") then
-
-
-                for _, cult in pairs(workspace.Items:GetChildren()) do
-                    if cult.Name == "Cultist" and cult:FindFirstChild("BunnyEars") or cult.Name == "Crossbow Cultist" and cult:FindFirstChild("BunnyEars") then
-                        
-                        local args = {
-                            cult,
-                            workspace:WaitForChild("Map"):WaitForChild("Landmarks"):WaitForChild("Volcano"):WaitForChild("Functional"):WaitForChild("Lava")
-                        }
-                        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestLavaBurnItem"):InvokeServer(unpack(args))
-                      
-                    end
-
-                end
-
-            else
-                Rayfield:Notify({
-                    Title = "Notification",
-                    Content = "No Lava detected!",
-                    Duration = 10,
-                    Image = 4483362458,
-                })
-                task.wait(4.5)
-            end
-            task.wait(0.25)
-
-        end
-    end,
-})
-update_tab_locals.cultist_desc = UpdateTab:CreateLabel("Produces Volcanic Eggs (Volcano Biome Only)", "flame")
 --// Bring Items Tab create
 
 local bring_items_locals = {
