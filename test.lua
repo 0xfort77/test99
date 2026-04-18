@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tWP2"
+local _Version = "Cyan-99 v1.tSM"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -161,6 +161,7 @@ local libtab_locals = {
     q2Label = "q2Label",
     q3Label = "q3Label",
     SHsection1 = "SHsection1",
+    shady_salesman = "shady_salesman",
     SHtimerLabel = "SHtimerLabel",
     defBiomeLabel = "defBiomeLabel",
     defFlameLabel = "defFlameLabel",
@@ -195,6 +196,18 @@ end
 
 -- stronghold timer
 libtab_locals.SHsection1 = LibTab:CreateSection("Misc:")
+
+libtab_locals.shady_salesman = LibTab:CreateLabel("Sketchy Salesman: ❌")
+task.spawn(function()
+    while true do
+        if workspace.Characters:FindFirstChild("Sketchy Salesman") then
+
+            libtab_locals.shady_salesman:Set("Sketchy Salesman: ✅")
+
+        end
+        task.wait(1.1111)
+    end
+end)
 
 libtab_locals.SHtimerLabel = LibTab:CreateLabel("Stronghold: not found", "timer")
 task.spawn(function()
@@ -1004,6 +1017,26 @@ local SHButton = MoveTab:CreateButton({
     end,
 })
 
+local ShadysalesmanButton = MoveTab:CreateButton({
+    Name = "Sketchy Salesman",
+    Callback = function()
+
+        if workspace.Characters:FindFirstChild("Sketchy Salesman") then
+            task.wait()
+            HRP.CFrame = workspace.Characters:FindFirstChild("Sketchy Salesman"):FindFirstChild("Head").CFrame * CFrame.new(0,6,0)
+        
+        else
+            Rayfield:Notify({
+                Title = "Notification",
+                Content = "No Salesman detected",
+                Duration = 10,
+                Image = 4483362458,
+            })
+        end
+
+    end,
+})
+
 local SHDCButton = MoveTab:CreateButton({
     Name = "Stronghold - Diamond Chest",
     Callback = function()
@@ -1166,7 +1199,7 @@ local HRP_table = {
 }
 
 local travelwaypointButton1 = MoveTab:CreateButton({
-    Name = "Not Ready!",
+    Name = "[1] Not Ready!",
     Callback = function()
         for key, value in pairs(HRP_table) do
             if key == "HRP1" then
@@ -1180,6 +1213,12 @@ local travelwaypointButton1 = MoveTab:CreateButton({
 
                 else
                     HRP.CFrame = value
+                    Rayfield:Notify({
+                        Title = "Notification",
+                        Content = "Going to Waypoint 1",
+                        Duration = 10,
+                        Image = 4483362458,
+                    })
                 end
                 
             end
@@ -1199,7 +1238,7 @@ local setwaypointButton1 = MoveTab:CreateButton({
 })
 
 local travelwaypointButton2 = MoveTab:CreateButton({
-    Name = "Not Ready!",
+    Name = "[2] Not Ready!",
     Callback = function()
         for key, value in pairs(HRP_table) do
             if key == "HRP2" then
@@ -1213,6 +1252,12 @@ local travelwaypointButton2 = MoveTab:CreateButton({
 
                 else
                     HRP.CFrame = value
+                    Rayfield:Notify({
+                        Title = "Notification",
+                        Content = "Going to Waypoint 2",
+                        Duration = 10,
+                        Image = 4483362458,
+                    })
                 end
                 
             end
@@ -1232,7 +1277,7 @@ local setwaypointButton2 = MoveTab:CreateButton({
 })
 
 local travelwaypointButton3 = MoveTab:CreateButton({
-    Name = "Not Ready!",
+    Name = "[3] Not Ready!",
     Callback = function()
         for key, value in pairs(HRP_table) do
             if key == "HRP3" then
@@ -1246,6 +1291,12 @@ local travelwaypointButton3 = MoveTab:CreateButton({
 
                 else
                     HRP.CFrame = value
+                    Rayfield:Notify({
+                        Title = "Notification",
+                        Content = "Going to Waypoint 3",
+                        Duration = 10,
+                        Image = 4483362458,
+                    })
                 end
                 
             end
@@ -1260,7 +1311,7 @@ local setwaypointButton3 = MoveTab:CreateButton({
         local set_hrp_cord = HRP.CFrame
         HRP_table["HRP3"] = set_hrp_cord
 
-        travelwaypointButton1:Set("⏩ Waypoint 3")
+        travelwaypointButton3:Set("⏩ Waypoint 3")
     end,
 })
 
