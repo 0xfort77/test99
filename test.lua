@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t"
+local _Version = "Cyan-99 v1.t22"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -203,7 +203,9 @@ task.spawn(function()
         if workspace.Characters:FindFirstChild("Sketchy Salesman") then
 
             libtab_locals.shady_salesman:Set("Sketchy Salesman: ✅", "ghost")
-
+        else
+            
+            libtab_locals.shady_salesman:Set("Sketchy Salesman: ❌", "ghost")
         end
         task.wait(1.1111)
     end
