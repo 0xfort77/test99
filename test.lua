@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t22"
+local _Version = "Cyan-99 v1.tKBk"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -165,6 +165,9 @@ local libtab_locals = {
     SHtimerLabel = "SHtimerLabel",
     defBiomeLabel = "defBiomeLabel",
     defFlameLabel = "defFlameLabel",
+    settings_sec = "settings_sec",
+    windowInput = "windowInput",
+    windowKB = "windowKB",
 }
 
 libtab_locals.libsection1 = LibTab:CreateSection("Hello!")
@@ -204,7 +207,7 @@ task.spawn(function()
 
             libtab_locals.shady_salesman:Set("Sketchy Salesman: ✅", "ghost")
         else
-            
+
             libtab_locals.shady_salesman:Set("Sketchy Salesman: ❌", "ghost")
         end
         task.wait(1.1111)
@@ -258,6 +261,38 @@ task.spawn(function()
         --print("flame not found")
     end
 end)
+
+libtab_locals.settings_sec = LibTab:CreateSection("Settings:")
+local window_keybind_index
+libtab_locals.windowInput = LibTab:CreateInput({
+    Name = "Window Visibile On/Off",
+    CurrentValue = "K",
+    PlaceholderText = "K",
+    RemoveTextAfterFocusLost = false,
+    Flag = "Input1",
+    Callback = function(Text)
+        window_keybind_index = Text
+
+    -- The function that takes place when the input is changed
+    -- The variable (Text) is a string for the value in the text box
+    end,
+})
+
+libtab_locals.windowKB = LibTab:CreateKeybind({
+    Name = "Window Visibile On/Off",
+    CurrentKeybind = window_keybind_index,
+    HoldToInteract = false,
+    Flag = "Keybind1", -- A flag is the identifier for the configuration file. Make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Keybind)
+        if Rayfield:IsVisible(true) then
+            Rayfield:SetVisibility(false)
+        else
+            Rayfield:IsVisible(true)
+        end
+    -- The function that takes place when the keybind is pressed
+    -- The variable (Keybind) is a boolean for whether the keybind is being held or not (HoldToInteract needs to be true)
+    end,
+})
 
 --local miscMoreLabel = LibTab:CreateLabel("More Coming Soon!", 0)
 
