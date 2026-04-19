@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tfood4"
+local _Version = "Cyan-99 v1.tf5"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -2844,6 +2844,7 @@ local applesButton = BringTab:CreateButton({
                     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     food_item:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+                    task.wait()
                 end   
             end
             task.wait()
@@ -2863,6 +2864,7 @@ local applesButton = BringTab:CreateButton({
                     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     food_item:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
+                    task.wait()
                 end   
             end
             task.wait()
@@ -2881,6 +2883,7 @@ local applesButton = BringTab:CreateButton({
                     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
 
                     food_item:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
+                    task.wait()
                 end   
             end
             task.wait()
