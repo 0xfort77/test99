@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t6polish"
+local _Version = "Cyan-99 v1.t7pol"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -4395,8 +4395,10 @@ local extrastab_locals = {
     santasack_path = "santasack_path",
 
 }
-extrastab_locals.warnlabel1ex = ExtrasTab:CreateLabel("NOTE: ", 0)
-extrastab_locals.warnlabel2ex = ExtrasTab:CreateLabel("Before you enable any menus, you MUST open the Crafting Table menu manually atleast once :)", 0)
+
+--local Paragraph = Tab:CreateParagraph({Title = "Paragraph Example", Content = "Paragraph Example"})
+
+extrastab_locals.warnlabel1ex = ExtrasTab:CreateParagraph({Title = "NOTE:", Content = "Before you enable any menus, you MUST open the Crafting Table menu manually atleast once :)" })
 
 extrastab_locals.mainextrasSection = ExtrasTab:CreateSection("Main/Crafting:")
 
