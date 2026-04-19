@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tKB2"
+local _Version = "Cyan-99 v1.tFood3"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -18,7 +18,7 @@ local Window = Rayfield:CreateWindow({
    ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
 
    DisableRayfieldPrompts = true,
-   DisableBuildWarnings = false, -- Prevents Rayfield from emitting warnings when the script has a version mismatch with the interface.
+   DisableBuildWarnings = true, -- Prevents Rayfield from emitting warnings when the script has a version mismatch with the interface.
 
    ConfigurationSaving = {
       Enabled = false,
@@ -167,6 +167,7 @@ local libtab_locals = {
     defFlameLabel = "defFlameLabel",
     settings_sec = "settings_sec",
     windowKB = "windowKB",
+    themesDropdown = "themesDropdown",
 }
 
 libtab_locals.libsection1 = LibTab:CreateSection("Hello!")
@@ -276,6 +277,19 @@ libtab_locals.windowKB = LibTab:CreateKeybind({
         end
     -- The function that takes place when the keybind is pressed
     -- The variable (Keybind) is a boolean for whether the keybind is being held or not (HoldToInteract needs to be true)
+    end,
+})
+
+libtab_locals.themesDropdown = Tab:CreateDropdown({
+    Name = "Select Theme",
+    Options = {"Default", "Amethyst", "Bloom", "DarkBlue", "Green", "Light", "Ocean", "Serenity"},
+    CurrentOption = {"DarkBlue"},
+    MultipleOptions = false,
+    Flag = "Dropdown1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Options)
+        Window.ModifyTheme(Options[1])
+    -- The function that takes place when the selected option is changed
+    -- The variable (Options) is a table of strings for the current selected options
     end,
 })
 
@@ -2627,12 +2641,12 @@ local highendammoButton = BringTab:CreateButton({
 local mainsectionfood = BringTab:CreateSection("Food:")
 
 local meatsncakeButton = BringTab:CreateButton({
-    Name = "Bring Meats & Cake",
+    Name = "Bring Meats",
     Callback = function()
         if bring_index == "Player" then
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
-                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" then
+                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" or food_item.Name == "Ribs" or food_item.Name == "Cooked Ribs" then
                     bring_items_locals.args = {
                         food_item
                     }
@@ -2651,7 +2665,7 @@ local meatsncakeButton = BringTab:CreateButton({
         elseif bring_index == "Scrapper" then
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
-                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" then
+                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" or food_item.Name == "Ribs" or food_item.Name == "Cooked Ribs" then
                     bring_items_locals.args = {
                         food_item
                     }
@@ -2669,7 +2683,193 @@ local meatsncakeButton = BringTab:CreateButton({
         elseif bring_index == "Fire" then
             for _, food_item in pairs(workspace.Items:GetChildren()) do
 
-                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cake" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" then
+                if food_item.Name == "Steak" or food_item.Name == "Morsel" or food_item.Name == "Cooked Morsel" or food_item.Name == "Cooked Steak" or food_item.Name == "Ribs" or food_item.Name == "Cooked Ribs" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+        end
+    end,
+})
+
+local cakeButton = BringTab:CreateButton({
+    Name = "Bring Cake",
+    Callback = function()
+        if bring_index == "Player" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Cake" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+
+        elseif bring_index == "Scrapper" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Cake" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+        elseif bring_index == "Fire" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Cake" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+        end
+    end,
+})
+
+local vegetablesButton = BringTab:CreateButton({
+    Name = "Bring Carrots & Corn",
+    Callback = function()
+        if bring_index == "Player" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Carrot" or food_item.Name == "Corn" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+
+        elseif bring_index == "Scrapper" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Carrot" or food_item.Name == "Corn" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+        elseif bring_index == "Fire" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Carrot" or food_item.Name == "Corn" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(FIREZONE.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+        end
+    end,
+})
+
+local applesButton = BringTab:CreateButton({
+    Name = "Bring Apples",
+    Callback = function()
+        if bring_index == "Player" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Apple" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(my_head.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+
+        elseif bring_index == "Scrapper" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Apple" then
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("RequestStartDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    bring_items_locals.args = {
+                        food_item
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("StopDraggingItem"):FireServer(unpack(bring_items_locals.args))
+
+                    food_item:PivotTo(workbench_loc.CFrame * CFrame.new(0, 10, 0))
+                end   
+            end
+            task.wait()
+        elseif bring_index == "Fire" then
+            for _, food_item in pairs(workspace.Items:GetChildren()) do
+
+                if food_item.Name == "Apple" then
                     bring_items_locals.args = {
                         food_item
                     }
