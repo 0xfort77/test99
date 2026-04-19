@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tFood3"
+local _Version = "Cyan-99 v1.tfood4"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -174,7 +174,7 @@ libtab_locals.libsection1 = LibTab:CreateSection("Hello!")
 
 libtab_locals.welcomeLabel = LibTab:CreateLabel("Welcome "..player.DisplayName.."!", "activity")
 
-libtab_locals.libsection1 = LibTab:CreateSection("Quests (beta):")
+libtab_locals.libsection1 = LibTab:CreateSection("Quests:")
 
 libtab_locals.quest_att = player:GetAttributes()
 
@@ -280,7 +280,7 @@ libtab_locals.windowKB = LibTab:CreateKeybind({
     end,
 })
 
-libtab_locals.themesDropdown = Tab:CreateDropdown({
+libtab_locals.themesDropdown = LibTab:CreateDropdown({
     Name = "Select Theme",
     Options = {"Default", "Amethyst", "Bloom", "DarkBlue", "Green", "Light", "Ocean", "Serenity"},
     CurrentOption = {"DarkBlue"},
