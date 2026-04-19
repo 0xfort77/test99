@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tf5"
+local _Version = "Cyan-99 v1.t6polish"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -3828,19 +3828,24 @@ local UICorner_18 = Instance.new("UICorner",TextButtonBACK)
 end
 
 local main_base_locals = {
-    "",
+    baseSection1 = "baseSection21",
+    baseRadiusSlider = "baseRadiusSlider",
+    logwallsCIRCLEButton = "logwallsCIRCLEButton",
+    descriptlogwallblueprintParagraph = "descriptlogwallblueprintParagraph",
+    decoDivider2 = "decoDivider2",
+    baseSection21 = "baseSection21",
 }
 
-local baseSection21 = BaseTab:CreateSection("Base:")
+main_base_locals.baseSection1 = BaseTab:CreateSection("Base:")
 
 local walls_index
 
-local baseRadiusSlider = BaseTab:CreateSlider({
+main_base_locals.baseRadiusSlider = BaseTab:CreateSlider({
     Name = "Walls",
     Range = {40, 70},
     Increment = 5,
     Suffix = " Blueprints",
-    CurrentValue = 40,
+    CurrentValue = 0,
     Flag = "Slider1", -- A flag is the identifier for the configuration file; make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(Value)
         walls_index = Value
@@ -3850,7 +3855,7 @@ local baseRadiusSlider = BaseTab:CreateSlider({
 local univ_vector = Vector3.new(0, 0.45, 0)
 local univ_cframe = CFrame.new(0, 0.45, 0)
 
-local logwallsCIRCLEButton = BaseTab:CreateButton({
+main_base_locals.logwallsCIRCLEButton = BaseTab:CreateButton({
     Name = "[Circle] Auto Place Log Walls",
     Callback = function()
         for i = 1, walls_index do
@@ -3883,9 +3888,11 @@ local logwallsCIRCLEButton = BaseTab:CreateButton({
         end
     end,
 })
-local descriptlogwallblueprintParagraph = BaseTab:CreateParagraph({Title = "Note:", Content = "Placement is based on the number of Log Wall Blueprints you have.\n40 Walls ~ 75 studs radius\n70 Walls ~ 130 studs radius (MAX)\nTorches are not necessary."})
+main_base_locals.descriptlogwallblueprintParagraph = BaseTab:CreateParagraph({Title = "Note:", Content = "Placement is based on the number of Log Wall Blueprints you have.\n40 Walls ~ 75 studs radius\n70 Walls ~ 130 studs radius (MAX)\nTorches are not necessary."})
 
-local baseSection21 = BaseTab:CreateSection("(New!) SkyBase:")
+main_base_locals.decoDivider2 = BaseTab:CreateDivider()
+main_base_locals.baseSection21 = BaseTab:CreateSection("SkyBase:")
+
 create_exp_UI()
 task.wait()
 local _interface = game.Players.LocalPlayer.PlayerGui.Interface_i
