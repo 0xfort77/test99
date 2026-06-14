@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.testI"
+local _Version = "Cyan-99 v1.tWarn"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -909,7 +909,7 @@ maintab_locals.autoSHButton = MainTab:CreateToggle({ -- workspace.Map.Landmarks.
     end,
 })
 
-maintab_locals.strongholdtablabel1 = MainTab:CreateLabel("Player will teleport around to ensure initiation", "rss")
+maintab_locals.strongholdtablabel1 = MainTab:CreateLabel("Not recommended without Invincibility", "forward")
 
 local fishSuccessArea = game:GetService("Players").LocalPlayer.PlayerGui.Interface.FishingCatchFrame.TimingBar.SuccessArea
 
