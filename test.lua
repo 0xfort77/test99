@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t7pol"
+local _Version = "Cyan-99 v1.testI"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -155,7 +155,7 @@ task.wait()
 local libtab_locals = {
     libsection1 = "libsection1",
     welcomeLabel = "welcomeLabel",
-    libsection1 = "libsection1",
+    libsection12 = "libsection12",
     quest_att = "quest_att",
     q1Label = "q1Label",
     q2Label = "q2Label",
@@ -174,7 +174,7 @@ libtab_locals.libsection1 = LibTab:CreateSection("Hello!")
 
 libtab_locals.welcomeLabel = LibTab:CreateLabel("Welcome "..player.DisplayName.."!", "activity")
 
-libtab_locals.libsection1 = LibTab:CreateSection("Quests:")
+libtab_locals.libsection12 = LibTab:CreateSection("Quests:")
 
 libtab_locals.quest_att = player:GetAttributes()
 
@@ -444,14 +444,29 @@ maintab_locals.HealthToggle = MainTab:CreateToggle({
     Callback = function(Value)
         health_flag = Value
 
-        while health_flag do
-            local args = {
-	            -1/0
-            }
-            game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("DamagePlayer"):FireServer(unpack(args))
-
-            task.wait(1.1)
+        if health_flag then
+            Rayfield:Notify({
+                Title = "! IMPORTANT !",
+                Content = "Invincibility is not usable. Workaround in progress!",
+                Duration = 12,
+                Image = 4483362458,
+            })
+            Rayfield:Notify({
+                Title = "4NTHO is sorry D'x",
+                Content = "The 99NITF devs have made our lives more difficult.",
+                Duration = 8,
+                Image = 4483362458,
+            })
         end
+
+        --while health_flag do
+        --    local args = {
+	    --        -1/0
+        --    }
+        --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("DamagePlayer"):FireServer(unpack(args))
+        --
+        --    task.wait(1.1)
+        --end
     end,
 })
 
@@ -1713,8 +1728,8 @@ update_tab_locals = {
 }
 
 update_tab_locals.updInfoLabel = UpdateTab:CreateLabel("Weekly update focused functions", 4483362458)
-update_tab_locals.updInfoLabel2 = UpdateTab:CreateLabel("Game update pending...", 4483362458)
-update_tab_locals.updInfoLabel3 = UpdateTab:CreateLabel("Please check back soon", 4483362458)
+update_tab_locals.updInfoLabel2 = UpdateTab:CreateLabel("Latest Gem Code: forestwakesup26", 4483362458)
+update_tab_locals.updInfoLabel3 = UpdateTab:CreateLabel("Improvements are being made. More info soon.", 4483362458)
 update_tab_locals.discord_lecture = UpdateTab:CreateSection("Join the Discord for a chance to win a free Key every week!")
 --
 --local function basiceggs()
