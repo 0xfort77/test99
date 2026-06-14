@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tWarn"
+local _Version = "Cyan-99 v1.t"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -124,19 +124,26 @@ Rayfield:Notify({
 Rayfield:Notify({
     Title = "Welcome!",
     Content = "Thanks for using CyanHub by 4NTHOcyan",
-    Duration = 6.5,
+    Duration = 12,
     Image = "file-heart",
 })
 
-local LibTab = Window:CreateTab("", "library") -- Title, Image
-local MainTab = Window:CreateTab("Main", "blend") -- Title, Image
-local BringTab = Window:CreateTab("Bring", "briefcase") -- Title, Image
-local MoveTab = Window:CreateTab("Teleport", "move") -- Title, Image
+Rayfield:Notify({
+    Title = "Notice",
+    Content = "Some features have changed. Join Discord for updates!",
+    Duration = 16,
+    Image = "file-heart",
+})
+
+local LibTab = Window:CreateTab("", "library")
+local MainTab = Window:CreateTab("Main", "blend")
+local BringTab = Window:CreateTab("Bring", "briefcase")
+local MoveTab = Window:CreateTab("Teleport", "move")
 local ExtrasTab = Window:CreateTab("Menus", "star")
 local TreeTab = Window:CreateTab("Trees", "trees")
 
-local ChestTab = Window:CreateTab("Chests", "package") -- Title, Image
-local SkullTab = Window:CreateTab("Skulls", "skull") -- Title, Image
+local ChestTab = Window:CreateTab("Chests", "package")
+local SkullTab = Window:CreateTab("Skulls", "skull") 
 local BaseTab = Window:CreateTab("Base", "baseline")
 local UpdateTab = Window:CreateTab("UPD", 4483362458)
 local CREDITS = Window:CreateTab("Credits", "users") -- Title, Image
