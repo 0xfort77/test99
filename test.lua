@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.t"
+local _Version = "Cyan-99 v1.tinf + FF"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -113,6 +113,18 @@ local function queryBears()
 
 end  
 
+local function addFF()
+
+    local forcefield_part = Instance.new("ForceField")
+
+    forcefield_part.Parent = my_humanoid
+    forcefield_part.Size = Vector3.new(14,14,14)
+    forcefield_part.Position = my_humanoid.Position + Vector3.new(0,0,0)
+    forcefield_part.Anchored = true
+    forcefield_part.Transparency = 0.75
+
+end
+
 Rayfield:Notify({
     Title = "Infrastructure:",
     Content = "Querying models and detecting NPCs, please wait...",
@@ -176,6 +188,8 @@ local libtab_locals = {
     windowKB = "windowKB",
     themesDropdown = "themesDropdown",
 }
+
+addFF() -- adding forcefield to player before information display
 
 libtab_locals.libsection1 = LibTab:CreateSection("Hello!")
 
@@ -466,14 +480,32 @@ maintab_locals.HealthToggle = MainTab:CreateToggle({
             })
         end
 
-        --while health_flag do
-        --    local args = {
-	    --        -1/0
-        --    }
-        --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("DamagePlayer"):FireServer(unpack(args))
-        --
-        --    task.wait(1.1)
-        --end
+        while health_flag do -- BROKEN BROKEN BROKEN BROKEN
+
+
+            my_humanoid.Health = math.huge
+            my_humanoid.maxHealth = math.huge
+            my_humanoid.MaxHealth = math.huge
+
+            if my_humanoid.Health <= 0 then
+
+                my_humanoid.Health = math.huge
+                my_humanoid.maxHealth = math.huge
+                my_humanoid.MaxHealth = math.huge
+
+            end
+
+
+            task.wait(0.1)
+
+
+            --    local args = {
+	        --        -1/0
+            --    }
+            --    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("DamagePlayer"):FireServer(unpack(args))
+            --
+            --    task.wait(1.1)
+        end
     end,
 })
 
