@@ -5,7 +5,7 @@ if game.PlaceId == place_id or game.PlaceId == party_placeid then
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local _Version = "Cyan-99 v1.tinf + FF"
+local _Version = "Cyan-99 v1.tff22"
 
 local Window = Rayfield:CreateWindow({
    Name = _Version,
@@ -118,7 +118,7 @@ local function addFF()
     local forcefield_part = Instance.new("ForceField")
 
     forcefield_part.Parent = my_humanoid
-    forcefield_part.Size = Vector3.new(14,14,14)
+    --forcefield_part.Size = Vector3.new(14,14,14)
     forcefield_part.Position = my_humanoid.Position + Vector3.new(0,0,0)
     forcefield_part.Anchored = true
     forcefield_part.Transparency = 0.75
